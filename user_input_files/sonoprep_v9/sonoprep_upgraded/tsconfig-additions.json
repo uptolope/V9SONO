@@ -1,0 +1,7 @@
+{
+  "_comment": "Merge these compilerOptions into tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "include_additions": ["__tests__/**/*.ts", "__tests__/**/*.tsx"]
+}

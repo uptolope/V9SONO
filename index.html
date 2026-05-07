@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonoPrep - ARDMS SPI Exam Prep</title>
+  <meta name="description" content="Pass the ARDMS SPI exam. 200+ flashcards, 110-question simulator, and Physics Pearls by RDMS-credentialed sonographers.">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0a0e14; color: #e8e4df; min-height: 100vh; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(180deg, #0a0e14 0%, #1a1f2e 100%); }
+    .badge { display: inline-block; padding: 0.5rem 1rem; background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3); border-radius: 9999px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #14b8a6; margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+    h1 span { background: linear-gradient(135deg, #14b8a6, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.25rem; color: rgba(232,228,223,0.7); max-width: 600px; margin-bottom: 2rem; line-height: 1.6; }
+    .cta { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: linear-gradient(135deg, #14b8a6, #0d9488); border-radius: 0.75rem; color: #0a0e14; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .cta:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(20,184,166,0.4); }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+    .feature { background: rgba(30,42,58,0.5); border: 1px solid rgba(232,228,223,0.1); border-radius: 1rem; padding: 1.5rem; transition: border-color 0.3s, box-shadow 0.3s; }
+    .feature:hover { border-color: rgba(20,184,166,0.3); box-shadow: 0 0 40px rgba(20,184,166,0.1); }
+    .feature-icon { width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+    .feature h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .feature p { color: rgba(232,228,223,0.6); font-size: 0.9rem; }
+    .products { background: rgba(20,30,40,0.5); padding: 4rem 2rem; }
+    .products h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .product { background: rgba(30,42,58,0.5); border: 1px solid rgba(232,228,223,0.1); border-radius: 1rem; padding: 2rem; }
+    .product.popular { border-color: #14b8a6; box-shadow: 0 0 30px rgba(20,184,166,0.15); }
+    .product-tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(20,184,166,0.1); border-radius: 9999px; font-size: 0.7rem; color: #14b8a6; margin-bottom: 1rem; }
+    .product h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .product-price { font-size: 2rem; font-weight: 700; color: #14b8a6; margin-bottom: 1rem; }
+    .product-features { list-style: none; margin-bottom: 1.5rem; }
+    .product-features li { padding: 0.5rem 0; border-bottom: 1px solid rgba(232,228,223,0.05); display: flex; align-items: center; gap: 0.5rem; }
+    .product-features li::before { content: '✓'; color: #14b8a6; }
+    .buy-btn { display: block; width: 100%; padding: 1rem; background: linear-gradient(135deg, #14b8a6, #0d9488); border: none; border-radius: 0.5rem; color: #0a0e14; font-weight: 600; cursor: pointer; transition: transform 0.2s; }
+    .buy-btn:hover { transform: scale(1.02); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 4rem auto; padding: 2rem; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 3rem; font-weight: 800; color: #14b8a6; }
+    .stat-label { color: rgba(232,228,223,0.6); font-size: 0.9rem; }
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(232,228,223,0.1); color: rgba(232,228,223,0.5); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="badge">ARDMS-Approved Exam Prep</div>
+    <h1>Pass the <span>SPI Exam</span><br>First Try</h1>
+    <p class="subtitle">200+ flashcards, 110-question simulator, and Physics Pearls built by RDMS-credentialed sonographers. Trusted by students nationwide.</p>
+    <a href="/demo" class="cta">Try Free Demo →</a>
+  </div>
+  
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">📚</div>
+      <h3>200+ Flashcards</h3>
+      <p>SM-2 spaced repetition algorithm for optimal retention. Covers all SPI exam domains.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎯</div>
+      <h3>110-Question Simulator</h3>
+      <p>Timed exams with ARDMS-weighted questions. Real exam experience, instant feedback.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💡</div>
+      <h3>Physics Pearls</h3>
+      <p>Expert insights and mnemonics from RDMS-credentialed sonographers.</p>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Choose Your Plan</h2>
+    <div class="product-grid">
+      <div class="product">
+        <div class="product-tag">Single Product</div>
+        <h3>Physics Pearls</h3>
+        <div class="product-price">$19</div>
+        <ul class="product-features">
+          <li>Expert study notes</li>
+          <li>Memory techniques</li>
+          <li>PDF format</li>
+        </ul>
+        <button class="buy-btn">Get Started</button>
+      </div>
+      <div class="product popular">
+        <div class="product-tag">Most Popular</div>
+        <h3>Flashcard Mastery</h3>
+        <div class="product-price">$39</div>
+        <ul class="product-features">
+          <li>200+ digital flashcards</li>
+          <li>SM-2 spaced repetition</li>
+          <li>Progress tracking</li>
+          <li>Mobile access</li>
+        </ul>
+        <button class="buy-btn">Get Started</button>
+      </div>
+      <div class="product">
+        <div class="product-tag">Complete Suite</div>
+        <h3>Full Access Bundle</h3>
+        <div class="product-price">$79</div>
+        <ul class="product-features">
+          <li>All flashcards + simulator</li>
+          <li>Physics Pearls included</li>
+          <li>Study notes access</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <button class="buy-btn">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-value">200+</div>
+      <div class="stat-label">Questions & Flashcards</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">110</div>
+      <div class="stat-label">Exam Simulator</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">5</div>
+      <div class="stat-label">Exam Domains</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">24/7</div>
+      <div class="stat-label">Access</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 SonoPrep. Built by RDMS-credentialed sonographers.</p>
+  </footer>
+</body>
+</html>
