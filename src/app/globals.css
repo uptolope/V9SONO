@@ -183,3 +183,10 @@
 ::-webkit-scrollbar-track { background: #03050a; }
 ::-webkit-scrollbar-thumb { background: #ff6b4a; }
 ::selection { background: #ff6b4a; color: black; }
+.corner-arch { position: relative; }
+.corner-arch::before, .corner-arch::after { content: ''; position: absolute; width: 16px; height: 16px; pointer-events: none; opacity: 0; transition: opacity 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+.corner-arch::before { top: 0; left: 0; border-top: 1px solid #ff6b4a; border-left: 1px solid #ff6b4a; }
+.corner-arch::after { bottom: 0; right: 0; border-bottom: 1px solid #ff6b4a; border-right: 1px solid #ff6b4a; }
+.corner-arch:hover::before, .corner-arch:hover::after { opacity: 1; }
+.depth-border { border-radius: 0 !important; }
+.btn-industrial, .btn-industrial-outline { border-radius: 0 !important; }
