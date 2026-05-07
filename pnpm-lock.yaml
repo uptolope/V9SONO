@@ -71,9 +71,6 @@ importers:
       next-auth:
         specifier: ^4.24.0
         version: 4.24.14(next@15.5.16(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      pnpm-store:
-        specifier: link:/tmp/pnpm-store
-        version: link:../../../../tmp/pnpm-store
       react:
         specifier: ^19.0.0
         version: 19.2.6

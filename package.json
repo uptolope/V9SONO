@@ -2,7 +2,7 @@
   "name": "sonoprep",
   "version": "1.0.0",
   "private": true,
-  "description": "SonoPrep — Premium SPI Exam Preparation Platform",
+  "description": "SonoPrep \u2014 Premium SPI Exam Preparation Platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build --no-turbopack",
@@ -37,7 +37,6 @@
     "lucide-react": "^0.469.0",
     "next": "^15.1.0",
     "next-auth": "^4.24.0",
-    "pnpm-store": "link:/tmp/pnpm-store",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "stripe": "^17.5.0",
