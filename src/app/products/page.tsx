@@ -2,11 +2,11 @@
 import Link from "next/link";
 
 const PRODUCTS = [
-  { name: "SPI Flashcards", price: "$29", description: "Master key physics concepts with SM-2 spaced repetition.", features: ["2,400 expert-written flashcards", "SM-2 spaced repetition", "Progress tracking", "Mobile optimized"] },
-  { name: "Physics Pearls", price: "$9", description: "High-yield physics principles in digestible bites.", features: ["150 concept summaries", "Clinical examples", "ARDMS domain mapped", "Quick reference"] },
-  { name: "Exam Simulator", price: "$49", description: "ARDMS-weighted questions that mirror the actual exam.", features: ["170 practice questions", "ARDMS domain weighting", "Detailed explanations", "Performance analytics"], featured: true },
-  { name: "Study Notes", price: "$39", description: "Comprehensive guide covering all SPI domains.", features: ["159 pages", "10 chapters", "Progress tracking", "Covers all domains"] },
-  { name: "Premium Bundle", price: "$99", description: "All four products at a discounted price.", features: ["All 4 products", "2,400 flashcards", "170-question simulator", "159-page notes", "Save $27"], featured: true, bundle: true }
+  { name: "SPI Flashcards", price: "$29", description: "Master key physics concepts with SM-2 spaced repetition.", features: ["2,400 expert-written flashcards", "SM-2 spaced repetition algorithm", "Progress tracking", "Mobile optimized"] },
+  { name: "Exam Simulator", price: "$49", description: "ARDMS-weighted questions that mirror the actual exam experience.", features: ["170 practice questions", "ARDMS domain weighting", "Detailed answer explanations", "Category performance analytics"], featured: true },
+  { name: "Physics Pearls", price: "$9", description: "50 high-yield physics principles in digestible, memorable bites.", features: ["50 concept summaries", "Clinical application examples", "ARDMS domain mapped", "Quick reference format"] },
+  { name: "Study Notes", price: "$39", description: "159-page comprehensive guide covering all SPI domains.", features: ["159 pages", "10 organized chapters", "Progress tracking", "Covers all domains"] },
+  { name: "Premium Bundle", price: "$99", description: "Everything you need — all four products at a discounted price.", features: ["All 4 products included", "2,400 flashcards", "170-question simulator", "159-page notes", "50 Physics Pearls", "Save $27"], featured: true, bundle: true }
 ];
 
 export default function ProductsPage() {
@@ -16,7 +16,7 @@ export default function ProductsPage() {
         <div className="mb-16 border-b border-white/10 pb-8">
           <span className="display-eyebrow">STUDY TOOLS</span>
           <h1 className="display-headline text-5xl sm:text-6xl mt-4">Pass the SPI.<br />Your way.</h1>
-          <p className="display-body max-w-xl mt-4">Choose the tools that fit your study style. Or get everything in the bundle and save.</p>
+          <p className="display-body max-w-xl mt-4">Choose individual tools or get everything in the bundle and save.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRODUCTS.map((product) => (
