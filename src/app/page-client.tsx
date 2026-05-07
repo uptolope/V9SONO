@@ -37,7 +37,7 @@ import { MiniExamSimulator } from "@/components/home/mini-exam-simulator";
 import { MiniFlashcardViewer } from "@/components/home/mini-flashcard-viewer";
 import { DEMO_QUESTIONS } from "@/lib/demo/exam-data";
 import { DEMO_FLASHCARDS } from "@/lib/demo/flashcard-data";
-import { UltrasoundShowcase } from "@/components/home/ultrasound-showcase";
+import UltrasoundShowcase from "@/components/home/ultrasound-showcase";
 
 // ─── Premium Animation Hooks ───────────────────────────────────────────────────
 const useScrollAnimation = () => {
