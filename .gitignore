@@ -1,0 +1,9 @@
+node_modules
+.next
+dist
+static_output
+user_input_files
+extracted_sonoprep
+sonoprep
+sonoprep_premium
+*.zip
