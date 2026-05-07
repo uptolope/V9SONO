@@ -18,3 +18,4 @@ sonoprep
 sonoprep_premium
 *.zip
 html_output
+.env.local

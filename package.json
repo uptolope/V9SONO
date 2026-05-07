@@ -2,15 +2,16 @@
   "name": "sonoprep",
   "version": "1.0.0",
   "private": true,
-  "description": "SonoPrep \u2014 Premium SPI Exam Preparation Platform",
+  "description": "SonoPrep — Premium SPI Exam Preparation Platform",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
