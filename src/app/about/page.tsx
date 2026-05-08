@@ -1,13 +1,8 @@
-"use client";
-
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export const dynamic = 'force-dynamic';
 
 export default function AboutPage() {
-  const { data: session, status } = useSession();
-
   return (
     <div className="min-h-screen pt-32 px-6">
       <div className="max-w-4xl mx-auto">
