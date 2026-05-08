@@ -129,16 +129,39 @@ function Footer() {
     <footer className="border-t border-[#f0ebe4]/5 py-12 mt-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div><div className="display-serif text-xl font-semibold text-[#f0ebe4] mb-2">SonoPrep</div><div className="body-small text-[#6b6359]">Built by sonographers, for sonographers.</div></div>
+          <div>
+            <div className="display-serif text-xl font-semibold text-[#f0ebe4] mb-2">SonoPrep</div>
+            <div className="body-small text-[#6b6359]">Built by sonographers, for sonographers.</div>
+          </div>
           <div className="flex gap-12">
-            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">PRODUCT</div><div className="space-y-2"><Link href="/products" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Pricing</Link><Link href="/demo" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Demo</Link></div></div>
-            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">RESOURCES</div><div className="space-y-2"><Link href="/blog" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Journal</Link><Link href="/faq" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">FAQ</Link></div></div>
-            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">LEGAL</div><div className="space-y-2"><Link href="/privacy" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Privacy</Link><Link href="/terms" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Terms</Link></div></div>
+            <div>
+              <div className="meta text-[10px] mb-3 text-[#6b6359]">PRODUCT</div>
+              <div className="space-y-2">
+                <Link href="/products" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Pricing</Link>
+                <Link href="/demo" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Demo</Link>
+              </div>
+            </div>
+            <div>
+              <div className="meta text-[10px] mb-3 text-[#6b6359]">RESOURCES</div>
+              <div className="space-y-2">
+                <Link href="/blog" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Journal</Link>
+                <Link href="/faq" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">FAQ</Link>
+              </div>
+            </div>
+            <div>
+              <div className="meta text-[10px] mb-3 text-[#6b6359]">LEGAL</div>
+              <div className="space-y-2">
+                <Link href="/privacy" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Privacy</Link>
+                <Link href="/terms" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Terms</Link>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-[#f0ebe4]/5 text-center meta text-[10px] text-[#4a453f]">SonoPrep is not affiliated with ARDMS. SPI is a registered trademark of ARDMS.</div>
+        <div className="mt-12 pt-6 border-t border-[#f0ebe4]/5 text-center meta text-[10px] text-[#4a453f]">
+          SonoPrep is not affiliated with ARDMS. SPI is a registered trademark of ARDMS.
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
