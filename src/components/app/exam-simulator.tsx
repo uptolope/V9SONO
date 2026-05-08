@@ -65,9 +65,11 @@ export function ExamSimulator({ questions }: { questions: Question[] }) {
   };
 
   const score = submitted
-    ? Object.entries(answers).filter(
-        ([i, a]) => a === (questions[parseInt(i)].correctIndex ?? questions[parseInt(i)].correctAnswer)
-      ).length
+    ? Object.entries(answers).filter(([i, a]) => {
+        const q = questions[parseInt(i)];
+        const idx = q.correctIndex ?? q.correctAnswer;
+        return a === idx;
+      }).length
     : 0;
   const percentage = Math.round((score / questions.length) * 100);
   const passingScore = Math.ceil(questions.length * 0.79);
@@ -101,7 +103,13 @@ export function ExamSimulator({ questions }: { questions: Question[] }) {
     );
   }
 
-  const explanation = currentQ.explanation || (isCorrect ? `Correct: ${currentQ.options[correctIdx]}` : `Correct answer: ${currentQ.options[correctIdx]}`);
+  // Safe guard in case correctIdx is undefined
+  const explanationText = () => {
+    if (correctIdx === undefined) return "Explanation not available.";
+    if (currentQ.explanation) return currentQ.explanation;
+    if (isCorrect) return `Correct: ${currentQ.options[correctIdx]}`;
+    return `Correct answer: ${currentQ.options[correctIdx]}`;
+  };
 
   return (
     <div className="depth-border">
@@ -127,7 +135,7 @@ export function ExamSimulator({ questions }: { questions: Question[] }) {
             <button onClick={() => setShowExplanation(!showExplanation)} className="meta text-sm text-[#c85b3a] hover:underline">Review explanation</button>
             {showExplanation && (
               <div className="mt-3 p-4 bg-[#1a212b] border-l-[3px] border-[#c85b3a] text-sm text-[#b8b0a4]">
-                {explanation}
+                {explanationText()}
               </div>
             )}
           </div>

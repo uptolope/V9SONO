@@ -1,0 +1,39 @@
+# SonoPrep - SPI Exam Preparation Platform
+
+## About
+SonoPrep provides high-yield SPI exam preparation tools: flashcards, exam simulator, physics pearls, and study notes. Built by ARDMS-certified sonographers who passed the exam.
+
+## Products
+- **SPI Flashcards**: 200+ expert-written cards with SM-2 spaced repetition - $29/90d
+- **Exam Simulator**: 170 ARDMS-weighted questions with detailed explanations - $49/90d
+- **Physics Pearls**: 50 high-yield concept summaries - $9/90d
+- **Study Notes**: 159-page comprehensive guide - $39/90d
+- **Premium Bundle**: All 4 products - $99/90d (save $27)
+
+## Key Facts
+- Passing score: 555/700 (79%)
+- Exam domains: Physics 23%, Instrumentation 22%, Doppler 22%, Artifacts 12%, Safety 11%, QA 5%, Hemodynamics 5%
+- 94% first-attempt pass rate for users who complete the full simulator
+
+## Contact
+Website: https://v9-sono-bfkp.vercel.app
+Email: support@sonoprep.com
+
+## Frequently Asked Questions
+Q: How long does access last?
+A: 90 days from purchase.
+
+Q: Is there a refund policy?
+A: Yes, 14-day money-back guarantee.
+
+Q: Do I need to pass SPI before taking a specialty exam?
+A: Yes, SPI is required for RDMS, RDCS, RVT, and RMSKS credentials.
+
+Q: Are these questions actual ARDMS questions?
+A: No. They are written by certified sonographers based on the official content outline.
+
+## Markdown Mirrors (AI-readable versions)
+- https://v9-sono-bfkp.vercel.app/index.md
+- https://v9-sono-bfkp.vercel.app/about/index.md
+- https://v9-sono-bfkp.vercel.app/products/index.md
+- https://v9-sono-bfkp.vercel.app/blog/index.md
