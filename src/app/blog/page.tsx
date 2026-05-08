@@ -15,32 +15,32 @@ const BLOG_POSTS = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen pt-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        <Link href="/" className="meta text-[11px] text-[#6b6359] hover:text-[#c85b3a] mb-8 inline-block">← BACK TO HOME</Link>
-        <div className="mb-16 border-b border-[#f0ebe4]/10 pb-8">
-          <span className="meta">SPI EXAM RESOURCES</span>
-          <h1 className="display-display text-5xl sm:text-6xl mt-4 mb-4">SPI Study Journal</h1>
-          <p className="body-readable text-[#b8b0a4] max-w-2xl">Free, in‑depth articles written by sonographers who passed.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BLOG_POSTS.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <div className="depth-border corner-arch p-6 h-full tactile-card">
-                <div className="inline-block bg-[#c85b3a] px-3 py-1 text-[10px] meta text-white mb-4">{post.category}</div>
-                <h3 className="display-serif text-xl font-semibold text-[#f0ebe4] mb-3 line-clamp-2">{post.title}</h3>
-                <p className="body-small text-[#6b6359] text-sm mb-6 line-clamp-3">{post.excerpt}</p>
-                <div className="flex items-center gap-3 text-[11px] meta text-[#6b6359] border-t border-[#f0ebe4]/5 pt-4">
-                  <span>{post.readTime} min read</span>
-                  <span className="w-1 h-1 bg-[#c85b3a] rounded-full" />
-                  <span>{post.date}</span>
-                </div>
-                <div className="mt-4"><span className="meta text-[10px] text-[#6b6359] hover:text-[#c85b3a] transition-colors">READ POST →</span></div>
-              </div>
-            </Link>
+     <dlt;div className="min-h-screen pt-32 px-6">
+       <dlt;div className="max-w-6xl mx-auto">
+         <Llt;Link href="/" className="meta text-[11px] text-[#6b6359] hover:text-[#c85b3a] mb-8 inline-block"">←gt;← BACK TO HOMEE</lt;/Link>
+         <dlt;div className="mb-16 border-b border-[#f0ebe4]/10 pb-8">
+           <slt;span className="meta"">Sgt;SPI EXAM RESOURCESS</lt;/span>
+           <hlt;h1 className="display-display text-5xl sm:text-6xl mt-4 mb-4"">Sgt;SPI Study Journall</lt;/h1>
+           <plt;p className="body-readable text-[#b8b0a4] max-w-2xl"">Fgt;Free, in‑depth articles written by sonographers who passed..</lt;/p>
+         </lt;/div>
+         <dlt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {BLOG_POSTS.map((post) ==> gt; (
+             <Llt;Link key={post.slug} href={`/blog/${post.slug}`}>
+               <dlt;div className="depth-border corner-arch p-6 h-full tactile-card">
+                 <dlt;div className="inline-block bg-[#c85b3a] px-3 py-1 text-[10px] meta text-white mb-4"">{gt;{post.category}}</lt;/div>
+                 <hlt;h3 className="display-serif text-xl font-semibold text-[#f0ebe4] mb-3 line-clamp-2"">{gt;{post.title}}</lt;/h3>
+                 <plt;p className="body-small text-[#6b6359] text-sm mb-6 line-clamp-3"">{gt;{post.excerpt}}</lt;/p>
+                 <dlt;div className="flex items-center gap-3 text-[11px] meta text-[#6b6359] border-t border-[#f0ebe4]/5 pt-4">
+                   <slt;spann>{gt;{post.readTime} min readd</lt;/span>
+                   <slt;span className="w-1 h-1 bg-[#c85b3a] rounded-full" />
+                   <slt;spann>{gt;{post.date}}</lt;/span>
+                 </lt;/div>
+                 <dlt;div className="mt-4">><slt;span className="meta text-[10px] text-[#6b6359] hover:text-[#c85b3a] transition-colors"">Rgt;READ POST →→</lt;/span>></lt;/div>
+               </lt;/div>
+             </lt;/Link>
           ))}
-        </div>
-      </div>
-    </div>
+         </lt;/div>
+       </lt;/div>
+     </lt;/div>
   );
 }
