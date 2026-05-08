@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -20,6 +21,7 @@ export default function BlogPost() {
             <p className="text-sm"><strong className="text-white">Bottom line:</strong> Students who complete all 170 simulator questions and review explanations pass at a 94% first‑attempt rate.</p>
           </div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

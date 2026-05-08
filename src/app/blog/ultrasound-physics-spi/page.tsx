@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -40,6 +41,7 @@ export default function BlogPost() {
             <p className="text-sm"><strong className="text-white">Memorize three numbers:</strong> soft tissue propagation speed = 1,540 m/s; attenuation coefficient ≈ 0.5 dB/cm/MHz; average speed in bone ≈ 4,000 m/s. Higher frequency = better resolution but less depth.</p>
           </div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

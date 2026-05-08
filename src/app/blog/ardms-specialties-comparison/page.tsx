@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -22,6 +23,7 @@ export default function BlogPost() {
           <p>Emerging specialty focusing on tendons, ligaments, muscles, and joints. Often used in sports medicine and rheumatology (e.g., rotator cuff tears, carpal tunnel, Achilles tendon). Smaller but rapidly growing field.</p>
           <div className="bg-[#c85b3a]/10 p-6 border-l-[3px] border-[#c85b3a] my-8"><p className="text-sm"><strong className="text-white">Tip:</strong> Many sonographers hold multiple credentials. Start with RDMS (abdomen) or RDCS (adult echo), then add others as you gain experience.</p></div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

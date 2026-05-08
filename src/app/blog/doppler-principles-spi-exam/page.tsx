@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -50,6 +51,7 @@ export default function BlogPost() {
             <p className="text-sm"><strong className="text-white">Must‑know formula:</strong> Nyquist limit = PRF/2. Aliasing velocity = (PRF × wavelength) / 4. To avoid aliasing → increase PRF or reduce transducer frequency.</p>
           </div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

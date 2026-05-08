@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -28,6 +29,7 @@ export default function BlogPost() {
           <p>The 2026 blueprint slightly increased Doppler (from 20% to 22%) and reduced QA (from 7% to 5%). Doppler is more clinically relevant than ever, so it makes sense. Be prepared for slightly more questions on Nyquist and aliasing.</p>
           <div className="bg-[#c85b3a]/10 p-6 border-l-[3px] border-[#c85b3a] my-8"><p className="text-sm"><strong className="text-white">Strategic insight:</strong> A student scoring 90% on Physics but 50% on Doppler will likely fail because Doppler alone is 22% of the exam. Balance your study across all high‑weight domains.</p></div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

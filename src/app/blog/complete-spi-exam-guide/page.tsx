@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -48,6 +49,7 @@ export default function BlogPost() {
             <p className="text-sm"><strong className="text-white">Key takeaway:</strong> Consistent daily study + spaced repetition + full‑length exams = first‑time pass. Start today with SonoPrep’s free demo.</p>
           </div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -22,6 +23,7 @@ export default function BlogPost() {
           <p>The SPI exam tests hundreds of discrete facts (formulas, relationships, artifact appearances). Cramming the week before will not work – you’ll forget half by exam day. Spaced repetition ensures that by week 6, you have seen each concept 8‑10 times, spaced perfectly for long‑term memory.</p>
           <div className="bg-[#c85b3a]/10 p-6 border-l-[3px] border-[#c85b3a] my-8"><p className="text-sm"><strong className="text-white">Science says:</strong> Students who use spaced repetition score 30% higher on average. SonoPrep’s flashcard system is built on this exact science.</p></div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );

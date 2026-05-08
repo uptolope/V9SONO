@@ -33,10 +33,22 @@ export default function DemoPage() {
           <TabsContent value="exam">
             <ExamSimulator questions={DEMO_QUESTIONS} />
           </TabsContent>
+
+      <div className="mt-8 text-center">
+        <p className="meta text-[10px] text-[#6b6359]">
+          Like what you see? <Link href="/auth/signin" className="text-[#c85b3a] hover:underline">Sign in</Link> to access the full random‑order exam simulator.
+        </p>
+      </div>
           
           <TabsContent value="flashcards">
             <FlashcardViewer cards={DEMO_FLASHCARDS} />
           </TabsContent>
+
+      <div className="mt-8 text-center">
+        <p className="meta text-[10px] text-[#6b6359]">
+          Like what you see? <Link href="/auth/signin" className="text-[#c85b3a] hover:underline">Sign in</Link> to access the full random‑order exam simulator.
+        </p>
+      </div>
         </Tabs>
       </div>
     </div>

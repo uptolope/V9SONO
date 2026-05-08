@@ -1,3 +1,4 @@
+import SimpleCTA from "/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
@@ -22,6 +23,7 @@ export default function BlogPost() {
           <p>If you cannot answer within 90 seconds, flag the question and move on. Do not let one difficult question ruin your pace. Often, later questions will trigger your memory, and you can return with fresh eyes.</p>
           <div className="bg-[#c85b3a]/10 p-6 border-l-[3px] border-[#c85b3a] my-8"><p className="text-sm"><strong className="text-white">Pro tip:</strong> Flag any question you are unsure about – do not stare at it for 5 minutes. Come back at the end with a clear head.</p></div>
         </div>
+        <SimpleCTA />
       </article>
     </div>
   );
