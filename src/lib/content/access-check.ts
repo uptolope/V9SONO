@@ -48,7 +48,7 @@ export async function checkContentAccess(
 
   // Check direct product purchase
   const directPurchase = purchases.find(
-    (p) => p.product.type === productKey
+    (p) => p.product && p.product.type === productKey
   );
 
   if (directPurchase) {
@@ -65,7 +65,7 @@ export async function checkContentAccess(
   // Check Premium Bundle (includes all products)
   if (BUNDLE_INCLUDES.includes(productKey)) {
     const bundlePurchase = purchases.find(
-      (p) => p.product.type === "PREMIUM_BUNDLE"
+      (p) => p.product && p.product.type === "PREMIUM_BUNDLE"
     );
 
     if (bundlePurchase) {
