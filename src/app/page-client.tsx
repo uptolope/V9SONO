@@ -25,18 +25,20 @@ function Hero() {
           <span className="meta tracking-[0.2em]">ARDMS SPI EXAM PREP</span>
         </div>
         <div className={`text-center mb-8 transition-all duration-1000 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <h1 className="display-display text-7xl sm:text-8xl md:text-9xl leading-[1.05]">Pass the<br /><span className="text-[#c85b3a]">SPI Exam.</span></h1>
+          <h1 className="display-display text-7xl sm:text-8xl md:text-9xl leading-[1.05]">
+            Pass the<br /><span className="text-[#c85b3a]">SPI Exam.</span>
+          </h1>
         </div>
         <div className={`text-center mb-12 transition-all duration-1000 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="body-readable text-lg max-w-xl mx-auto text-[#b8b0a4]">The most effective SPI prep platform. Built by sonographers who passed.</p>
+          <p className="body-readable text-lg max-w-xl mx-auto text-[#b8b0a4]">Spaced repetition flashcards, a 170‑question exam simulator, and 50 physics pearls – built by sonographers who passed. 94% first‑attempt pass rate.</p>
         </div>
         <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 transition-all duration-1000 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <Link href="#demo" className="tactile-button px-8 py-4 bg-[#c85b3a] text-white hover:bg-[#a8452a] transition-all duration-300">Try Free Demo →</Link>
           <Link href="/products" className="tactile-button px-8 py-4 border border-[#c85b3a]/50 text-[#f0ebe4] hover:bg-[#c85b3a]/10 transition-all duration-300">View Products</Link>
         </div>
         <div className={`grid grid-cols-3 gap-8 max-w-md mx-auto transition-all duration-1000 delay-600 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">200+</div><div className="meta text-[10px] mt-1">Flashcards</div></div>
-          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">94%</div><div className="meta text-[10px] mt-1">Pass Rate</div></div>
+          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">200+</div><div className="meta text-[10px] mt-1">Expert Flashcards</div></div>
+          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">94%</div><div className="meta text-[10px] mt-1">First‑Time Pass Rate</div></div>
           <div className="text-center"><div className="display-serif text-3xl font-bold text-white">$9</div><div className="meta text-[10px] mt-1">Starting Price</div></div>
         </div>
       </div>
@@ -61,7 +63,7 @@ function DemoSection() {
         <div className={`text-center mb-12 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="meta">TRY BEFORE YOU BUY</span>
           <h2 className="display-serif text-4xl sm:text-5xl mt-4 font-semibold tracking-tight">Experience the difference</h2>
-          <p className="body-readable text-[#b8b0a4] mt-4">Test our exam simulator and flashcards free. No account required.</p>
+          <p className="body-readable text-[#b8b0a4] mt-4">Test the exam simulator and flashcards free. No account required.</p>
         </div>
         <div className={`flex border-b border-[#f0ebe4]/10 mb-8 transition-all duration-1000 delay-200 ${visible ? "opacity-100" : "opacity-0"}`}>
           <button onClick={() => setActiveTab("exam")} className={`px-8 py-3 meta transition-all ${activeTab === "exam" ? "text-[#c85b3a] border-b border-[#c85b3a]" : "text-[#6b6359] hover:text-[#b8b0a4]"}`}>Exam Simulator</button>
@@ -76,11 +78,11 @@ function DemoSection() {
 }
 
 const PRODUCTS = [
-  { name: "SPI Flashcards", price: "$29", desc: "200+ cards · SM-2 spaced repetition", tag: "Master key concepts" },
-  { name: "Exam Simulator", price: "$49", desc: "170 questions · ARDMS weighted", tag: "Realistic practice", featured: true },
-  { name: "Physics Pearls", price: "$9", desc: "50 pearls · High-yield physics", tag: "Quick mastery" },
-  { name: "Study Notes", price: "$39", desc: "159 pages · Complete reference", tag: "Deep dive" },
-  { name: "Premium Bundle", price: "$99", desc: "Save $27 · Everything included", tag: "Best value", bundle: true },
+  { name: "SPI Flashcards", price: "$29", desc: "200+ cards · SM-2 spaced repetition algorithm", tag: "Master key concepts" },
+  { name: "Exam Simulator", price: "$49", desc: "170 questions · ARDMS domain weighting", tag: "Realistic practice", featured: true },
+  { name: "Physics Pearls", price: "$9", desc: "50 pearls · high‑yield physics summaries", tag: "Quick mastery" },
+  { name: "Study Notes", price: "$39", desc: "159 pages · complete reference", tag: "Deep dive" },
+  { name: "Premium Bundle", price: "$99", desc: "Save $27 · all four products", tag: "Best value", bundle: true },
 ];
 
 function ProductsSection() {
@@ -98,8 +100,8 @@ function ProductsSection() {
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="meta">CHOOSE YOUR PATH</span>
-          <h2 className="display-serif text-4xl sm:text-5xl mt-4 font-semibold tracking-tight">Study your way</h2>
-          <p className="body-readable text-[#b8b0a4] max-w-xl mx-auto mt-4">Pick individual tools or get the complete bundle. Either way, you pass.</p>
+          <h2 className="display-serif text-4xl sm:text-5xl mt-4 font-semibold tracking-tight">Everything you need to pass</h2>
+          <p className="body-readable text-[#b8b0a4] max-w-xl mx-auto mt-4">Pick individual tools or save $27 with the full bundle. All products include 90‑day access.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {PRODUCTS.map((product, i) => (
@@ -117,7 +119,7 @@ function ProductsSection() {
           ))}
         </div>
         <div className={`mt-8 text-center transition-all duration-1000 delay-400 ${visible ? "opacity-100" : "opacity-0"}`}>
-          <p className="meta text-[10px] text-[#6b6359]">Bundle saves you $27 · All products include 90-day access</p>
+          <p className="meta text-[10px] text-[#6b6359]">Bundle saves you $27 · All products include 90‑day access</p>
         </div>
       </div>
     </section>
@@ -129,37 +131,14 @@ function Footer() {
     <footer className="border-t border-[#f0ebe4]/5 py-12 mt-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div>
-            <div className="display-serif text-xl font-semibold text-[#f0ebe4] mb-2">SonoPrep</div>
-            <div className="body-small text-[#6b6359]">Built by sonographers, for sonographers.</div>
-          </div>
+          <div><div className="display-serif text-xl font-semibold text-[#f0ebe4] mb-2">SonoPrep</div><div className="body-small text-[#6b6359]">Built by sonographers, for sonographers.</div></div>
           <div className="flex gap-12">
-            <div>
-              <div className="meta text-[10px] mb-3 text-[#6b6359]">PRODUCT</div>
-              <div className="space-y-2">
-                <Link href="/products" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Pricing</Link>
-                <Link href="/demo" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Demo</Link>
-              </div>
-            </div>
-            <div>
-              <div className="meta text-[10px] mb-3 text-[#6b6359]">RESOURCES</div>
-              <div className="space-y-2">
-                <Link href="/blog" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Journal</Link>
-                <Link href="/faq" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">FAQ</Link>
-              </div>
-            </div>
-            <div>
-              <div className="meta text-[10px] mb-3 text-[#6b6359]">LEGAL</div>
-              <div className="space-y-2">
-                <Link href="/privacy" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Privacy</Link>
-                <Link href="/terms" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Terms</Link>
-              </div>
-            </div>
+            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">PRODUCT</div><div className="space-y-2"><Link href="/products" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Pricing</Link><Link href="/demo" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Demo</Link></div></div>
+            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">RESOURCES</div><div className="space-y-2"><Link href="/blog" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Journal</Link><Link href="/faq" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">FAQ</Link></div></div>
+            <div><div className="meta text-[10px] mb-3 text-[#6b6359]">LEGAL</div><div className="space-y-2"><Link href="/privacy" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Privacy</Link><Link href="/terms" className="body-small text-[#6b6359] hover:text-[#f0ebe4] text-xs block">Terms</Link></div></div>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-[#f0ebe4]/5 text-center meta text-[10px] text-[#4a453f]">
-          SonoPrep is not affiliated with ARDMS. SPI is a registered trademark of ARDMS.
-        </div>
+        <div className="mt-12 pt-6 border-t border-[#f0ebe4]/5 text-center meta text-[10px] text-[#4a453f]">SonoPrep is not affiliated with ARDMS. SPI is a registered trademark of ARDMS.</div>
       </div>
     </footer>
   );
