@@ -167,3 +167,4 @@ export default function BillingPage() {
     </div>
   );
 }
+export const dynamic = 'force-dynamic';

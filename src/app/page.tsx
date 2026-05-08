@@ -27,3 +27,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return <HomePageClient />;
 }
+
+export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
