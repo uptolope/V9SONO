@@ -5,6 +5,21 @@
  * into pages via <script type="application/ld+json">.
  */
 
+import DOMPurify from 'dompurify';
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Sanitization Utility                                                 */
+/* ─────────────────────────────────────────────────────────────────── */
+
+function sanitizeHtml(html: string | null | undefined) {
+  return html
+    ? DOMPurify.sanitize(html, {
+        ALLOWED_TAGS: ['span', 'p'],
+        ALLOWED_ATTR: ['class'],
+      })
+    : '';
+}
+
 /* ─────────────────────────────────────────────────────────────────── */
 /* Organization Schema                                                  */
 /* ─────────────────────────────────────────────────────────────────── */
@@ -326,7 +341,7 @@ export function ReviewsJsonLd({ reviews }: { reviews: ReviewData[] }) {
         <script
           key={i}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(JSON.stringify(d)) }}
         />
       ))}
     </>
@@ -357,7 +372,7 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: sanitizeHtml(JSON.stringify(data)) }}
     />
   );
 }
