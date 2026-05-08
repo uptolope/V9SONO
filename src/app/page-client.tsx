@@ -30,7 +30,7 @@ function Hero() {
           </h1>
         </div>
         <div className={`text-center mb-12 transition-all duration-1000 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="body-readable text-lg max-w-xl mx-auto text-[#b8b0a4]">Spaced repetition flashcards, a 170‑question exam simulator, and 50 physics pearls – built by sonographers who passed. 94% first‑attempt pass rate.</p>
+          <p className="body-readable text-lg max-w-xl mx-auto text-[#b8b0a4]">Master the SPI exam with spaced repetition flashcards, a 170‑question simulator, 50 physics pearls, and 159 pages of study notes – all created by sonographers who passed.</p>
         </div>
         <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 transition-all duration-1000 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <Link href="#demo" className="tactile-button px-8 py-4 bg-[#c85b3a] text-white hover:bg-[#a8452a] transition-all duration-300">Try Free Demo →</Link>
