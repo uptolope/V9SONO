@@ -33,7 +33,7 @@ export default function DemoPage() {
           </TabsContent>
         </Tabs>
 
-        {/* Larger CTA for both products */}
+        {/* Larger combined CTA */}
         <div className="mt-12 text-center border-t border-[#f0ebe4]/10 pt-8">
           <div className="bg-[#c85b3a]/5 p-6 border-l-[3px] border-[#c85b3a]">
             <p className="body-readable text-[#f0ebe4] text-base mb-4">
