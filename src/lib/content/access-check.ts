@@ -4,7 +4,13 @@
 // ═══════════════════════════════════════════════════════════════════
 
 import { prisma } from "@/lib/prisma";
-import { BUNDLE_INCLUDES, type ProductContentKey } from "./index";
+
+export type ProductContentKey = 
+  | "FLASHCARDS"
+  | "EXAM_SIMULATOR" 
+  | "PHYSICS_PEARLS"
+  | "STUDY_NOTES"
+  | "PREMIUM_BUNDLE";
 
 export interface AccessResult {
   hasAccess: boolean;
@@ -13,13 +19,14 @@ export interface AccessResult {
   reason?: string;
 }
 
-/**
- * Check if a user has active access to a specific product.
- * Also checks if they have the Premium Bundle (which includes all products).
- *
- * SECURITY: This must be called on every content API route before
- * serving any educational content.
- */
+// Which product keys are included in the bundle
+const BUNDLE_INCLUDES: ProductContentKey[] = [
+  "FLASHCARDS",
+  "EXAM_SIMULATOR",
+  "PHYSICS_PEARLS",
+  "STUDY_NOTES",
+];
+
 export async function checkContentAccess(
   userId: string,
   productKey: ProductContentKey
@@ -30,15 +37,12 @@ export async function checkContentAccess(
 
   const now = new Date();
 
-  // Find all active purchases for this user
+  // Fetch all active purchases for this user
   const purchases = await prisma.purchase.findMany({
     where: {
       userId,
       status: "COMPLETED",
       accessExpiresAt: { gt: now },
-    },
-    include: {
-      product: true,
     },
   });
 
@@ -46,35 +50,29 @@ export async function checkContentAccess(
     return { hasAccess: false, reason: "No active purchases" };
   }
 
-  // Check direct product purchase
-  const directPurchase = purchases.find(
-    (p) => p.product && p.product.type === productKey
-  );
-
+  // Check direct product purchase (using productKey field)
+  const directPurchase = purchases.find(p => p.productKey === productKey);
   if (directPurchase) {
     const daysRemaining = Math.ceil(
-      (directPurchase.accessExpiresAt.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+      (directPurchase.accessExpiresAt!.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
     );
     return {
       hasAccess: true,
-      expiresAt: directPurchase.accessExpiresAt,
+      expiresAt: directPurchase.accessExpiresAt!,
       daysRemaining,
     };
   }
 
   // Check Premium Bundle (includes all products)
   if (BUNDLE_INCLUDES.includes(productKey)) {
-    const bundlePurchase = purchases.find(
-      (p) => p.product && p.product.type === "PREMIUM_BUNDLE"
-    );
-
+    const bundlePurchase = purchases.find(p => p.productKey === "PREMIUM_BUNDLE");
     if (bundlePurchase) {
       const daysRemaining = Math.ceil(
-        (bundlePurchase.accessExpiresAt.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+        (bundlePurchase.accessExpiresAt!.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
       );
       return {
         hasAccess: true,
-        expiresAt: bundlePurchase.accessExpiresAt,
+        expiresAt: bundlePurchase.accessExpiresAt!,
         daysRemaining,
       };
     }
@@ -83,9 +81,6 @@ export async function checkContentAccess(
   return { hasAccess: false, reason: "Product not purchased or expired" };
 }
 
-/**
- * Get all active product access for a user (used in dashboard).
- */
 export async function getUserProductAccess(userId: string): Promise<Record<string, AccessResult>> {
   const products: ProductContentKey[] = [
     "FLASHCARDS",
@@ -93,12 +88,9 @@ export async function getUserProductAccess(userId: string): Promise<Record<strin
     "PHYSICS_PEARLS",
     "STUDY_NOTES",
   ];
-
   const results: Record<string, AccessResult> = {};
-
   for (const product of products) {
     results[product] = await checkContentAccess(userId, product);
   }
-
   return results;
 }
