@@ -33,10 +33,18 @@ export default function DemoPage() {
           </TabsContent>
         </Tabs>
 
-        <div className="mt-12 text-center">
-          <p className="meta text-[10px] text-[#6b6359]">
-            Like what you see? <Link href="/auth/signin" className="text-[#c85b3a] hover:underline">Sign in</Link> to access the full 170‑question randomized exam simulator.
-          </p>
+        {/* Larger CTA for both products */}
+        <div className="mt-12 text-center border-t border-[#f0ebe4]/10 pt-8">
+          <div className="bg-[#c85b3a]/5 p-6 border-l-[3px] border-[#c85b3a]">
+            <p className="body-readable text-[#f0ebe4] text-base mb-4">
+              Ready to master the SPI exam? Get full access to <strong>all 170+ randomized questions</strong> and <strong>200+ spaced repetition flashcards</strong>.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/products" className="btn-industrial px-6 py-3 text-base">View Products →</Link>
+              <Link href="/auth/signin" className="btn-industrial-outline px-6 py-3 text-base">Sign In</Link>
+            </div>
+            <p className="text-[#6b6359] text-xs mt-4">90‑day access · 14‑day refund · Start studying today</p>
+          </div>
         </div>
       </div>
     </div>
