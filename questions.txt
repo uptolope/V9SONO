@@ -1,0 +1,1084 @@
+﻿Ultrasound wave propagation causes displacement of particles in a medium. The regions of greatest particle concentration are called __________ while the regions of lowest particle concentration are called ________ 
+A. Compressions, rarefactions
+B. Rarefactions, compressions
+C. Elevation, depression
+D. Depression, elevation
+ANSWER:A
+The effects of ultrasound on living tissue are called 
+A. Hazardous effects
+B. Chemical effects
+C. Tissue effects
+D. Bio-effects 
+ANSWER:D
+The acoustic variables that change as sound propagates through a medium
+A. Pressure
+B. Density
+C. Particle motion
+D. All of the above
+ANSWER:D
+The properties that describe the effects of the medium on the sound wave travelling through it are called
+A. Mechanical properties
+B. Travelling properties
+C. Acoustic propagation properties
+D. Variable properties
+ANSWER:C
+Destructive interference results
+A. when a pair of in-phase waves interferes with each other
+B. when a pair of conjugal waves interferes with each other
+C. when a pair of out-of-phase waves interferes with each other
+D. when a pair of transverse waves interferes with each other
+ANSWER:C
+
+Transverse waves travel_________ to the motion of the particle in the wave, while longitudinal waves travel ___________ to the particle motion
+A. incidental
+B. Perpendicular
+C. Parallel
+D. a & b
+E. b & c
+ANSWER:E
+
+Waves that are in-phase interfere constructively with each other. The single wave resulting from the interference will always have a _________ amplitude than either of the original waves
+A. Smaller
+B. Higher
+C. Longer 
+D. The same
+ANSWER:B
+The acoustic parameters include:
+A. Period
+B. Wavelength
+C. Intensity
+D. All of the above
+ANSWER:D
+Ultrasound frequency is defined as sound wave at least
+A. 10,000Hz
+B. 5000Hz
+C. 20,000Hz
+D. 15,000Hz
+ANSWER:C
+Infrasound has frequency less than
+A. 20Hz
+B. 40Hz
+C. 10Hz
+D. 100Hz
+ANSWER:A
+Frequency is _________ to period
+A. Directly related
+B. Equal
+C. Reciprocal 
+D. Proportional
+ANSWER:C
+The strength of the amplitude diminishes as sound wave travels within the body. This process is known as
+A. attenuation
+B. propagation
+C. intensity
+D. amplification
+ANSWER:A
+
+The units of power are
+A. Centimeters 
+B. kilogram
+C. Watts
+D. Micrometer 
+ANSWER:C
+
+Power is proportional to
+A. Wavelength 
+B. Imaging depth 
+C. Amplitude
+D. Amplitude2
+ANSWER:D
+
+The wavelength is determined by
+A. The source
+B. The medium
+C. The source and the medium
+D. The monitor
+ANSWER:C
+
+Higher frequencies generally produce
+A. higher quality images
+B. greater details
+C. lower quality images
+D. shallow imaging depth
+E. a & b & d
+ANSWER:E
+
+The propagation speed of ultrasound in soft tissue is
+A. 300 m/s
+B. 1,540 m/s
+C. 3300 m/s
+D. 500 m/s 
+ANSWER:B
+
+The property(ies) that establish the propagation speed of sound in a medium are
+A. Density
+B. Elasticity 
+C. a & b
+D. None of the above
+ANSWER:C
+
+The pulse duration is the actual time that a transducer is creating one pulse. Pulse duration is determined by
+A. The sound source(transducer)
+B. The sonographer
+C. The medium
+D. The patient
+ANSWER:A
+
+Both the period and pulse duration are measured in units of
+A. Density 
+B. Volume
+C. Distance
+D. Time
+ANSWER:D
+
+Spatial pulse length is the distance that a pulse occupies in space. Spatial pulse length, like wavelength depends on
+A. The imaging depth
+B. The source
+C. The medium
+D. Both the source and the medium
+ANSWER:D
+
+Pulse repetition period(PRP) and pulse repetition frequency(PRF) are
+A. Directly related 
+B. Reciprocals 
+C. Affected by the depth of view
+D. b & c
+ANSWER:D
+
+The Duty factor is the amount of time that the transducer is transmitting sound energy. The value of the duty factor is
+A. Unitless
+B. Expressed as percentages or decimal
+C. Expressed in units of distance
+D. a & b
+ANSWER:D
+
+The duty factor of a continuous wave is
+A. Between 50 & 60 %
+B. 100%
+C. Less than 100%
+D. More than 100%
+ANSWER:B
+
+The duty factor of a pulsed wave is
+A. Between 50 & 60 %
+B. 100%
+C. Less than 100%
+D. More than 100%
+ANSWER:C
+
+In diagnostic pulsed ultrasound, the duty factor is usually
+A. Less than 1%
+B. 100%
+C. Between 50 & 60%
+D. More than 1%
+ANSWER:A
+
+The parameters that describe a pulsed wave are:
+A. Pulse duration
+B. Pulse repetition period
+C. Pulse repetition frequency
+D. Spatial pulse length
+E. Duty factor
+F. All of the above
+ANSWER:F
+
+A substance applied on the face of the transducer and used to avoid diminished quality of sound signal transmitted between the transducer and the body tissue is known as
+A. Ultraviolet agent
+B. Contrast agent
+C. Bubble agent
+D. Gel or coupling agent
+ANSWER:D
+
+Attenuation is the process by which the power of sound wave diminishes as it propagates through a medium. The following factors contribute to attenuation
+A. Reflection
+B. Scattering
+C. Absorption
+D. All of the above
+E. a & b
+ANSWER:D
+
+Axial resolution depends on_________ while lateral resolution depends on __________ 
+A. Spatial pulse length, beam width
+B. Beam width, spatial pulse length
+C. Attenuation
+D. Intensity 
+ANSWER:A
+
+Axial resolution is also known as
+A. Azimuthal
+B. Longitudinal
+C. Radial
+D. Range
+E. Depth
+F. a, b, c, d
+G. b, c, d, e
+ANSWER:G
+
+Lateral resolution is also known as
+A. Radial
+B. Angular
+C. Azimuthal
+D. Transverse
+E. a, b and c
+F. b, c, and d
+ANSWER:F
+
+The Principle which states that all points on a wave-front can be considered as point sources for the production of spherical secondary wavelets is called
+A. Bernoulli principle
+B. Huygens Principle
+C. Ohm Principle
+D. Pythagorean principle
+ANSWER:B
+
+Ultrasound waves in tissues are
+A. Longitudinal
+B. Lateral
+C. Transverse
+D. Vertical 
+ANSWER:A
+
+The term Hertz(Hz) denotes
+A. Cycles per second
+B. Cycles per day
+C. Cycles per hour
+D. Cycles per minute
+ANSWER:A
+
+The damping material in the transducer housing does not affect lateral resolution. However it:
+A. Reduces pulse duration
+B. Improves axial resolution
+C. Reduces Spatial pulse length (SPL)
+D. All of the above
+ANSWER:D
+
+In ultrasound physics, the time taken to complete one cycle is called
+A. Wavelength
+B. Frequency
+C. Amplitude 
+D. Period
+ANSWER:D
+
+Longitudinal waves are characterized by
+A. Motion of particles parallel to the axis of wave propagation
+B. Motion of particles perpendicular to the axis of wave propagation
+C. Motion of particles above the axis of wave propagation
+D. Motion of particles below the axis of wave propagation
+ANSWER:A
+Transverse waves are characterized by
+A. Motion of particles parallel to the axis of wave propagation
+B. Motion of particles perpendicular to the axis of wave propagation
+C. Motion of particles above the axis of wave propagation
+D. Motion of particles below the axis of wave propagation
+ANSWER:B
+Wavelength will ________ if frequency _________
+A. Decrease, decreases
+B. Decrease, increases
+C. Increase, decreases
+D. Increase, increases
+E. b & c
+ANSWER:E
+
+Penetration will _________ as frequency __________
+A. Decrease, decreases
+B. Decrease, increases
+C. Increase, decreases
+D. Increase, increases
+E. b & c
+ANSWER:E
+
+Resolution __________ as frequency _____________
+A. Decrease, decreases
+B. Decrease, increases
+C. Increase, decreases
+D. Increase, increases
+E. a & d
+ANSWER:E
+Attenuation may be a result of
+A. Reflection
+B. Absorption
+C. Transmission 
+D. All of the above
+ANSWER:D
+Acoustic impedance(Z) may be defined as
+A. Intensity X density
+B. Density X wavelength
+C. Wavelength X propagation speed
+D. Density X propagation speed
+ANSWER:D
+
+Acoustic impedance depends on:
+A. Density of tissue
+B. Stiffness of tissue
+C. Elasticity of the tissue
+D. Compressibility of the tissue
+E. All of the above
+ANSWER:E
+
+The number of pulses emitted per second is called
+A. Pulse repetition period (PRP)
+B. Pulse repetition frequency (PRF)
+C. Pulse duration (PD)
+D. Spatial pulse length (SPL)
+ANSWER:B
+
+The time from the beginning of one pulse to the beginning of the next
+A. Pulse repetition period (PRP)
+B. Pulse repetition frequency (PRF)
+C. Pulse duration (PD)
+D. Spatial pulse length (SPL)
+ANSWER:A
+
+The time during which pulse actually occurs
+A. Pulse repetition period (PRP)
+B. Pulse repetition frequency (PRF)
+C. Pulse duration (PD)
+D. Spatial pulse length (SPL)
+ANSWER:C
+
+Transducers are focused by two main methods, internal focusing and external focusing. Internal focusing is achieved by__________ while external focusing is achieved by ____________
+A. Cutting a curved transducer element, using an acoustic lens
+B. Using an acoustic lens, cutting a curved transducer element
+C. Both are achieved by cutting a curved transducer element
+D. Both are achieved by using an acoustic lens
+ANSWER:A
+
+The range of frequencies that are present within the pulse is called
+A. Bandwidth
+B. Frequency
+C. Pulse repetition frequency
+D. Power
+ANSWER:A
+
+The ratio of the operating (main)frequency to the bandwidth is called
+A. Amplitude factor
+B. Quality factor
+C. Intensity factor
+D. Propagation factor
+ANSWER:B
+Decreasing the spatial pulse length
+A. Improves lateral resolution
+B. Decreases lateral resolution
+C. Increases axial resolution
+D. Decreases axial resolution
+ANSWER:C
+
+Axial resolution is improved by
+A. Damping the PZT
+B. Intensity
+C. Power
+D. Sound beam diameter
+ANSWER:A
+
+If the amplitude is doubled, the intensity is
+A. Doubled
+B. Reduced by 50%
+C. Unchanged
+D. Increased 4 fold
+ANSWER:D
+
+Attenuation is the process by which 
+A. the power of sound wave diminishes as it propagates through  the body
+B. the intensity of sound increases as it travels through a medium
+C. the intensity of soundwave remains unchanged as it propagates though a medium
+D. the intensity of sound is converted into electrical energy as it travels through a medium
+ANSWER:A
+
+The bandwidth of an ultrasound beam is
+A. Can be increased using the coupling gel
+B. Is the difference between the highest and lowest frequency
+C. Is the addition of the highest and lowest frequency
+D. The median frequency
+ANSWER:B
+
+The relative strength of a sound beam as it undergoes attenuation or amplification may be measured in :
+A. Inches
+B. Kilograms
+C. Rayls
+D. Decibels
+ANSWER:D
+
+The incident intensity of a sound beam is 65 w/cm2 while the transmitted intensity is 55 w/cm2. What is the reflected intensity?
+A. 110 w/cm2
+B. 10 w/cm2
+C. 25 w/cm2
+D. There is no refection
+ANSWER:B
+
+The acoustic impedance of a medium
+A. The product of the propagation speed and the density of the medium
+B. Directly proportional to the density
+C. Inversely proportional to the propagation speed
+D. Is unrelated to either the propagation or density
+ANSWER:A
+
+The following is true about decibels except:
+A. A decibel represents a relationship between two numbers
+B. a relative measure of intensity of power
+C. Decibel notation is based on algorithms
+D. The decibel notation is negative when the acoustic signal is amplified and positive when the acoustic signal is attenuated
+ANSWER:D
+
+Attenuation in soft tissue
+A. Increases with propagation speed of the tissue
+B. Increases with tissue thickness
+C. Increased with high frequency
+D. Decreases with shorter wavelength
+ANSWER:C
+Which of the following determines the amount of reflection at an interface of two dissimilar media?
+A. The time gain compensation
+B. The frequency
+C. The period
+D. The difference in acoustic impedance
+ANSWER:D
+
+When a sound wave strikes a tissue interface at an oblique angle of incidence, what other condition must be present for refraction to take place?
+A. A strong reflector
+B. The presence of several smaller reflectors
+C. Normal incidence
+D. A difference in propagation speeds between the two media
+ANSWER:D
+
+When a sound wave strikes an interface with a normal incidence, the following other condition must be present for reflection to happen.
+A. An oblique incidence
+B. A strong reflector
+C. A difference in acoustic impedance
+D. The two media must have the same acoustic impedance
+ANSWER:C
+
+Ultrasound transducers
+A. Convert thermal to cavitation energy and vice versa
+B. Convert electrical to mechanical energy and vice versa
+C. Only converts mechanical to heat energy 
+D. Only converts heat to mechanical energy
+ANSWER:B
+
+Which of the following describes the change in direction of an ultrasound beam as it travels from one medium to another
+A. Rarefaction
+B. Compression
+C. Reflection
+D. Refraction 
+ANSWER:D
+
+Which of the following relates to the quality factor?
+A. Main frequency
+B. Highest frequency
+C. Lowest frequency
+D. All of the above
+ANSWER:D
+
+The incident reflection coefficient is
+A. The % of intensity that bounces back at an interface between two media of different impedance
+B. The % of intensity that is absorbed at the interface
+C. The % of intensity that is transmitted at the interface between two media of different impedance
+D. All of the above
+ANSWER:A
+
+The incident transmission coefficient is
+A. The % of intensity that bounces back at an interface between two media of different impedance
+B. The % of intensity that is absorbed at the interface
+C. The % of intensity that is transmitted at the interface between two media of different impedance
+D. All of the above
+ANSWER:C
+The formula for the incident reflection coefficient (IRC) is
+A. (Z2 + Z1 /Z2 + Z1 )2 X 100
+B. (Z2 + Z1 /Z2 - Z1 )2 X 100
+C. (Z2 – Z1 /Z2 + Z1 )2 X 100
+D. (Z2 – Z1 /Z2 - Z1 )2 X 100
+ANSWER:C
+
+IRC is
+A. A unitless value expressed as percentage
+B. Expressed in decibels
+C. Expressed as Watts/cm2
+D. Expressed in units of time
+ANSWER:A
+
+Incident intensity is reflected intensity plus transmitted intensity
+A. A unitless value expressed as percentage
+B. Expressed in decibels
+C. Expressed as Watts/cm2
+D. Expressed in units of time
+ANSWER:C
+
+According to the Range equation
+A. For every 10 seconds of go-return-time, the sound beam travels a distance of 1 centimeter deeper in the body
+B. For every 10 microsecond of go-return-time, the sound beam travels a distance of 1 centimeter deeper in the body
+C. For every 13 seconds of go-return-time, the sound beam travels a distance of 1 centimeter deeper in the body
+D. For every 13 microseconds of go-return-time, the sound beam travels a distance of 1 centimeter deeper in the body
+ANSWER:D
+
+A- mode appears on display as
+A. A block of wavy lines, indicating the changing position of moving reflectors
+B. A line graph display as a series of upward spikes
+C. A line of dots of varying brightness
+D. A mix of colors, usually read, blue, green and yellow
+ANSWER:B
+
+B- mode appears on display as
+A. A block of wavy lines, indicating the changing position of moving reflectors
+B. A line graph display as a series of upward spikes
+C. A line of dots of varying brightness
+D. A mix of colors, usually read, blue, green and yellow
+ANSWER:C
+
+Better axial resolution is associated with the following except
+A. Shorter  SPL
+B. Shorter PD
+C. Shorter wavelength
+D. Smaller beam width
+ANSWER:D
+
+Focusing the ultrasound beam helps to achieve the following except
+A. Narrower focal depth
+B. Shorter wavelength
+C. Focal zone is shorter and thinner
+D. Narrower beam diameter(width) in near field and focal zone
+ANSWER:B
+
+The matching layer
+A. Helps to reduce reflection at the transducer/tissue interface
+B. Helps to increase reflection at the transducer/tissue interface
+C. Helps to reduce transmission at the transducer/tissue interface
+D. Helps to increase the attenuation at the transducer/tissue interface
+ANSWER:A
+
+The frequency of the acoustic wave produced by a standard pulsed wave ultrasound system depends on 
+A. Frequency of the electric voltage in the system
+B. Curie temperature
+C. Type of active element
+D. The thickness of the PZT and propagation speed of sound in the PZT
+ANSWER:D
+
+Bi-stable images are composed of 
+A. 2 or more shades of gray
+B. 2 shades of gray
+C. One shade of gray
+D. Shades of blue and red
+ANSWER:B
+
+In grayscale displays
+A. There are multiple levels of brightness from light to darker shades of gray
+B. These different shades indicate different echo amplitudes
+C. The different shades differentiate the various body tissues 
+D. All of the above
+ANSWER:D
+
+The scan converter
+A. temporarily retains scanned image for review and converts the image into format suitable for display, recording and storage
+B. permanently stores the scanned image
+C. deletes the stored image
+D. all of the above
+ANSWER:A
+
+Within the scan converter,
+A. Image attributes such as amplitude at each pixel location are converted from analog and re-presented in binary form
+B. Echo signals into a suitable format for display
+C. The multiple frames(images) acquired are  displayed as a single scan
+D. All of the above
+ANSWER:D
+
+Picture Archiving and communications System (PACS)
+A. is the set of rules under which the components of the system communicate.
+B. is the physical computer network installed within the facility
+C. is the administrative procedure for communicating with colleagues
+D. is the procedure for communicating with patients
+ANSWER:B
+
+Digital Imaging and Computers in Medicine (DICOM) 
+A. is the set of rules under which the components of the system communicate.
+B. is the physical computer network installed within the facility
+C. is the administrative procedure for communicating with colleagues
+D. is the procedure for communicating with patients
+ANSWER:A
+
+There are 2 types of scan converters, analog and digital. The limitations of analog scan converters include
+A. image fade
+B. image flicker
+C. deterioration
+D. all of the above
+ANSWER:D
+
+Advantages of digital converters include
+A.  Uniformity
+B. Stability
+C. Durability
+D. All of the above
+ANSWER:D
+
+With digital imaging, the image or picture is divided into many small squares similar to a checkerboard called
+A. Bits 
+B. Pixel
+C. Word 
+D. Bytes 
+ANSWER:B
+
+A byte = ______bits while a word = ______ bytes
+A. 16, 8
+B. 8, 16
+C. 8, 2
+D. 2, 8
+ANSWER:C
+
+Spatial compounding
+A. Is the technique by which Images of an object are acquired in different acoustic frequencies and  then averaged or compounded to reduce speckles (signal to noise ratio)
+B. Superimposes the current frame on previous frames (history) to create a smoother image
+C. Is the technique for producing a single image from several imaging angles. The frames are overlapped to form a single real-time image
+D. Is the method of filling in gaps of missing data that usually exists in sector shaped images as scan lines become wider apart with depth
+ANSWER:C
+
+Dynamic Range
+A. Is the extent to which a signal can vary and still maintain accuracy
+B. Is the number of,  or possible gray shades an image can produce
+C. Is the related to the bandwidth
+D. All of the above
+ANSWER:D
+
+Harmonic frequencies :
+A. Are created due to the linear distortions that sound pulses undergo as they propagate through tissue
+B. Harmonic frequencies are created due to the nonlinear distortions that sound pulses undergo as they propagate through tissue
+C. Harmonic frequencies are fractions of the main or fundamental frequencies
+D. Harmonic imaging is the creation of an image from sound reflections at half the fundamental frequency of the transmitted sound
+ANSWER:B
+
+Contrast agents
+A. Are designed to create strong reflections that light up blood vessels, blood chambers and other anatomic regions
+B. Are either intravenously injected or ingested
+C. Are commonly used to enhance echo signals from blood
+D. All of the above
+ANSWER:D
+
+Phased array transducers are 
+A. Focused and steered electronically
+B. Focused and steered mechanically
+C. Focused electronically and steered mechanically
+D. Focused mechanically and steered electronically
+ANSWER:A
+
+Mechanical transducers are 
+A. Focused and steered electronically
+B. Focused and steered mechanically
+C. Focused electronically and steered mechanically
+D. Focused mechanically and steered electronically
+ANSWER:B
+
+One method of focusing an array transducer is
+A. Internal focusing, using a curved element
+B. Supradicing
+C. Apodization 
+D. b & c
+ANSWER:C
+
+Type of resolution contributes to image quality:
+A. Axial resolution
+B. Lateral resolution
+C. Elevational resolution
+D. All of the above
+ANSWER:D
+
+Dynamic or multiple focusing is a technique to
+A. Focus the ultrasound beam at multiple imaging points only during reception of ultrasound signals or waves
+B. Focus the ultrasound beam at multiple imaging points only during transmission of ultrasound signals or waves
+C. Focus the ultrasound beam at multiple imaging points both during transmission and reception of ultrasound signals or waves
+D. Focus the ultrasound beam in  the receiver
+ANSWER:C
+
+The following is true about frame rate
+A. The frame rate is the number of frames or images produced in a second and is measured in Hertz
+B. The frame rate and the time to produce one frame are reciprocals
+C. The frame rate is determined by the imaging depth and propagation speed
+D. All of the above
+ANSWER:D
+
+The following is true about  line density
+A. It is the amount of spacing between each scan line or sound beam
+B. Low line density generates widely space lines between sound beams or pulses, fewer pulses per frame and higher frame rate
+C. High line density generates tightly-spaced lines between successive sound beams, more pulses per frame and lower frame rate
+D. All of the above
+ANSWER:D
+
+The following is true about the pulser
+A. The pulser creates and controls electrical pulses sent to the transducer to excite the PZT crystals
+B. The pulser is also known as power, gain,  output gain, acoustic power, pulser power, energy output and transmitter output
+C. The pulser functions during transmission 
+D. All of the above
+ANSWER:D
+
+The beam former
+A. Functions both during transmission and reception
+B. The beam former receives a single electrical signal from the pulser and distributes these to the active elements in a specific pattern according to need 
+C. Is responsible for apodization, a process whereby electrical spike voltages are selectively regulated to reduce side lobes
+D. All of the above
+ANSWER:D
+
+The main functions of the receiver are in the following order
+A. Demodulation, amplification, compensation, compression and reject
+B. Amplification, reject, compression, compensation, compression and demodulation 
+C. Reject, amplification, compression, compensation, and demodulation 
+D. Amplification, compensation, compression, demodulation and reject
+ANSWER:D
+
+Examples of ultrasound artifacts include
+A. Shadowing
+B. Enhancement
+C. Reverberation
+D. All of the above
+ANSWER:D
+
+Which of the following is true about Thermal effects?
+A. They are produced primarily by a mechanism of attenuation
+B. Absorption, a major component of attenuation leads to rise in tissue temperature which may cause irreversible damage to body tissue
+C. It is generally agreed that exposure producing a maximum of 10 rise in temperature can be used without any effect
+D. All of the above
+ANSWER:D
+
+Ultrasound systems assume a propagation speed of 1540 m/s in soft tissue. If the beam passes from a medium of one speed into a medium of higher speed, the calculated distance will be less than the actual distance, causing the echo to be displayed closer to the transducer. This type of artifact is called
+A. Display artifact
+B. Sound beam artifact
+C. Propagation speed error artifact
+D. Transducer artifact
+ANSWER:C
+
+An increase in the apparent size of an object on the display monitor is called
+A. Magnification
+B. Compression
+C. Demodulation
+D. Suppression
+ANSWER:A
+
+In Doppler technique, the received echoes would be __________ as the ultrasound beam becomes more _________ to the organ interface
+A. Smaller, parallel
+B. Larger, perpendicular
+C. Larger, parallel
+D. None of the above
+ANSWER:C
+
+In bio effect studies, the term “In Vitro” means:
+A. Zombie tissues replacing human tissues
+B. Tissue cultures in a test tube
+C. Living human tissues
+D. None of the above
+ANSWER:B
+
+Digital computers use a special number system called
+A. Decimal number system
+B. Roman number system
+C. Egyptian number
+D. Binary number system
+ANSWER:D
+
+The Doppler shift is
+A. The difference between the frequency of reflected echo signal and transmitted echo signal
+B. The addition of the frequency of reflected echo signal and transmitted echo signal
+C. The product of the frequency of reflected echo signal and transmitted echo signal
+D. The ratio of the frequency of reflected echo signal to transmitted echo signal
+ANSWER:A
+
+Laminar flow is:
+A. Aligned and parallel flow streamlines
+B. Characterized by layers of blood; each layer traveling at individual speeds
+C. Usually found in normal physiological states
+D. All of the above
+ANSWER:D
+An artifact is an error in imaging. They are echoes without anatomic correlation in terms of location, interface and intensity. Artifacts may appear on images as any of the following:
+A. Incorrect shape or size of reflection
+B. Incorrectly positioned reflection
+C. Incorrect reflection brightness
+D. All of the above
+ANSWER:D
+
+Nyquist limit is defined as
+A. Equal to the PRF
+B. Half of the PRP
+C. Equal to the PRP
+D.  Half the PRF
+ANSWER:D
+The causes of artifact include:
+A. Violation of assumptions
+B. The physics of ultrasound
+C. Operator error
+D. All of the above
+ANSWER:D
+
+Assumptions built into imaging systems which, when violated may result in creation of artifacts include:
+A. Sound travels in a straight line
+B. Sound travels directly to a reflector and back
+C. Sound travels in soft tissue at exactly 1540 m/s
+D. All of the above
+ANSWER:D
+
+If the velocity of the flow exceeds the Nyquist limit
+A. The velocity of flow is increases
+B. The velocity of flow is decreases
+C. Velocity of flow appear to be in same direction
+D. Velocity of flow appear to be in opposite direction
+ANSWER:D
+We may have more aliasing due to:
+A. Faster blood velocity
+B. Higher transducer frequency
+C. Deep sample volume or gate(low PRF)
+D. All of the above
+ANSWER:D
+
+The principle that describes the relationship between velocity (kinetic energy) and pressure in a moving fluid is called
+A. Ohm’s Principle
+B. Doppler Principle
+C. Bernoulli Principle
+D. Huygens’ Principle
+ANSWER:C
+
+According to the principle that describes the relationship between velocity (kinetic energy) and pressure in a moving fluid:
+A. With a steady flow, the sum of all forms of energy remain constant everywhere.
+B. Energy lost in one form is gained in another form. Hence the sum of both kinetic and pressure energy remains constant
+C. Higher velocity increases kinetic energy and simultaneously decreases pressure energy and vice versa
+D. All of the above
+ANSWER:D
+
+Velocity indicates the speed of a fluid moving from one location to another, measured in units of
+A. distance/time
+B. time/distance
+C. volume/distance
+D. volume/time
+ANSWER:A
+
+The basic forms of normal blood flow:
+A. Pulsatile flow
+B. Phasic flow
+C. Steady flow
+D. All of the above
+ANSWER:D
+
+Which of the following is correct about blood flow?
+A. Pulsatile flow occurs in arterial blood flow as a result of cardiac contraction and relaxation
+B. Phasic or spontaneous flow occurs when venous blood flows with variable velocity as a result of changes in respiration
+C. Steady flow occurs when a fluid moves at constant speed or velocity
+D. All of the above
+ANSWER:D
+
+The following are true about laminar flow except:
+A.  The streamlines are non- aligned
+B. The streamlines are and parallel and flow in layers.  The layers of blood that travel at individual speeds
+C. It is commonly found in normal physiological states
+D. The streamlines are aligned
+ANSWER:A
+
+Which of the following is incorrect?
+A. There are 2 types of laminar flow; plug flow and parabolic flow
+B. Parabolic flow has a bullet-shaped profile with the highest flow is at the center of the lumen and gradually decreases to its minimum at the vessel wall
+C. Turbulent flow is characterized chaotic flow patterns in many different directions and speeds
+D. Turbulent flow is usually associated with normal cardiovascular physiologic state
+ANSWER:D
+
+Hydrostatic pressure
+A.  Is pressure related to the weight of blood pressing on a vessel wall measured at a height above or below the heart level.
+B. It is the difference between the pressure at the heart level and site of measurement
+C. It is reported in units of mmHg
+D. All of the above
+ANSWER:D
+
+Which of the following is true about blood flow?
+A. Blood flows from one location to another due to energy gradient
+B. Blood moves from area of high gradient to area of low gradient
+C. Pressure gradient is a form of energy 
+D. All of the above
+ANSWER:D
+
+Techniques for reducing or eliminating aliasing include:
+A. Adjust the scale
+B. Shifting the base
+C. Using Continuous Wave Doppler
+D. All of the above
+ANSWER:D
+
+The sound created from the difference between transmitted and reflected frequency is 
+A. infrasonic
+B. Audible
+C. Ultrasonic
+D. Supersonic 
+ANSWER:B
+
+Doppler shift provide information about flow velocity relative to the transducer. Which of the following is true regarding Doppler shift?
+A. Higher velocities create higher Doppler shifts and vice versa, that is the Doppler shift would double if the velocity doubles and triple if the velocity triples
+B. The velocities measured by the transducer are the same regardless of the transducer frequency
+C. Doppler shift are directly related to transducer frequency; when the transducer frequency is halved, the Doppler shift would also be halved
+D. All of the above
+ANSWER:D
+
+Aliasing is a 
+A. Pulsed  ultrasound artifact where high Doppler shifts(velocities) beyond the Nyquist limit are identified as flow in the same direction
+B. Pulsed wave ultrasound artifact where high Doppler shifts(velocities) beyond the Nyquist limit are misidentified as flow in the opposite direction
+C. Continuous wave ultrasound artifact where high Doppler shifts(velocities) beyond the Nyquist limit are misidentified as flow in the same direction
+D. Continuous wave ultrasound artifact where high Doppler shifts(velocities) beyond the Nyquist limit are misidentified as flow in the opposite direction
+ANSWER:B
+
+Continuous Wave Doppler has the following properties except:
+A. High quality factor
+B. Higher sensitivity to flow signal
+C. Range ambiguity
+D. Range specificity
+ANSWER:D
+
+A duplex ultrasound system displays
+A. Only 2D information
+B. Only Doppler information
+C. Neither 2D nor Doppler information
+D. Both 2D and Doppler information
+ANSWER:D
+
+Color flow Doppler:
+A. Is a pulsed Doppler imaging modality, hence it is prone to aliasing
+B. Displays anatomic data in 2D grayscale while simultaneously displaying flow information in color
+C. The color deals with the Doppler frequencies produced by moving red blood cells in the image plane
+D. All of the above
+ANSWER:D
+
+With Doppler:
+A. The best views are obtained at either 00 or 1800
+B. Aliasing may be avoided by using lower frequency transducer
+C. Images may be obtained by both Pulsed and Continuous wave
+D. All of the above
+ANSWER:D
+
+Which of the following is correct?
+A. Velocity color modes may be identified side-to-side (horizontal) changes in the color bar, whereas variance color maps only change from top to bottom (vertically)
+B. Variance color modes may be identified side-to-side (horizontal) changes in the color bar, whereas velocity maps only change from top to bottom (vertically)
+C. Variance color mode and velocity color mode will not appear similar if flow is laminar
+D. All of the above
+ANSWER:B
+
+Duplex imaging combines
+A.  2D grayscale with Doppler
+B. M mode with 2D grayscale
+C. Color Doppler with Pedoff
+D. Pedoff with 2D grayscale.
+ANSWER:A
+
+In Doppler color flow imaging:
+A. Stationery tissues are displayed in color while moving tissues are in gray scale. 
+B. Both Stationery and moving tissues are displayed in gray scale
+C. Both stationery and moving tissues displayed in color. 
+D. Stationery tissues are displayed in gray scale while moving tissues are in color. 
+ANSWER:D
+
+In Doppler technique, the received echoes would be __________ as the ultrasound beam becomes more _________ to the organ interface
+A. Smaller, parallel
+B. Larger, perpendicular
+C. Larger, parallel
+D. None of the above
+ANSWER:C
+
+The Doppler Effect happens to all waves coming from a moving source, regardless of propagation velocities or power levels. The Doppler Effect depends on:
+A.  the closing velocity between transducer and tissue
+B. Carrier frequency
+C. Ultrasound propagation velocity
+D. All of the above
+ANSWER:D
+
+The color flow image provides information on all of the following except:
+A. The existence of flow
+B. The location of the flow in the image
+C. The flow direction relative to transducer
+D. Flow velocity
+ANSWER:D
+
+With bidirectional spectral Doppler: 
+A. Flow toward the transducer is displayed below the baseline while flow away from the transducer is also displayed below the baseline
+B. Flow toward the transducer is displayed above the baseline while flow away from the transducer is displayed below the baseline
+C. Flow toward the transducer is displayed below the baseline while flow away from the transducer is displayed above the baseline
+D. Flow toward the transducer is displayed above the baseline while flow away from the transducer is also displayed above the baseline
+ANSWER:B
+
+The following is correct about Doppler color flow imaging except that:
+A. It is a continuous wave system
+B. It is a pulsed wave system
+C. It is range specific
+D. It cannot detect the peak velocity of blood flow
+ANSWER:A
+
+With Doppler color flow system, aliasing occurs when:
+A. Doppler frequency exceeds the PRF sampling (Nyquist) limit
+B. Doppler frequency is below the PRF sampling (Nyquist) limit
+C. Doppler frequency equals the PRF sampling (Nyquist) limit
+D. PRF sampling (Nyquist) limit exceeds the Doppler frequency
+ANSWER:A
+
+Which of the following is correct about Power Doppler Imaging?
+A. It is able to detect low velocity signals unlike spectral and color flow Doppler
+B.  It is limited because it does not show the direction of flow
+C. It only captures the amplitudes of the signals
+D. All of the above
+ANSWER:D
+
+The Doppler shift is
+A. The difference between the frequency of reflected echo signal and transmitted echo signal
+B. The addition of the frequency of reflected echo signal and transmitted echo signal
+C. The product of the frequency of reflected echo signal and transmitted echo signal
+D. The ratio of the frequency of reflected echo signal to transmitted echo signal
+ANSWER:A
+
+Laminar flow is:
+A. Aligned and parallel flow streamlines
+B. Characterized by layers of blood; each layer traveling at individual speeds
+C. Usually found in normal physiological states
+D. All of the above
+ANSWER:D
+
+The two forms of laminar flow are
+A. Plug and parabolic flow
+B. Parabolic and abrupt flow
+C. Incident and plug flow
+D. Incident and parabolic flow
+ANSWER:A
+
+Turbulent flow
+A. Chaotic and multi-velocity flow patterns
+B. Often associated with cardiovascular pathology and elevated blood velocities
+C. may be noticed downstream a Stenosis
+D. All of the above
+ANSWER:D
+
+Bernoulli’s Principle
+A. Describes the relationship between velocity (kinetic energy) and pressure in a moving fluid
+B. States that with a steady flow, the sum of all forms of energy remain constant everywhere.
+C. Is derived from the Principle of conservation of energy which states that energy is neither created nor destroyed.
+D. All of the above
+ANSWER:D
+
+In bidirectional Doppler
+A. A positive Doppler shift indicates a movement away from the transducer
+B. A negative Doppler shift indicates a movement toward the transducer
+C. Flow toward the transducer is above the baseline(+) while flow away from the transducer is below the baseline(-)
+D. All of the above
+ANSWER:C
+
+Power Doppler
+A. Is  non-directional color Doppler
+B. Only  identifies the presence of Doppler shift
+C. does not evaluate for velocity
+D. All of the above
+ANSWER:D
+
+Pulsed Wave Doppler:
+A. Requires 2 crystals in the transducer, one for transmission and the other for reception
+B. Accurately measures high velocities
+C. Is unable to determine the precise location of peak velocity
+D. Requires only one PZT crystal, which alternates between transmit and receive times
+ANSWER:D
+
+Continuous Wave Doppler
+A. Measures velocity in a small region called gate or sample volume
+B. is able to select the exact location where velocities are measured (Range resolution)
+C. Is unable to measure high velocity flows accurately, causing aliasing
+D. Lacks TGC, hence deeper images not adequately compensated for
+ANSWER:D
+
+Doppler artifacts include:
+A. Ghosting
+B. Crosstalk
+C. Aliasing
+D. All of the above
+ANSWER:D
+
+
+
+
+

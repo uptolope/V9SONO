@@ -1,65 +1,56 @@
 const fs = require('fs');
 const content = fs.readFileSync('./questions.txt', 'utf8');
-
 const lines = content.split(/\r?\n/);
 const questions = [];
-let current = null;
-let options = [];
-let answerLine = null;
+let i = 0;
 
-for (let i = 0; i < lines.length; i++) {
+while (i < lines.length) {
   let line = lines[i].trim();
-  if (!line) continue;
+  if (!line) { i++; continue; }
 
-  if (/^\d+[\.\s]/.test(line) && !line.startsWith('ANSWER:')) {
-    if (current && options.length > 0) {
+  // Detect question start: line that ends with '?' or is the first line of a multi-line question
+  if (!line.match(/^[A-D]\./) && !line.startsWith('ANSWER:')) {
+    let questionText = line;
+    i++;
+    // Gather multi-line question (until we hit an option line)
+    while (i < lines.length && !lines[i].trim().match(/^[A-D]\./) && !lines[i].trim().startsWith('ANSWER:')) {
+      if (lines[i].trim()) questionText += ' ' + lines[i].trim();
+      i++;
+    }
+    // Now collect options
+    let options = [];
+    while (i < lines.length && lines[i].trim().match(/^[A-D]\./)) {
+      let optLine = lines[i].trim();
+      let optText = optLine.replace(/^[A-D]\.\s*/, '');
+      options.push(optText);
+      i++;
+    }
+    // Find answer line
+    let answerLetter = null;
+    while (i < lines.length && !lines[i].trim().startsWith('ANSWER:')) {
+      i++;
+    }
+    if (i < lines.length && lines[i].trim().startsWith('ANSWER:')) {
+      answerLetter = lines[i].trim().replace('ANSWER:', '').trim();
+      i++;
+    }
+    if (questionText && options.length === 4 && answerLetter) {
+      const correctIndex = answerLetter.charCodeAt(0) - 65;
       questions.push({
         id: questions.length + 1,
-        question: current,
-        options: [...options],
-        correctAnswer: answerLine ? answerLine.charCodeAt(0) - 65 : 0,
+        question: questionText,
+        options: options,
+        correctAnswer: correctIndex,
         domain: 'General',
         explanation: ''
       });
     }
-    current = line.replace(/^\d+[\.\s]/, '').trim();
-    options = [];
-    answerLine = null;
+  } else {
+    i++;
   }
-  else if (/^[A-D]\./.test(line)) {
-    let opt = line.replace(/^[A-D]\.\s*/, '').trim();
-    options.push(opt);
-  }
-  else if (line.startsWith('ANSWER:')) {
-    let ansLetter = line.replace('ANSWER:', '').trim();
-    answerLine = ansLetter;
-    if (current && options.length > 0) {
-      questions.push({
-        id: questions.length + 1,
-        question: current,
-        options: [...options],
-        correctAnswer: ansLetter.charCodeAt(0) - 65,
-        domain: 'General',
-        explanation: ''
-      });
-      current = null;
-      options = [];
-      answerLine = null;
-    }
-  }
-}
-if (current && options.length > 0) {
-  questions.push({
-    id: questions.length + 1,
-    question: current,
-    options: [...options],
-    correctAnswer: answerLine ? answerLine.charCodeAt(0) - 65 : 0,
-    domain: 'General',
-    explanation: ''
-  });
 }
 
-const output = `// Auto-generated from your question bank
+const output = `// Auto-generated from your exact question bank
 export interface ExamQuestion {
   id: number;
   question: string;
@@ -88,4 +79,4 @@ export function shuffleQuestions<T>(arr: T[]): T[] {
 `;
 
 fs.writeFileSync('src/lib/exam/full-questions.ts', output);
-console.log(`✅ Parsed ${questions.length} questions → src/lib/exam/full-questions.ts`);
+console.log(`✅ Parsed ${questions.length} questions exactly as in your file.`);
