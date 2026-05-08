@@ -38,7 +38,7 @@ function Hero() {
         </div>
         <div className={`grid grid-cols-3 gap-8 max-w-md mx-auto transition-all duration-1000 delay-600 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="text-center"><div className="display-serif text-3xl font-bold text-white">200+</div><div className="meta text-[10px] mt-1">Expert Flashcards</div></div>
-          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">94%</div><div className="meta text-[10px] mt-1">First‑Time Pass Rate</div></div>
+          <div className="text-center"><div className="display-serif text-3xl font-bold text-white">170</div><div className="meta text-[10px] mt-1">Questions</div></div>
           <div className="text-center"><div className="display-serif text-3xl font-bold text-white">$9</div><div className="meta text-[10px] mt-1">Starting Price</div></div>
         </div>
       </div>
