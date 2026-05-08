@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
     };
     const product = productMap[priceId];
     if (!product) return NextResponse.json({ error: "Unknown product" }, { status: 400 });
+    const expiresAt = new Date(Date.now() + product.days * 24 * 60 * 60 * 1000);
     await prisma.purchase.create({
       data: {
         userId: user.id,
@@ -42,7 +43,9 @@ export async function POST(req: NextRequest) {
         stripeSessionId: session.id,
         amount: session.amount_total || 0,
         purchasedAt: new Date(),
-        expiresAt: new Date(Date.now() + product.days * 24 * 60 * 60 * 1000),
+        expiresAt,
+        accessExpiresAt: expiresAt,
+        status: "COMPLETED",
       },
     });
   }
