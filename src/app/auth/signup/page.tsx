@@ -10,19 +10,24 @@ export default function SignUpPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
+  const validate = () => {
+    if (!name.trim()) { setError("Name required"); return false; }
+    if (!email.includes("@")) { setError("Valid email required"); return false; }
+    if (password.length < 8) { setError("Password must be at least 8 characters"); return false; }
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
     });
-    if (res.ok) {
-      router.push("/auth/signin?registered=true");
-    } else {
-      const data = await res.json();
-      setError(data.error || "Registration failed");
-    }
+    const data = await res.json();
+    if (res.ok) router.push("/auth/signin?registered=true");
+    else setError(data.error || "Registration failed");
   };
 
   return (
@@ -34,13 +39,11 @@ export default function SignUpPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <input type="text" placeholder="Full name" value={name} onChange={e => setName(e.target.value)} className="w-full p-3 bg-[#1a212b] border border-white/10 text-white" required />
             <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-[#1a212b] border border-white/10 text-white" required />
-            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-[#1a212b] border border-white/10 text-white" required />
+            <input type="password" placeholder="Password (min 8 chars)" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-[#1a212b] border border-white/10 text-white" required />
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button type="submit" className="btn-industrial w-full">Sign Up</button>
           </form>
-          <p className="text-center text-[#6b6359] text-sm mt-4">
-            Already have an account? <Link href="/auth/signin" className="text-[#c85b3a] hover:underline">Sign in</Link>
-          </p>
+          <p className="text-center text-[#6b6359] text-sm mt-4">Already have an account? <Link href="/auth/signin" className="text-[#c85b3a] hover:underline">Sign in</Link></p>
         </div>
       </div>
     </div>

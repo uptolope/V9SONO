@@ -54,7 +54,7 @@ export function Header() {
             {session ? (
               <>
                 <Link href="/dashboard" className="body-small text-[#b8b0a4] hover:text-[#f0ebe4]">Dashboard</Link>
-                <button onClick={() => signOut()} className="body-small text-[#b8b0a4] hover:text-[#f0ebe4]">Exit</button>
+                <button onClick={() => signOut({ callbackUrl: "/" })} className="body-small text-[#b8b0a4] hover:text-[#f0ebe4]">Exit</button>
               </>
             ) : (
               <>
