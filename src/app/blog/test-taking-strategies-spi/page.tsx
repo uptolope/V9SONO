@@ -1,4 +1,4 @@
-import SimpleCTA from "/components/ui/cta-simple";
+import SimpleCTA from "@/components/ui/cta-simple";
 import Link from "next/link";
 export const dynamic = 'force-dynamic';
 export default function BlogPost() {
