@@ -27,9 +27,6 @@ export async function POST(req: NextRequest) {
       customer_email: customerEmail,
     });
 
-    // Optionally, store a pending purchase record (could be done via webhook)
-    // We'll not do it here to avoid duplication.
-
     return NextResponse.json({ sessionId: stripeSession.id, url: stripeSession.url });
   } catch (err) {
     console.error("Checkout error:", err);
