@@ -12,3 +12,4 @@ export default function HomePage() {
   return <HomePageClient />;
 }
 export const dynamic = 'force-dynamic';
+// redeploy trigger
