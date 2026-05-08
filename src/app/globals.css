@@ -176,3 +176,30 @@
   .sono-scan, .page-emerge { animation: none; }
   .tactile-card:hover { transform: none; }
 }
+
+/* Ensure fixed header doesn't overlap content */
+main, .main-content {
+  padding-top: 80px; /* Height of header + some breathing room */
+}
+
+@media (max-width: 768px) {
+  main, .main-content {
+    padding-top: 70px;
+  }
+}
+
+/* Prevent fixed header from covering content */
+main, .main-content, .min-h-screen[class*="pt-"]:first-of-type {
+  scroll-margin-top: 80px;
+}
+
+/* Ensure all pages with pt-32 have enough spacing */
+body > main {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  body > main {
+    padding-top: 70px;
+  }
+}
