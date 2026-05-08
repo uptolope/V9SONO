@@ -22,7 +22,7 @@ export function Header() {
     { href: "/demo", label: "Demo" },
     { href: "/products", label: "Pricing" },
     { href: "/blog", label: "Journal" },
-    { href: "/about", label: "Studio" },
+    { href: "/about", label: "Blueprint" },  // ← human‑engineered word
   ];
 
   return (
@@ -40,7 +40,11 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={`body-small tracking-wider ${pathname === link.href ? "text-[#c85b3a]" : "text-[#b8b0a4] hover:text-[#f0ebe4]"}`}>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`body-small tracking-wider ${pathname === link.href ? "text-[#c85b3a]" : "text-[#b8b0a4] hover:text-[#f0ebe4]"}`}
+              >
                 {link.label}
               </Link>
             ))}
