@@ -1,0 +1,81 @@
+# SonoPrep
+
+> SonoPrep is an ARDMS SPI exam prep platform for sonography students and working sonographers. It provides a question bank, flashcard system, physics study notes, and domain-specific practice tools built around the official ARDMS content outline.
+
+## What SonoPrep Is
+
+SonoPrep helps candidates pass the ARDMS Sonography Principles and Instrumentation (SPI) exam — the mandatory prerequisite for all ARDMS specialty credentials: RDMS, RDCS, RVT, and RMSKS.
+
+The SPI exam covers 5 domains: ultrasound physics, transducer technology and management, image optimization, Doppler principles, and clinical safety. Doppler (34%) and image optimization (26%) together make up 60% of the exam.
+
+SonoPrep is not a generic test-prep site. Every product — questions, flashcards, and study notes — is mapped to the official ARDMS SPI content outline and weighted by how heavily each domain appears on the exam.
+
+## Products
+
+### Physics Pearls ($9)
+50 concise summaries of the most commonly tested ultrasound physics concepts. Formulas, definitions, and relationships the ARDMS actually tests. Instant digital download.
+
+### Flashcards ($24)
+200+ digital flashcards organized by SPI domain. Spaced-repetition friendly. Covers all five ARDMS SPI content areas. Works on mobile and desktop.
+
+### Study Notes ($34)
+159-page PDF study guide. Written to the ARDMS content outline. Covers all five domains: physics principles, artifact identification, Doppler analysis, transducer types, quality assurance, and bioeffects. Printable.
+
+### Exam Simulator ($49.99)
+170+ practice questions in ARDMS-style multiple-choice format. Timed exam mode, immediate answer explanations, domain-level performance tracking.
+
+### Full Bundle ($99)
+All four products. 90-day access. 14-day money-back guarantee.
+
+## Target Audience
+
+- Sonography students in ARDMS-accredited programs (RDMS, RDCS, RVT, RMSKS tracks)
+- Repeat SPI candidates who failed on a previous attempt
+- Working sonographers refreshing physics knowledge before re-certification
+- Candidates with strong clinical skills but weaker physics background
+
+## Key Facts
+
+- 6 core SPI domains covered (all five ARDMS + Doppler subdivisions)
+- 200+ flashcards, 170+ exam questions, 50 Physics Pearls, 159-page notes
+- 90-day access on all digital products
+- 14-day money-back guarantee, no questions asked
+- Built by an RDMS instructor at Houston International Cardiotech Ultrasound School
+- No subscription — one-time purchase
+
+## About the SPI Exam
+
+- 110 multiple-choice questions, approximately 90 scored
+- 2.5-hour time limit
+- Passing score: approximately 555/700 (scaled)
+- Administered at Pearson VUE testing centers and via online proctoring
+- Required for: RDMS, RDCS, RVT, RMSKS, and all other ARDMS specialty credentials
+
+## Pages
+
+- / — Homepage
+- /products — Full product listing and checkout
+- /demo — Free 5-question demo and 20 flashcards (no account required)
+- /blog — All free study guides
+
+## Markdown Mirrors
+
+Clean markdown versions of every page — for AI reading:
+
+- /index.md — Homepage
+- /products/index.md — Products page
+- /demo/index.md — Demo page
+- /blog/index.md — Blog index
+- /blog/complete-spi-exam-guide/index.md — Complete SPI exam guide
+- /blog/ardms-exam-blueprint/index.md — Domain weightings blueprint
+- /blog/doppler-principles-spi-exam/index.md — Doppler principles guide
+- /blog/ultrasound-physics-spi/index.md — Ultrasound physics guide
+- /blog/ultrasound-artifacts-spi/index.md — Artifact recognition guide
+- /blog/pass-spi-first-attempt/index.md — 6-week study blueprint
+- /blog/spaced-repetition-spi-exam/index.md — Spaced repetition guide
+- /blog/test-taking-strategies-spi/index.md — Test-taking strategies guide
+- /blog/ardms-specialties-comparison/index.md — ARDMS specialties comparison
+
+## Sitemap
+
+- https://sonoprep.com/sitemap.xml
