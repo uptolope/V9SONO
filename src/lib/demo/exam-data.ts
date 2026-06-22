@@ -117,32 +117,6 @@ export const DEMO_QUESTIONS: DemoQuestion[] = [
     answerIndex: 1,
     explanation: "The average attenuation coefficient of soft tissue is approximately 0.5 dB/cm/MHz. This is the foundational value used for calculating penetration depth and TGC settings.",
   },
-  {
-    id: "demo-9",
-    domain: "Doppler",
-    question: "In color Doppler, aliasing occurs when blood velocity exceeds the Nyquist limit. How can you typically reduce aliasing?",
-    choices: [
-      "Increase the imaging depth",
-      "Decrease the scale (PRF)",
-      "Increase the baseline shift",
-      "Use a lower frequency transducer",
-    ],
-    answerIndex: 2,
-    explanation: "Shifting the baseline effectively doubles the displayable velocity range in one direction, reducing aliasing without changing PRF or frequency.",
-  },
-  {
-    id: "demo-10",
-    domain: "Physics",
-    question: "What is acoustic impedance (Z) and how is it calculated?",
-    choices: [
-      "Z = density × wavelength",
-      "Z = density × propagation speed",
-      "Z = frequency × wavelength",
-      "Z = propagation speed / frequency",
-    ],
-    answerIndex: 1,
-    explanation: "Acoustic impedance (Z) equals tissue density (ρ) multiplied by the speed of sound in that tissue (c): Z = ρ × c. Impedance mismatches between tissues cause reflections.",
-  },
 ];
 
 /** ARDMS domain categories with weights */

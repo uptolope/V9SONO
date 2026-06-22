@@ -438,7 +438,7 @@ export function Hero() {
 
             {/* Trust line */}
             <motion.p variants={item} className="mt-6 font-mono text-xs text-cream-dim/40">
-              No subscription · 90-day access · No credit card for demo
+              No subscription · 60-day access · No credit card for demo
             </motion.p>
           </motion.div>
 

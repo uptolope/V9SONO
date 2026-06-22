@@ -40,7 +40,7 @@ const PRODUCTS: Product[] = [
     description: "Everything you need to pass — in one system. The flashcard deck, the full domain-weighted simulator, Physics Pearls, and the 159-page study notes. All 6 ARDMS SPI domains. No piecing resources together.",
     features: [
       "200+ flashcards with SM-2 spaced repetition",
-      "3 exam attempts · 110 Qs from a 278-question bank",
+      "3 exam attempts · 110 Qs from a 167-question bank",
       "50 high-yield Physics Pearls",
       "159-page study notes (10 chapters)",
       "All 6 ARDMS SPI domains covered",
@@ -99,11 +99,11 @@ const PRODUCTS: Product[] = [
     name: "Exam Simulator",
     price: "$49.99",
     tag: "TEST YOURSELF",
-    description: "3 exam attempts over 90 days. Each draws 110 random questions from a 278-question bank — ARDMS domain-weighted, 2-hour timer, with detailed rationales. Per-domain analytics show exactly where you're losing points.",
+    description: "3 exam attempts over 60 days. Each draws 110 random questions from a 167-question bank — ARDMS domain-weighted, 2.5-hour timer, with detailed rationales. Per-domain analytics show exactly where you're losing points.",
     features: [
-      "3 attempts · 90-day access",
-      "278-question bank · 110 questions per exam",
-      "2-hour timer (real SPI format)",
+      "3 attempts · 60-day access",
+      "167-question bank · 110 questions per exam",
+      "2.5-hour timer (real SPI format)",
       "Randomized & domain-weighted",
       "Detailed clinical rationales",
       "Per-domain performance analytics",
@@ -172,8 +172,8 @@ export default function ProductsPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { not: "Not a textbook", is: "Structured SPI prep based on ARDMS exam weighting" },
-                { not: "Not random practice tests", is: "110 questions drawn from a 278-question bank, mapped to 6 domains at real exam ratios" },
-                { not: "Not a subscription", is: "One payment. 90-day access. 14-day full refund policy." },
+                { not: "Not random practice tests", is: "110 questions drawn from a 167-question bank, mapped to 6 domains at real exam ratios" },
+                { not: "Not a subscription", is: "One payment. 60-day access. 14-day full refund policy." },
               ].map(({ not, is }) => (
                 <div key={not}>
                   <p className="meta text-[9px] text-[#c85b3a] line-through mb-1">{not}</p>
@@ -184,7 +184,7 @@ export default function ProductsPage() {
           </div>
 
           <p className="meta text-[9px] text-[#3a3530] mt-4">
-            All products include 90-day access · 14-day full refund policy · Instant unlock after checkout
+            All products include 60-day access · 14-day full refund policy · Instant unlock after checkout
           </p>
         </div>
 
@@ -201,7 +201,7 @@ export default function ProductsPage() {
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-4xl font-bold text-[#c85b3a]">{bundle.price}</span>
                 <span className="text-sm text-[#4a453f] line-through">{bundle.strikethrough}</span>
-                <span className="meta text-[9px] text-[#3a3530]">/ 90-day access</span>
+                <span className="meta text-[9px] text-[#3a3530]">/ 60-day access</span>
               </div>
               <p className="meta text-[10px] text-[#c85b3a]/70 mb-4">{bundle.savings}</p>
               <p className="body-readable text-[#c2bab0] text-sm leading-relaxed">{bundle.description}</p>
@@ -254,7 +254,7 @@ export default function ProductsPage() {
                 <div className="meta text-[9px] text-[#4a453f] mb-2">{product.tag}</div>
                 <h3 className="display-serif text-lg font-semibold text-white mb-1">{product.name}</h3>
                 <div className="text-2xl font-semibold text-[#c85b3a] mb-3">
-                  {product.price}<span className="text-[9px] text-[#4a453f] ml-1">/ 90-day access</span>
+                  {product.price}<span className="text-[9px] text-[#4a453f] ml-1">/ 60-day access</span>
                 </div>
                 <p className="body-small text-[#c2bab0] text-sm leading-relaxed mb-5">{product.description}</p>
                 {product.socialProof && (

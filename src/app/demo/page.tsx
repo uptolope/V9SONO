@@ -5,15 +5,44 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExamSimulator } from "@/components/app/exam-simulator";
 import { FlashcardViewer } from "@/components/app/flashcard-viewer";
-import { DEMO_QUESTIONS } from "@/lib/demo/exam-data";
 import { trackSignup } from "@/lib/analytics";
-import { DEMO_FLASHCARDS } from "@/lib/demo/flashcard-data";
+
+type QuizQuestion = {
+  id: string;
+  question: string;
+  choices: string[];
+  answerIndex: number;
+  explanation: string;
+  domain: string;
+};
+
+type Flashcard = {
+  id: string;
+  front: string;
+  back: string;
+  domain: string;
+};
 
 export default function DemoPage() {
+  const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
+  const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
   const [timeOnPage, setTimeOnPage]   = useState(0);
   const [showCapture, setShowCapture] = useState(false);
   const [email, setEmail]             = useState("");
   const [submitted, setSubmitted]     = useState(false);
+
+  // Fetch random quiz questions and flashcards from API
+  useEffect(() => {
+    fetch("/api/demo/quiz")
+      .then((res) => res.json())
+      .then((data) => { if (Array.isArray(data)) setQuizQuestions(data); })
+      .catch(() => {});
+
+    fetch("/api/demo/flashcards")
+      .then((res) => res.json())
+      .then((data) => { if (Array.isArray(data)) setFlashcards(data); })
+      .catch(() => {});
+  }, []);
 
   // Surface email capture after 25s of engagement
   useEffect(() => {
@@ -55,11 +84,11 @@ export default function DemoPage() {
         <div className="mb-8 flex gap-0">
           <div className="w-0.5 bg-[#c85b3a]/40 shrink-0" />
           <div className="pl-4">
-            <p className="meta text-[9px] text-[#4a453f] mb-1">WHAT YOU'RE PREPARING FOR</p>
+            <p className="meta text-[9px] text-[#4a453f] mb-1">WHAT YOU&apos;RE PREPARING FOR</p>
             <p className="body-readable text-[#c2bab0] text-sm leading-relaxed">
               The ARDMS SPI exam is a prerequisite for every ARDMS credential — RDMS, RDCS, RVT, and RMSKS.
               You cannot register for specialty exams until you pass it. It tests 6 specific physics domains
-              at specific weightings. Most students underestimate how targeted you need to be with your prep.
+              at specific weightings. Most students underestimate how targeted you need to be with their prep.
             </p>
           </div>
         </div>
@@ -68,10 +97,12 @@ export default function DemoPage() {
         <div className="text-center mb-12">
           <span className="meta">FREE PREVIEW</span>
           <h1 className="display-serif text-4xl sm:text-5xl mt-3 font-semibold tracking-tight">
-            Find out what you'd get wrong if you took the SPI today.
+            Find out what you&apos;d get wrong if you took the SPI today.
           </h1>
           <p className="body-readable text-[#8a8279] mt-4 max-w-xl mx-auto">
-            This uses the same exam engine as the full version. See exactly which of the 6 ARDMS domains need work. The full version draws 110 questions from a 170+ question bank — questions are weighted to match the real exam, with performance tracking and clear explanations for every answer, plus 200+ spaced repetition flashcards.
+            8 random questions from our physics bank — different every visit.
+            The full exam simulator mirrors the real SPI: 110 questions, domain-weighted,
+            2.5-hour timer.
           </p>
           {/* Micro-commitment strip */}
           <div className="flex items-center justify-center gap-4 mt-5">
@@ -79,25 +110,39 @@ export default function DemoPage() {
             <span className="text-[#2e2b27]">·</span>
             <span className="meta text-[9px] text-[#3a3530]">No signup required</span>
             <span className="text-[#2e2b27]">·</span>
-            <span className="meta text-[9px] text-[#3a3530]">Instant domain feedback</span>
+            <span className="meta text-[9px] text-[#3a3530]">Different questions every visit</span>
           </div>
         </div>
 
         {/* Demo */}
-        <Tabs defaultValue="exam" className="w-full">
+        <Tabs defaultValue="quiz" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/5 border border-white/10">
-            <TabsTrigger value="exam"       className="data-[state=active]:bg-[#c85b3a] data-[state=active]:text-white meta text-[10px]">
-              Exam Simulator
+            <TabsTrigger value="quiz"       className="data-[state=active]:bg-[#c85b3a] data-[state=active]:text-white meta text-[10px]">
+              Quiz (8 Questions)
             </TabsTrigger>
             <TabsTrigger value="flashcards" className="data-[state=active]:bg-[#c85b3a] data-[state=active]:text-white meta text-[10px]">
-              Flashcards
+              Flashcards (8 Cards)
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="exam">
-            <ExamSimulator questions={DEMO_QUESTIONS} />
+
+          <TabsContent value="quiz">
+            {quizQuestions.length > 0 ? (
+              <ExamSimulator questions={quizQuestions} />
+            ) : (
+              <div className="text-center py-12">
+                <div className="animate-pulse text-[#4a453f] text-sm">Loading questions…</div>
+              </div>
+            )}
           </TabsContent>
+
           <TabsContent value="flashcards">
-            <FlashcardViewer cards={DEMO_FLASHCARDS} />
+            {flashcards.length > 0 ? (
+              <FlashcardViewer cards={flashcards} />
+            ) : (
+              <div className="text-center py-12">
+                <div className="animate-pulse text-[#4a453f] text-sm">Loading flashcards…</div>
+              </div>
+            )}
           </TabsContent>
         </Tabs>
 
@@ -134,7 +179,7 @@ export default function DemoPage() {
           <div className="mt-10 border border-white/6 p-7 text-center">
             <p className="display-serif text-lg font-semibold text-white mb-2">Check your inbox.</p>
             <p className="body-small text-[#8a8279] text-sm mb-6">
-              The SPI domain breakdown is on its way. When you're ready for the full prep system:
+              The SPI domain breakdown is on its way. When you&apos;re ready for the full prep system:
             </p>
             <Link href="/products" className="btn-industrial px-6 py-3 inline-block">
               SEE FULL PRICING →
@@ -151,8 +196,8 @@ export default function DemoPage() {
               <div className="meta text-[9px] text-[#c85b3a] mb-2">RECOMMENDED — BEST VALUE</div>
               <h3 className="display-serif text-lg font-semibold text-white mb-2">Premium Bundle — $99</h3>
               <p className="body-small text-[#c2bab0] text-sm leading-relaxed flex-grow mb-5">
-                All four products: 200+ flashcards, 110-question exam from 170+ bank, 50 Physics Pearls, 159-page notes.
-                90-day access. 14-day refund. Covers all 6 ARDMS SPI domains.
+                All four products: 200+ flashcards, 110-question exam simulator, 50 Physics Pearls, 159-page notes.
+                60-day access. 14-day refund. Covers all 6 ARDMS SPI domains.
               </p>
               <Link href="/products" className="btn-industrial py-3 text-center block">
                 GET THE BUNDLE →

@@ -114,7 +114,7 @@ export default function ProductDetailPage({
                     ${product.price}
                   </span>
                   <span className="meta text-[9px] text-[#3a3530]">
-                    / 90-day access
+                    / 60-day access
                   </span>
                 </div>
 
@@ -168,7 +168,7 @@ export default function ProductDetailPage({
                 Start studying now
               </p>
               <p className="text-sm text-[#8a8279]">
-                Our SPI Physics Question Bank is live with 278 questions.
+                Our SPI Physics Question Bank is live with 167 exam-level questions.
               </p>
             </div>
             <Link

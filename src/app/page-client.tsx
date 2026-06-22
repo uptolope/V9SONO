@@ -7,8 +7,7 @@ import { trackSignup } from "@/lib/analytics";
 import { Header } from "@/components/layout/header";
 import { ExamSimulator } from "@/components/app/exam-simulator";
 import { FlashcardViewer } from "@/components/app/flashcard-viewer";
-import { DEMO_QUESTIONS } from "@/lib/demo/exam-data";
-import { DEMO_FLASHCARDS } from "@/lib/demo/flashcard-data";
+// Demo questions/flashcards fetched dynamically from API
 import { FaqSection } from "@/components/marketing/faq-section";
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -186,7 +185,7 @@ function HeroStats() {
       transition={{ delay: 1.6, duration: 0.8 }}
     >
       <StatCell target={200} suffix="+" label="Flashcards" />
-      <StatCell target={170} suffix="+" label="Question Bank" />
+      <StatCell target={167} suffix="" label="Question Bank" />
       <StatCell target={50}  suffix=""  label="Physics Pearls" />
       <StatCell target={6}   suffix=""  label="SPI Domains Covered" />
     </motion.div>
@@ -251,7 +250,7 @@ function TheFork() {
               Focus on exactly what ARDMS tests.
             </h3>
             <p className="t-body text-sm">
-              Each exam attempt pulls 110 questions from a 170+ question bank — weighted to
+              Each exam attempt pulls 110 questions from a 167 question bank — weighted to
               the real ARDMS domain distribution. You see exactly where you're losing points
               while there's still time to fix them.
             </p>
@@ -415,8 +414,22 @@ function DemoSection() {
   const [demoComplete, setDemoComplete] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [quizQuestions, setQuizQuestions] = useState<Array<{ id: string; question: string; choices: string[]; answerIndex: number; explanation: string; domain: string }>>([]);
+  const [flashcards, setFlashcards] = useState<Array<{ id: string; front: string; back: string; domain: string }>>([]);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  // Fetch dynamic quiz/flashcard data
+  useEffect(() => {
+    fetch("/api/demo/quiz")
+      .then((r) => r.json())
+      .then((d) => { if (Array.isArray(d)) setQuizQuestions(d); })
+      .catch(() => {});
+    fetch("/api/demo/flashcards")
+      .then((r) => r.json())
+      .then((d) => { if (Array.isArray(d)) setFlashcards(d); })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!inView) return;
@@ -455,7 +468,7 @@ function DemoSection() {
             Find out what you'd get wrong<br className="hidden sm:block" /> if you took the SPI today.
           </h2>
           <p className="t-body text-base mt-6 max-w-xl mx-auto">
-            This is the real simulator. The full version draws 110 questions from a 170+
+            This is the real simulator. The full version draws 110 questions from a 167
             question bank — domain-weighted with detailed rationales and per-domain analytics.
           </p>
         </motion.div>
@@ -500,8 +513,12 @@ function DemoSection() {
               transition={{ duration: 0.3 }}
             >
               {activeTab === "exam"
-                ? <ExamSimulator questions={DEMO_QUESTIONS.slice(0, 5)} />
-                : <FlashcardViewer cards={DEMO_FLASHCARDS} />
+                ? (quizQuestions.length > 0
+                    ? <ExamSimulator questions={quizQuestions} />
+                    : <div className="text-center py-12"><div className="animate-pulse text-[#4a453f] text-sm">Loading questions…</div></div>)
+                : (flashcards.length > 0
+                    ? <FlashcardViewer cards={flashcards} />
+                    : <div className="text-center py-12"><div className="animate-pulse text-[#4a453f] text-sm">Loading flashcards…</div></div>)
               }
             </motion.div>
           </AnimatePresence>
@@ -553,7 +570,7 @@ function DemoSection() {
           >
             <div>
               <p className="t-subhead text-base">Ready for the full 110-question exam?</p>
-              <p className="t-caption text-[10px] mt-2 text-[#3a3530]">90-day access · 14-day refund · instant unlock</p>
+              <p className="t-caption text-[10px] mt-2 text-[#3a3530]">60-day access · 14-day refund · instant unlock</p>
             </div>
             <Link href="/products" className="premium-cta px-8 py-4 text-sm shrink-0">
               GET FULL ACCESS →
@@ -587,8 +604,8 @@ function WhatThisIsNot() {
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           {[
             { not: "Not a textbook.", is: "Structured SPI prep based on how the exam is actually weighted — not everything the field covers." },
-            { not: "Not random questions.", is: "170+ ARDMS domain-weighted questions. Each exam pulls 110 randomly — so every attempt is unique." },
-            { not: "Not a subscription.", is: "One payment. 90-day access. No recurring charges. The bundle is $99." },
+            { not: "Not random questions.", is: "167 ARDMS domain-weighted questions. Each exam pulls 110 randomly — so every attempt is unique." },
+            { not: "Not a subscription.", is: "One payment. 60-day access. No recurring charges. The bundle is $99." },
           ].map(({ not, is }, i) => (
             <motion.div
               key={not}
@@ -747,7 +764,7 @@ function TheCost() {
               { label: "Broad textbook studying", flag: false, desc: "Covers everything — including what the exam doesn't test" },
               { label: "Generic practice tests", flag: false, desc: "No domain weighting, no rationale, no gap analysis" },
               { label: "SonoPrep flashcards", flag: true, desc: "200+ cards mapped to 6 ARDMS SPI domains" },
-              { label: "SonoPrep simulator", flag: true, desc: "110-question exams from 170+ bank, domain-weighted" },
+              { label: "SonoPrep simulator", flag: true, desc: "110-question exams from 167 bank, domain-weighted" },
             ].map(({ label, flag, desc }, i) => (
               <motion.div
                 key={label}
@@ -776,7 +793,7 @@ function TheCost() {
           transition={{ delay: 0.7 }}
         >
           <Link href="/products" className="premium-cta px-10 py-5 text-sm">SEE THE PREP SYSTEM →</Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 90-day access · instant unlock</p>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 60-day access · instant unlock</p>
         </motion.div>
       </div>
     </section>
@@ -914,7 +931,7 @@ function Credibility() {
           <Link href="/products" className="premium-cta px-10 py-5 text-sm">
             GET PREPARED BY AN RDMS INSTRUCTOR →
           </Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 90-day access · instant unlock</p>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 60-day access · instant unlock</p>
         </motion.div>
       </div>
     </section>
@@ -927,7 +944,7 @@ function Credibility() {
 const PRODUCTS = [
   { key: "pearls", name: "Physics Pearls", price: "$9", tag: "THE FIRST STEP", desc: "Start studying in 10 minutes. 50 high-yield physics concepts — zero friction.", features: ["50 concept summaries", "Clinical examples", "ARDMS domain mapped"], featured: false },
   { key: "flashcards", name: "SPI Flashcards", price: "$24", tag: "FIX YOUR WEAKEST TOPICS", desc: "200+ cards with SM-2 spaced repetition. Most students start here.", features: ["200+ expert-written cards", "SM-2 algorithm", "Per-card tracking"], featured: false },
-  { key: "simulator", name: "Exam Simulator", price: "$49.99", tag: "TEST YOURSELF", desc: "3 attempts over 90 days. 110 questions from a 170+ bank — domain-weighted, timed, different every time.", features: ["3 attempts · 90-day access", "110 Qs from 170+ bank", "2-hour timer (real SPI format)", "Per-domain analytics"], featured: true },
+  { key: "simulator", name: "Exam Simulator", price: "$49.99", tag: "TEST YOURSELF", desc: "3 attempts over 60 days. 110 questions from a 167 bank — domain-weighted, timed, different every time.", features: ["3 attempts · 60-day access", "110 Qs from 167 bank", "2.5-hour timer (real SPI format)", "Per-domain analytics"], featured: true },
   { key: "notes", name: "Study Notes", price: "$34", tag: "UNDERSTAND THE SYSTEM", desc: "Not just memorize answers. 159-page guide covering all 6 SPI domains across 10 chapters.", features: ["159 pages", "10 chapters", "All 6 domains"], featured: false },
 ];
 
@@ -966,7 +983,7 @@ function ProductsSection() {
               <div className="flex items-baseline gap-3 mt-4 mb-5">
                 <span className="t-display text-5xl text-gradient-accent">$99</span>
                 <span className="t-label text-sm text-[#5a5349] line-through">$116</span>
-                <span className="t-caption text-[10px] text-[#3a3530]">/ 90-day access</span>
+                <span className="t-caption text-[10px] text-[#3a3530]">/ 60-day access</span>
               </div>
               <p className="t-body text-sm">
                 Everything you need to pass — in one system. For less than the cost of a single retake fee,
@@ -978,10 +995,10 @@ function ProductsSection() {
                 {[
                   "All 4 products included",
                   "200+ flashcards + 50 Physics Pearls",
-                  "110-question exams from 170+ question bank",
+                  "110-question exams from 167 question bank",
                   "159-page study notes",
                   "Every exam attempt is different",
-                  "90-day full access",
+                  "60-day full access",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-3 text-sm text-[#B8B0A6]">
                     <span className="text-[#c85b3a] text-xs shrink-0">✓</span>{f}
@@ -1029,7 +1046,7 @@ function ProductsSection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
         >
-          {["90-day access", "14-day refund", "Instant access", "RDMS instructor", "All 6 domains"].map((t) => (
+          {["60-day access", "14-day refund", "Instant access", "RDMS instructor", "All 6 domains"].map((t) => (
             <span key={t} className="t-caption text-[10px] text-[#3a3530]">✓ {t}</span>
           ))}
         </motion.div>

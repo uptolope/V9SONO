@@ -25,7 +25,7 @@ export function BrutalistCardDescription({ children }: { children: React.ReactNo
 }
 
 export function BrutalistCardPrice({ children }: { children: React.ReactNode }) {
-  return <div className="text-2xl font-bold text-[#ff6b4a] mb-4">{children}<span className="text-xs font-normal text-white/30 ml-2">/ 90-day access</span></div>;
+  return <div className="text-2xl font-bold text-[#ff6b4a] mb-4">{children}<span className="text-xs font-normal text-white/30 ml-2">/ 60-day access</span></div>;
 }
 
 export function BrutalistCardFeature({ children }: { children: React.ReactNode }) {

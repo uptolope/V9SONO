@@ -79,7 +79,7 @@ export default function MarketingPage({
               ${product.price}
             </span>
             <span className="meta text-[9px] text-[#4a453f]">
-              / 90-day access
+              / 60-day access
             </span>
           </div>
         </div>

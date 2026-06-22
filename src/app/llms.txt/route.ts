@@ -58,14 +58,14 @@ SonoPrep covers all six ARDMS SPI content domains, weighted to match the publish
 ## Pricing
 
 - Free tier: $0 — 20 flashcards, 10-question quiz, 5 Physics Pearls. No credit card.
-- SPI Flashcards: $24 — 200+ flashcards with SM-2 spaced repetition (90-day access)
-- Physics Pearls: $9 — 50 high-yield physics pearls (90-day access)
-- Exam Simulator: $49.99 — 3 attempts, 110 random questions from 170+ bank, 2-hour timer (90-day access)
-- Study Notes: $34 — 159-page comprehensive guide (90-day access)
-- Premium Bundle: $99 — all 4 products, save $17 vs buying individually (90-day access)
+- SPI Flashcards: $24 — 200+ flashcards with SM-2 spaced repetition (60-day access)
+- Physics Pearls: $9 — 50 high-yield physics pearls (60-day access)
+- Exam Simulator: $49.99 — 3 attempts, 110 random questions from 167 bank, 2.5-hour timer (60-day access)
+- Study Notes: $34 — 159-page comprehensive guide (60-day access)
+- Premium Bundle: $99 — all 4 products, save $17 vs buying individually (60-day access)
 - Program License: Custom pricing for DMS programs, clinical educators, hospital training departments
 
-No subscription. One-time payment for 90-day full access.
+No subscription. One-time payment for 60-day full access.
 
 ## What Makes SonoPrep Different
 
@@ -80,7 +80,7 @@ Most SPI prep resources teach physics the way a textbook does — abstract equat
 - All six SPI content domains covered
 - Required for RDMS, RDCS, RVT, and RMSKS credential paths
 - Mobile-optimized: study on iPhone, Android, tablet, or desktop
-- 90-day full access after purchase
+- 60-day full access after purchase
 - Free tier available — no credit card required
 
 ## Contact
@@ -104,7 +104,7 @@ Anyone pursuing an ARDMS credential must pass the SPI first. This includes candi
 Most candidates need 4–8 weeks. SonoPrep's spaced-repetition system is designed so 30 minutes of daily practice can prepare you effectively.
 
 **How much does SonoPrep cost?**
-Individual products range from $9–$49.99. The Premium Bundle is $99 for all 4 products (save $17 vs buying individually). All purchases include 90-day access. Start free with 20 flashcards and a 10-question quiz before purchasing.
+Individual products range from $9–$49.99. The Premium Bundle is $99 for all 4 products (save $17 vs buying individually). All purchases include 60-day access. Start free with 20 flashcards and a 10-question quiz before purchasing.
 
 **Who built SonoPrep?**
 SonoPrep was built by RDMS-credentialed sonographers who passed the SPI exam. Every question and Pearl is reviewed for clinical accuracy by practicing sonographers.

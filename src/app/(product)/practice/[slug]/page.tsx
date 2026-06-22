@@ -14,7 +14,7 @@ type Question = {
   domain?: string;
 };
 
-const FREE_LIMIT = 5;
+const FREE_LIMIT = 8;
 
 export default function PracticePage({
   params,
@@ -30,16 +30,24 @@ export default function PracticePage({
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [purchasedProducts, setPurchasedProducts] = useState<string[]>([]);
 
-  // Fetch questions
+  // Free preview: 8 random questions from exam-data.ts via /api/demo/quiz
+  // Paid users get full exam simulator via /api/questions
   useEffect(() => {
+    // First check if product is coming soon
     fetch(`/api/questions?slug=${params.slug}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.error === "coming_soon") {
           setComingSoon(true);
-        } else if (Array.isArray(data)) {
-          setQuestions(data);
         }
+      })
+      .catch(() => {});
+
+    // Load free preview questions
+    fetch("/api/demo/quiz")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) setQuestions(data);
       })
       .catch(() => setQuestions([]));
   }, [params.slug]);

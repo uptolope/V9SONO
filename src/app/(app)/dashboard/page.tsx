@@ -178,7 +178,7 @@ export default function DashboardPage() {
             <div className="text-2xl mb-2">🎯</div>
             <div className="font-bold text-white mb-1">Exam Simulator</div>
             <div className="text-white/40 text-sm">
-              {maxAttempts - examAttempts} attempts · 110 Qs from 170+ bank · 2-hour timer
+              {maxAttempts - examAttempts} attempts · 110 Qs from 167 bank · 2.5-hour timer
             </div>
           </Link>
           <Link

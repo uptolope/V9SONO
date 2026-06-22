@@ -140,7 +140,7 @@ export function CredentialUrgency() {
           </div>
           <p className="text-base text-cream-dim leading-relaxed">
             <span className="text-cream font-semibold">110 multiple-choice questions.</span>{" "}
-            2-hour time limit. Ultrasound physics, Doppler principles, wave behavior,
+            2.5-hour time limit. Ultrasound physics, Doppler principles, wave behavior,
             image artifacts, transducer technology, and bioeffects — everything required
             to prove you can operate clinical equipment safely.{" "}
             <span className="text-cream font-semibold">
@@ -205,7 +205,7 @@ export function CredentialUrgency() {
             </Button>
           </div>
           <p className="mt-4 font-mono text-xs text-cream-dim/40">
-            No subscription · 90-day access · No credit card for demo
+            No subscription · 60-day access · No credit card for demo
           </p>
         </motion.div>
 

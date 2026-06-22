@@ -24,11 +24,11 @@ export const FAQS = [
   },
   {
     q: "How much does SonoPrep cost?",
-    a: "Individual products range from $9 to $49.99. The Premium Bundle is $99 for all 4 products (save $17 vs buying individually). All purchases include 90-day full access — no subscription. You can start free with 20 flashcards and a 10-question quiz. No credit card required for the free tier.",
+    a: "Individual products range from $9 to $49.99. The Premium Bundle is $99 for all 4 products (save $17 vs buying individually). All purchases include 60-day full access — no subscription. You can start free with 20 flashcards and a 10-question quiz. No credit card required for the free tier.",
   },
   {
     q: "What is the first-attempt pass rate for SonoPrep students?",
-    a: "Every product is built around the exact ARDMS exam blueprint by credentialed sonographers who passed the SPI and scan patients daily. What we don't have yet: a statistically meaningful first-attempt pass rate. SonoPrep is a new platform — we won't publish numbers we can't verify. What we do have: a 14-day full refund if it's not the right fit, and 90 days of full access — more than enough for thorough preparation.",
+    a: "Every product is built around the exact ARDMS exam blueprint by credentialed sonographers who passed the SPI and scan patients daily. What we don't have yet: a statistically meaningful first-attempt pass rate. SonoPrep is a new platform — we won't publish numbers we can't verify. What we do have: a 14-day full refund if it's not the right fit, and 60 days of full access — more than enough for thorough preparation.",
   },
   {
     q: "Who built SonoPrep?",

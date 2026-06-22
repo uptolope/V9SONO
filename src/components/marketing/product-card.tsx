@@ -78,11 +78,11 @@ export const PRODUCTS: ProductData[] = [
     name: "Exam Simulator",
     price: 4999,
     description:
-      "3 full exam attempts over 90 days. Each attempt draws 110 random questions from a 170+ question bank — ARDMS domain-weighted, timed at 2 hours, with detailed rationales and per-domain analytics.",
+      "3 full exam attempts over 60 days. Each attempt draws 110 random questions from a 167 question bank — ARDMS domain-weighted, timed at 2.5 hours, with detailed rationales and per-domain analytics.",
     features: [
-      "3 exam attempts · 90-day access",
-      "170+ question bank · 110 per exam",
-      "2-hour timer (matches real SPI)",
+      "3 exam attempts · 60-day access",
+      "167 question bank · 110 per exam",
+      "2.5-hour timer (matches real SPI)",
       "Randomized & domain-weighted each time",
       "Detailed clinical rationales",
       "Per-domain performance analytics",
@@ -100,10 +100,10 @@ export const PRODUCTS: ProductData[] = [
     features: [
       "All 4 products included",
       "200+ flashcards + 50 Pearls",
-      "3 exam attempts · 110 questions from 170+ bank",
+      "3 exam attempts · 110 questions from 167 bank",
       "159-page study notes",
       "One bad exam costs more than everything you need to pass",
-      "90-day full access",
+      "60-day full access",
     ],
     icon: Package,
     savingsLabel: "Most Students Choose This",
@@ -118,7 +118,7 @@ function TrustBar() {
         { icon: ShieldCheck, text: "14-day refund policy" },
         { icon: Zap,         text: "Instant access after checkout" },
         { icon: Users,       text: "Written by an RDMS instructor" },
-        { icon: Clock,       text: "90-day access" },
+        { icon: Clock,       text: "60-day access" },
       ].map(({ icon: Icon, text }) => (
         <div key={text} className="flex items-center gap-1.5">
           <Icon className="h-3.5 w-3.5 text-[#c85b3a]/50" />
@@ -135,7 +135,7 @@ function BundleValueStrip() {
     <div className="flex items-center gap-3 rounded-lg border border-[#c85b3a]/20 bg-[#c85b3a]/[0.04] px-4 py-2.5">
       <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-[#c85b3a]/70" />
       <span className="text-xs text-cream-dim/70">
-        90-day access to all 4 products · 14-day full refund policy · no subscription
+        60-day access to all 4 products · 14-day full refund policy · no subscription
       </span>
     </div>
   );
@@ -236,7 +236,7 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
                     {formatCurrency(product.originalPrice)}
                   </motion.span>
                 )}
-                <span className="font-mono text-xs text-cream-dim/50">/ 90-day access</span>
+                <span className="font-mono text-xs text-cream-dim/50">/ 60-day access</span>
               </div>
               {isBundle && product.originalPrice && (
                 <p className="font-mono text-sm text-[#c85b3a]/70 flex items-center gap-2">
@@ -326,7 +326,7 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
             Everything You Need to Pass the SPI
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-cream-dim">
-            110-question exams from a 170+ question bank, 200+ spaced repetition flashcards, 50 Physics Pearls,
+            110-question exams from a 167 question bank, 200+ spaced repetition flashcards, 50 Physics Pearls,
             and 159 pages of study notes — all written by a credentialed RDMS instructor.
             Start with a free demo. Upgrade when you're ready.
           </p>

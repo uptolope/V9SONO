@@ -5,11 +5,11 @@ import { ArrowRight, CheckCircle2, Shield, Zap } from "lucide-react";
 
 const INCLUSIONS = [
   "200+ RDMS-written flashcards",
-  "3 exam attempts · 110 Qs from 170+ bank",
+  "3 exam attempts · 110 Qs from 167 bank",
   "50 Physics Pearls",
   "Domain performance analytics",
   "Detailed clinical rationales",
-  "90-day full access",
+  "60-day full access",
 ];
 
 export function CtaSection() {

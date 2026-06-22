@@ -27,13 +27,13 @@ export const questionBanks: QuestionBankProduct[] = [
       "High-yield physics questions designed for ARDMS SPI exam success.",
     longDescription:
       "Covers all core physics domains tested on the SPI — acoustic properties, pulse-echo imaging, Doppler principles, artifacts, instrumentation, and bioeffects. Every question maps to the official ARDMS content outline weightings.",
-    questionCount: "278",
+    questionCount: "167",
     features: [
       "Questions mapped to ARDMS content outline",
       "Detailed clinical rationales for every answer",
       "Domain-weighted distribution (real exam ratios)",
       "Covers all 6 SPI physics domains",
-      "90-day access with progress tracking",
+      "60-day access with progress tracking",
     ],
     seoTitle: "Ultrasound Physics Practice Questions — ARDMS SPI Prep",
     seoDescription:
@@ -55,7 +55,7 @@ export const questionBanks: QuestionBankProduct[] = [
       "Covers hepatobiliary, renal, splenic, pancreatic, GI",
       "Diagnostic reasoning emphasis",
       "Detailed image-based explanations",
-      "90-day access with progress tracking",
+      "60-day access with progress tracking",
     ],
     seoTitle: "Abdominal Ultrasound Practice Questions — ARDMS Exam Prep",
     seoDescription:
@@ -77,7 +77,7 @@ export const questionBanks: QuestionBankProduct[] = [
       "Doppler interpretation focus",
       "Hemodynamic principles",
       "Diagnostic criteria emphasis",
-      "90-day access with progress tracking",
+      "60-day access with progress tracking",
     ],
     seoTitle: "Vascular Ultrasound Practice Questions — RVT Exam Prep",
     seoDescription:

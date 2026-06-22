@@ -1,11 +1,10 @@
 import { NextResponse, NextRequest } from "next/server";
-import { EXAM_QUESTIONS as CONTENT_QUESTIONS } from "@/lib/content/exam-data";
-import { EXAM_QUESTIONS as FULL_QUESTIONS } from "@/lib/exam/full-questions";
+import { EXAM_QUESTIONS } from "@/lib/exam/full-questions";
 
 // ═══════════════════════════════════════════════════════════════════
-// Questions API — serves SPI practice preview questions
-// Combines both question sources (281 total) for the physics product.
-// Abdomen + vascular return coming_soon until content is added.
+// Questions API — serves paid exam simulator questions
+// Source: full-questions.ts (170 licensed SPI questions)
+// Free quiz/flashcards use exam-data.ts via the demo page instead.
 // ═══════════════════════════════════════════════════════════════════
 
 type ClientQuestion = {
@@ -17,48 +16,27 @@ type ClientQuestion = {
   domain: string;
 };
 
-function getAllPhysicsQuestions(): ClientQuestion[] {
-  // Source 1: content/exam-data.ts (111 questions, 5 ARDMS domains)
-  const fromContent: ClientQuestion[] = CONTENT_QUESTIONS.map((q) => ({
-    id: `ce-${q.id}`,
-    question: q.question,
-    choices: [...q.options],
-    answerIndex: q.correctAnswer,
-    explanation: q.explanation,
-    domain: q.domain,
-  }));
-
-  // Source 2: exam/full-questions.ts (170 questions)
-  const fromFull: ClientQuestion[] = FULL_QUESTIONS.map((q) => ({
-    id: `fq-${q.id}`,
-    question: q.question,
-    choices: [...q.options],
-    answerIndex: q.correctAnswer,
-    explanation: q.explanation || "",
-    domain: q.domain,
-  }));
-
-  // Deduplicate by first 50 chars of question text (case-insensitive)
+function getExamQuestions(): ClientQuestion[] {
+  // Deduplicate by first 50 chars (3 internal dupes in full-questions.ts)
   const seen = new Set<string>();
-  const combined: ClientQuestion[] = [];
+  const questions: ClientQuestion[] = [];
 
-  // Prefer content questions (they have better domain labels)
-  for (const q of fromContent) {
+  for (const q of EXAM_QUESTIONS) {
     const key = q.question.trim().slice(0, 50).toLowerCase();
     if (!seen.has(key)) {
       seen.add(key);
-      combined.push(q);
-    }
-  }
-  for (const q of fromFull) {
-    const key = q.question.trim().slice(0, 50).toLowerCase();
-    if (!seen.has(key)) {
-      seen.add(key);
-      combined.push(q);
+      questions.push({
+        id: `fq-${q.id}`,
+        question: q.question,
+        choices: [...q.options],
+        answerIndex: q.correctAnswer,
+        explanation: q.explanation || "",
+        domain: q.domain,
+      });
     }
   }
 
-  return combined;
+  return questions; // 167 unique questions
 }
 
 // Supported slugs
@@ -78,7 +56,8 @@ export async function GET(req: NextRequest) {
   if (COMING_SOON_SLUGS.includes(slug)) {
     return NextResponse.json({
       error: "coming_soon",
-      message: "This question bank is coming soon. Join the waitlist to be notified.",
+      message:
+        "This question bank is coming soon. Join the waitlist to be notified.",
       slug,
     });
   }
@@ -90,9 +69,9 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const questions = getAllPhysicsQuestions();
+  const questions = getExamQuestions();
 
-  // Shuffle for variety on each load
+  // Shuffle for variety on each load — no repeats within a session
   const shuffled = [...questions].sort(() => Math.random() - 0.5);
 
   return NextResponse.json(shuffled);

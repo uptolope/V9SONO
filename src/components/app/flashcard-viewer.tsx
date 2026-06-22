@@ -1,36 +1,42 @@
 "use client";
 
 import { useState } from "react";
-import type { DemoFlashcard } from "@/lib/demo/flashcard-data";
 
-interface FlashcardViewerProps {
-  flashcards: DemoFlashcard[];
+interface FlashcardItem {
+  id: string;
+  front: string;
+  back: string;
+  domain: string;
 }
 
-export function FlashcardViewer({ flashcards }: FlashcardViewerProps) {
+interface FlashcardViewerProps {
+  cards: FlashcardItem[];
+}
+
+export function FlashcardViewer({ cards }: FlashcardViewerProps) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
 
-  if (!flashcards.length) return null;
-  const current = flashcards[index];
+  if (!cards.length) return null;
+  const current = cards[index];
 
   function next() {
     setFlipped(false);
-    setIndex((prev) => (prev + 1) % flashcards.length);
+    setIndex((prev) => (prev + 1) % cards.length);
   }
 
   function prev() {
     setFlipped(false);
-    setIndex((prev) => (prev - 1 + flashcards.length) % flashcards.length);
+    setIndex((prev) => (prev - 1 + cards.length) % cards.length);
   }
 
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
         <span className="meta text-[9px] text-[#4a453f]">
-          CARD {index + 1} OF {flashcards.length}
+          CARD {index + 1} OF {cards.length}
         </span>
-        <span className="meta text-[9px] text-[#4a453f]">
+        <span className="meta text-[9px] text-[#c85b3a]/70">
           {current.domain}
         </span>
       </div>
@@ -52,7 +58,7 @@ export function FlashcardViewer({ flashcards }: FlashcardViewerProps) {
         ) : (
           <div>
             <p className="meta text-[9px] text-green-500/70 mb-3">ANSWER</p>
-            <p className="text-sm text-[#c2bab0] leading-relaxed">
+            <p className="text-sm text-[#c2bab0] leading-relaxed whitespace-pre-line">
               {current.back}
             </p>
           </div>

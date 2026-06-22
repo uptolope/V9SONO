@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════════
 // SonoPrep — Exam Content API (PROTECTED)
 // Returns exam questions WITHOUT correct answers.
-// Draws 110 random questions from the 170+ question bank.
+// Draws 110 random questions from the 167 question bank.
 // Answer validation happens via POST /api/exam/submit
 // SECURITY: Correct answers are NEVER sent to the client.
 // ═══════════════════════════════════════════════════════════════════
@@ -25,7 +25,7 @@ const QUESTIONS_PER_EXAM = 110;
 /**
  * GET /api/content/exam
  * Returns shuffled exam questions WITHOUT correct answers.
- * Draws 110 from the full 170+ bank so every attempt is different.
+ * Draws 110 from the full 167 bank so every attempt is different.
  * The client never sees which option is correct.
  */
 export async function GET(req: NextRequest) {

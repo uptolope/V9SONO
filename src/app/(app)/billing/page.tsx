@@ -212,7 +212,7 @@ export default function BillingPage() {
                           {product.name}
                         </h3>
                         <p className="font-mono text-xs text-cream-dim">
-                          {formatCurrency(product.price)} / 90-day access
+                          {formatCurrency(product.price)} / 60-day access
                         </p>
                       </div>
                     </div>
@@ -261,7 +261,7 @@ export default function BillingPage() {
       {/* Guarantee */}
       <div className="flex items-center justify-center gap-2 text-sm text-cream-dim">
         <Shield className="h-4 w-4 text-teal" />
-        <span>90-day full access • Secure payment via Stripe</span>
+        <span>60-day full access • Secure payment via Stripe</span>
       </div>
     </div>
   );

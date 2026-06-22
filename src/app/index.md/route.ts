@@ -22,11 +22,11 @@ Built by practicing RDMS sonographers. Built around the exact ARDMS exam bluepri
 ## Pricing
 
 - Free: $0 — no credit card
-- SPI Flashcards: $24 (90-day access)
-- Physics Pearls: $9 (90-day access)
-- Exam Simulator: $49.99 — 3 attempts, 110 Qs from 170+ bank (90-day access)
-- Study Notes: $34 (90-day access)
-- Premium Bundle: $99 — all 4 products, save $17 vs buying individually (90-day access)
+- SPI Flashcards: $24 (60-day access)
+- Physics Pearls: $9 (60-day access)
+- Exam Simulator: $49.99 — 3 attempts, 110 Qs from 167 bank (60-day access)
+- Study Notes: $34 (60-day access)
+- Premium Bundle: $99 — all 4 products, save $17 vs buying individually (60-day access)
 - Program License: Custom pricing for DMS programs and hospitals
 
 ## SPI Exam Coverage
@@ -44,7 +44,7 @@ All six ARDMS SPI content domains:
 - Built around the exact ARDMS exam blueprint
 - Built by RDMS-credentialed, practicing sonographers
 - Mobile-optimized, progress syncs across devices
-- 90-day full access after purchase
+- 60-day full access after purchase
 
 ## Contact
 

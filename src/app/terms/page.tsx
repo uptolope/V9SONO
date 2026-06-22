@@ -39,7 +39,7 @@ export default function TermsPage() {
           <section>
             <h2 className="display-serif text-xl font-semibold text-white mb-3">2. License</h2>
             <p className="mb-3">
-              When you purchase a SonoPrep product, you receive a limited, non-exclusive, non-transferable license to access the purchased materials for the duration of your access period (90 or 120 days depending on plan).
+              When you purchase a SonoPrep product, you receive a limited, non-exclusive, non-transferable license to access the purchased materials for the duration of your access period (60 days).
             </p>
             <p>You may not:</p>
             <ul className="list-disc pl-6 space-y-2 mt-2">
@@ -72,7 +72,7 @@ export default function TermsPage() {
           <section>
             <h2 className="display-serif text-xl font-semibold text-white mb-3">5. Access Period</h2>
             <p>
-              Access begins on the date of purchase, not on the date you first log in. The Exam Simulator and Flashcard products include a 90-day access window. The Premium Bundle includes 120 days. Access expires automatically at the end of the period and is not renewed automatically.
+              Access begins on the date of purchase, not on the date you first log in. The Exam Simulator and Flashcard products include a 60-day access window. The Premium Bundle includes 60 days. Access expires automatically at the end of the period and is not renewed automatically.
             </p>
           </section>
 

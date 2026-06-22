@@ -59,18 +59,6 @@ export const DEMO_FLASHCARDS: DemoFlashcard[] = [
     back: "fd = (2 × f₀ × v × cosθ) / c, where fd = frequency shift, f₀ = transmitted frequency, v = blood velocity, θ = angle of incidence, c = speed of sound (1540 m/s).",
     domain: "Doppler",
   },
-  {
-    id: "fc-9",
-    front: "What causes posterior acoustic shadowing?",
-    back: "Posterior acoustic shadowing occurs when sound waves are strongly attenuated (reflected or absorbed) by a structure like bone, calculi, or gallstones. Little energy reaches structures behind it.",
-    domain: "Artifacts",
-  },
-  {
-    id: "fc-10",
-    front: "What is the Mechanical Index (MI)?",
-    back: "MI estimates the likelihood of cavitational (mechanical) bioeffects. MI = peak rarefactional pressure / √frequency. FDA limit for diagnostic use: 1.9. Higher MI = higher cavitation risk.",
-    domain: "Safety",
-  },
 ];
 
 /** SM-2 Spaced Repetition algorithm */
