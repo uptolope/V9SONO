@@ -2,6 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 
 // ═══════════════════════════════════════════════════════════════════
 // Questions API — serves practice questions by product slug
+// LICENSED CONTENT — READ ONLY — DO NOT MODIFY QUESTION CONTENT
 // TODO: Move to DB once Prisma is wired for question banks
 // ═══════════════════════════════════════════════════════════════════
 
@@ -17,246 +18,128 @@ const questionsBySlug: Record<string, Question[]> = {
   "ultrasound-physics": [
     {
       id: "phys-1",
-      question: "What determines acoustic impedance in a medium?",
+      question: "A patient with gallstones shows posterior acoustic shadowing. What is the primary cause of this artifact?",
       choices: [
-        "Density and propagation speed",
-        "Frequency and wavelength",
-        "Amplitude and intensity",
-        "Attenuation and absorption",
+        "Reflection at tissue interfaces",
+        "Strong attenuation by the stones",
+        "Refraction at curved surfaces",
+        "Mirror imaging artifact",
       ],
-      answerIndex: 0,
-      explanation:
-        "Acoustic impedance (Z) equals density × propagation speed. It determines how much sound is reflected at tissue boundaries.",
+      answerIndex: 1,
+      explanation: "Gallstones cause strong attenuation (both absorption and reflection), resulting in posterior acoustic shadowing — a clean shadow directly behind the calcified structure.",
     },
     {
       id: "phys-2",
-      question: "Increasing transducer frequency primarily results in:",
+      question: "When using spectral Doppler, what happens to the frequency shift when the angle of incidence increases from 0° to 60°?",
       choices: [
-        "Better axial resolution",
-        "Greater penetration depth",
-        "Lower attenuation",
-        "Wider beam width",
+        "Frequency shift doubles",
+        "Frequency shift decreases",
+        "Frequency shift increases",
+        "No change in frequency shift",
       ],
-      answerIndex: 0,
-      explanation:
-        "Higher frequency = shorter wavelength = better axial resolution. The trade-off is reduced penetration depth due to increased attenuation.",
+      answerIndex: 1,
+      explanation: "The Doppler equation includes cosθ. As the angle increases from 0° to 60°, cosθ decreases from 1.0 to 0.5, causing the measured frequency shift to decrease by half.",
     },
     {
       id: "phys-3",
-      question:
-        "The Doppler shift frequency is directly proportional to which of the following?",
+      question: "Which type of resolution is determined primarily by the transducer frequency?",
       choices: [
-        "Blood flow velocity",
-        "Tissue density",
-        "Transducer element size",
-        "Pulse repetition period",
+        "Lateral resolution",
+        "Axial resolution",
+        "Temporal resolution",
+        "Contrast resolution",
       ],
-      answerIndex: 0,
-      explanation:
-        "The Doppler equation shows frequency shift is directly proportional to blood velocity and the cosine of the insonation angle.",
+      answerIndex: 1,
+      explanation: "Axial resolution is determined by spatial pulse length (SPL), which is inversely related to transducer frequency. Higher frequency → shorter SPL → better axial resolution.",
     },
     {
       id: "phys-4",
-      question: "What artifact is caused by a strong reflector near the transducer?",
+      question: "What happens to beam penetration when transducer frequency is increased?",
       choices: [
-        "Reverberation",
-        "Acoustic enhancement",
-        "Edge shadowing",
-        "Slice thickness artifact",
+        "Penetration increases",
+        "Penetration decreases",
+        "Penetration stays the same",
+        "Penetration doubles",
       ],
-      answerIndex: 0,
-      explanation:
-        "Reverberation artifacts occur when sound bounces back and forth between the transducer and a strong near-field reflector, creating equally spaced parallel lines.",
+      answerIndex: 1,
+      explanation: "Higher frequency ultrasound experiences greater attenuation in tissue, resulting in less penetration depth. This is the fundamental frequency–penetration tradeoff.",
     },
     {
       id: "phys-5",
-      question: "The ALARA principle refers to:",
+      question: "What are the two main biological effects of ultrasound?",
       choices: [
-        "Keeping ultrasound exposure as low as reasonably achievable",
-        "Using the highest frequency available for every scan",
-        "Maximizing output power for best image quality",
-        "Applying consistent pressure during scanning",
+        "Thermal and cavitational",
+        "Electrical and magnetic",
+        "Ionizing and non-ionizing",
+        "Mechanical and chemical",
       ],
       answerIndex: 0,
-      explanation:
-        "ALARA (As Low As Reasonably Achievable) is a safety principle — minimize patient exposure while maintaining diagnostic quality.",
+      explanation: "The two main biological effects are thermal (tissue heating from absorption) and cavitational (microscopic bubble formation and collapse). Both are monitored via TI and MI indices.",
     },
     {
       id: "phys-6",
-      question:
-        "Lateral resolution is determined primarily by:",
+      question: "What percentage of ultrasound energy is reflected at a soft tissue-to-bone interface?",
       choices: [
-        "Beam width",
-        "Spatial pulse length",
-        "Pulse repetition frequency",
-        "Dynamic range",
+        "Less than 1%",
+        "About 50%",
+        "Nearly 100%",
+        "About 25%",
       ],
-      answerIndex: 0,
-      explanation:
-        "Lateral resolution equals beam width at the point of interest. It is best at the focal zone where the beam is narrowest.",
+      answerIndex: 2,
+      explanation: "Bone has a much higher acoustic impedance than soft tissue. The large impedance mismatch causes nearly total reflection of ultrasound energy at this interface.",
+    },
+    {
+      id: "phys-7",
+      question: "The Mechanical Index (MI) on an ultrasound machine displays 0.8. What does this value indicate?",
+      choices: [
+        "Maximum frame rate setting",
+        "Thermal dose delivered to tissue",
+        "Likelihood of cavitation effects",
+        "Current transducer frequency in MHz",
+      ],
+      answerIndex: 2,
+      explanation: "The Mechanical Index (MI) estimates the likelihood of cavitational (mechanical) bioeffects. Higher MI values indicate a greater potential for cavitation. FDA limit is 1.9 for diagnostic use.",
+    },
+    {
+      id: "phys-8",
+      question: "What is the typical attenuation coefficient of soft tissue in dB/cm/MHz?",
+      choices: [
+        "0.3 dB/cm/MHz",
+        "0.5 dB/cm/MHz",
+        "1.0 dB/cm/MHz",
+        "2.0 dB/cm/MHz",
+      ],
+      answerIndex: 1,
+      explanation: "The average attenuation coefficient of soft tissue is approximately 0.5 dB/cm/MHz. This is the foundational value used for calculating penetration depth and TGC settings.",
+    },
+    {
+      id: "phys-9",
+      question: "In color Doppler, aliasing occurs when blood velocity exceeds the Nyquist limit. How can you typically reduce aliasing?",
+      choices: [
+        "Increase the imaging depth",
+        "Decrease the scale (PRF)",
+        "Increase the baseline shift",
+        "Use a lower frequency transducer",
+      ],
+      answerIndex: 2,
+      explanation: "Shifting the baseline effectively doubles the displayable velocity range in one direction, reducing aliasing without changing PRF or frequency.",
+    },
+    {
+      id: "phys-10",
+      question: "What is acoustic impedance (Z) and how is it calculated?",
+      choices: [
+        "Z = density × wavelength",
+        "Z = density × propagation speed",
+        "Z = frequency × wavelength",
+        "Z = propagation speed / frequency",
+      ],
+      answerIndex: 1,
+      explanation: "Acoustic impedance (Z) equals tissue density (ρ) multiplied by the speed of sound in that tissue (c): Z = ρ × c. Impedance mismatches between tissues cause reflections.",
     },
   ],
-  "abdominal-ultrasound": [
-    {
-      id: "abd-1",
-      question:
-        "A patient presents with right upper quadrant pain. On ultrasound, a gallstone is identified in the gallbladder neck with posterior acoustic shadowing. What is the most likely diagnosis?",
-      choices: [
-        "Cholelithiasis",
-        "Gallbladder polyp",
-        "Adenomyomatosis",
-        "Porcelain gallbladder",
-      ],
-      answerIndex: 0,
-      explanation:
-        "The combination of an echogenic focus with posterior shadowing in the gallbladder is characteristic of cholelithiasis. Polyps typically do not shadow.",
-    },
-    {
-      id: "abd-2",
-      question:
-        "What is the normal upper limit for the common bile duct diameter in adults?",
-      choices: ["6-7 mm", "10-12 mm", "3-4 mm", "15-20 mm"],
-      answerIndex: 0,
-      explanation:
-        "The normal CBD measures up to 6-7mm. It may be slightly larger in elderly patients or post-cholecystectomy (up to 10mm).",
-    },
-    {
-      id: "abd-3",
-      question:
-        "Which sonographic finding is most suggestive of hepatic cirrhosis?",
-      choices: [
-        "Nodular liver surface with caudate lobe hypertrophy",
-        "Homogeneous echogenicity",
-        "Smooth liver capsule",
-        "Normal portal vein diameter",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Cirrhosis shows surface nodularity, heterogeneous echotexture, caudate lobe hypertrophy, and often signs of portal hypertension.",
-    },
-    {
-      id: "abd-4",
-      question: "Acoustic enhancement is typically seen posterior to:",
-      choices: [
-        "Fluid-filled structures",
-        "Calcified lesions",
-        "Gas collections",
-        "Dense tissue",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Fluid attenuates less than surrounding tissue, so the sound beam is stronger beyond the fluid, creating posterior acoustic enhancement.",
-    },
-    {
-      id: "abd-5",
-      question:
-        "A hyperechoic renal mass with posterior shadowing most likely represents:",
-      choices: [
-        "Angiomyolipoma",
-        "Renal cell carcinoma",
-        "Simple cyst",
-        "Transitional cell carcinoma",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Angiomyolipomas are the most common benign renal tumors. They are characteristically hyperechoic due to their fat content.",
-    },
-    {
-      id: "abd-6",
-      question:
-        "What structure connects the gallbladder to the common hepatic duct?",
-      choices: [
-        "Cystic duct",
-        "Common bile duct",
-        "Pancreatic duct",
-        "Hepatic artery",
-      ],
-      answerIndex: 0,
-      explanation:
-        "The cystic duct connects the gallbladder to the common hepatic duct. Together they form the common bile duct.",
-    },
-  ],
-  "vascular-ultrasound": [
-    {
-      id: "vasc-1",
-      question:
-        "An ICA stenosis of 70-99% typically shows a peak systolic velocity (PSV) greater than:",
-      choices: ["125 cm/s", "50 cm/s", "200 cm/s", "80 cm/s"],
-      answerIndex: 0,
-      explanation:
-        "PSV > 125 cm/s with end-diastolic velocity > 40 cm/s and ICA/CCA ratio > 2.0 indicates 50-69% stenosis. For 70-99%, PSV is typically > 230 cm/s per some criteria, but > 125 cm/s is the threshold for significant stenosis.",
-    },
-    {
-      id: "vasc-2",
-      question:
-        "The normal direction of flow in the vertebral artery is:",
-      choices: [
-        "Antegrade (toward the brain)",
-        "Retrograde (away from the brain)",
-        "Bidirectional",
-        "No detectable flow",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Normal vertebral artery flow is antegrade — toward the brain. Reversed flow suggests subclavian steal syndrome.",
-    },
-    {
-      id: "vasc-3",
-      question:
-        "Which finding is most diagnostic of acute deep vein thrombosis (DVT)?",
-      choices: [
-        "Non-compressibility of the vein",
-        "Augmented flow with calf squeeze",
-        "Phasic respiratory variation",
-        "Thin vessel walls",
-      ],
-      answerIndex: 0,
-      explanation:
-        "The hallmark of DVT on ultrasound is non-compressibility. A normal vein collapses completely with probe pressure; a thrombosed vein does not.",
-    },
-    {
-      id: "vasc-4",
-      question:
-        "Spectral broadening in arterial Doppler indicates:",
-      choices: [
-        "Disturbed or turbulent flow",
-        "Normal laminar flow",
-        "Complete vessel occlusion",
-        "Venous contamination",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Spectral broadening occurs when blood cells move at many different velocities simultaneously, indicating disturbed or turbulent flow — typically seen at or just beyond a stenosis.",
-    },
-    {
-      id: "vasc-5",
-      question:
-        "In a normal lower extremity venous exam, flow should be:",
-      choices: [
-        "Spontaneous, phasic with respiration, and augmentable",
-        "Continuous and non-phasic",
-        "Only detectable with Valsalva",
-        "Pulsatile like arterial flow",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Normal venous flow is spontaneous, phasic with respiration (increases with expiration), and augments with distal compression. Loss of phasicity suggests proximal obstruction.",
-    },
-    {
-      id: "vasc-6",
-      question:
-        "What does a tardus-parvus waveform distal to a stenosis indicate?",
-      choices: [
-        "Significant proximal arterial stenosis",
-        "Normal distal perfusion",
-        "Venous insufficiency",
-        "AV fistula",
-      ],
-      answerIndex: 0,
-      explanation:
-        "Tardus (slow rise) parvus (diminished amplitude) waveforms are seen distal to a hemodynamically significant stenosis. The stenosis dampens the normal sharp systolic peak.",
-    },
-  ],
+  // TODO: Add licensed abdomen + vascular question content
+  "abdominal-ultrasound": [],
+  "vascular-ultrasound": [],
 };
 
 export async function GET(req: NextRequest) {
@@ -269,5 +152,13 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  return NextResponse.json(questionsBySlug[slug]);
+  const questions = questionsBySlug[slug];
+  if (questions.length === 0) {
+    return NextResponse.json(
+      { error: "Questions not yet available for this product" },
+      { status: 404 }
+    );
+  }
+
+  return NextResponse.json(questions);
 }
