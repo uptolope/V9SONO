@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { questionBanks } from "@/lib/products";
 
 const BASE = "https://sonoprep.com";
 
@@ -42,6 +43,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // SEO marketing pages + product detail pages + practice pages
+  const productRoutes: MetadataRoute.Sitemap = questionBanks.flatMap((p) => [
+    {
+      url: `${BASE}/${p.slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE}/products/${p.slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE}/practice/${p.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      lastModified: new Date(),
+    },
+  ]);
+
   const blogRoutes: MetadataRoute.Sitemap = BLOG_SLUGS.map((slug) => ({
     url: `${BASE}/blog/${slug}`,
     changeFrequency: "monthly",
@@ -49,5 +72,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...productRoutes, ...blogRoutes];
 }
