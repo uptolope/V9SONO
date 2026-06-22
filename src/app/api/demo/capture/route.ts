@@ -7,6 +7,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { appendLeadToSheet } from "@/lib/google-sheets";
 import { z } from "zod";
+import { createRateLimiter, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
+
+/* ── Rate limiter: 10 captures per IP per 15 minutes ──────────────── */
+const captureLimiter = createRateLimiter("demo_capture", {
+  maxRequests: 10,
+  windowMs: 15 * 60 * 1000,
+});
 
 const captureSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -63,6 +70,10 @@ async function addToMailerLite(
 
 export async function POST(req: NextRequest) {
   try {
+    const clientIp = getClientIp(req);
+    const rl = captureLimiter.check(clientIp);
+    if (!rl.success) return rateLimitResponse(rl);
+
     const body = await req.json();
     const parsed = captureSchema.safeParse(body);
 

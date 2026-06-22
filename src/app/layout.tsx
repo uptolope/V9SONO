@@ -104,6 +104,13 @@ export default function RootLayout({
         />
       </head>
       <body style={{ background: "#0B0D10" }}>
+        {/* Skip to content — accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#c85b3a] focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:outline-none"
+        >
+          Skip to main content
+        </a>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SD4LQYV442"

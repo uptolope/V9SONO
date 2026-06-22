@@ -47,11 +47,11 @@ export async function POST(req: NextRequest) {
       // Env var names MUST match what's in .env and /api/price-ids
       // Product keys MUST match what checkContentAccess() expects
       const productMap: Record<string, { name: string; key: string; days: number }> = {
-        [process.env.STRIPE_PRICE_FLASHCARDS!]:      { name: "SPI Flashcards",  key: "FLASHCARDS",      days: 90 },
-        [process.env.STRIPE_PRICE_EXAM_SIMULATOR!]:   { name: "Exam Simulator",  key: "EXAM_SIMULATOR",  days: 90 },
-        [process.env.STRIPE_PRICE_PHYSICS_PEARLS!]:   { name: "Physics Pearls",  key: "PHYSICS_PEARLS",  days: 90 },
-        [process.env.STRIPE_PRICE_STUDY_NOTES!]:      { name: "Study Notes",     key: "STUDY_NOTES",     days: 90 },
-        [process.env.STRIPE_PRICE_PREMIUM_BUNDLE!]:   { name: "Premium Bundle",  key: "PREMIUM_BUNDLE",  days: 90 },
+        [process.env.STRIPE_PRICE_FLASHCARDS!]:      { name: "SPI Flashcards",  key: "FLASHCARDS",      days: 60 },
+        [process.env.STRIPE_PRICE_EXAM_SIMULATOR!]:   { name: "Exam Simulator",  key: "EXAM_SIMULATOR",  days: 60 },
+        [process.env.STRIPE_PRICE_PHYSICS_PEARLS!]:   { name: "Physics Pearls",  key: "PHYSICS_PEARLS",  days: 60 },
+        [process.env.STRIPE_PRICE_STUDY_NOTES!]:      { name: "Study Notes",     key: "STUDY_NOTES",     days: 60 },
+        [process.env.STRIPE_PRICE_PREMIUM_BUNDLE!]:   { name: "Premium Bundle",  key: "PREMIUM_BUNDLE",  days: 60 },
       };
 
       const product = productMap[priceId];

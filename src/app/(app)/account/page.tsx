@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { motion } from "framer-motion";
 import {
   User, Mail, Calendar, Building, Save, Loader2,
   CheckCircle2, CalendarDays, Flame, Trophy, BookOpen,
+  Download, Trash2, AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -278,7 +279,140 @@ export default function AccountPage() {
         </Card>
       </motion.div>
 
+      {/* Data Rights ─────────────────────────────────────────────── */}
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Your Data</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-sm text-cream-dim/60">
+              You have the right to access, download, and delete your data at any time. See our{" "}
+              <a href="/privacy" className="text-teal hover:underline">Privacy Policy</a> for details.
+            </p>
+
+            {/* Download Data */}
+            <div className="flex items-center justify-between p-4 rounded-xl border border-border/50 bg-white/[0.02]">
+              <div>
+                <p className="text-sm text-cream font-medium">Download your data</p>
+                <p className="text-xs text-cream-dim/50 mt-0.5">Export all your data as JSON (profile, purchases, exam history, flashcard progress)</p>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={async () => {
+                  try {
+                    const res = await fetch("/api/account/data");
+                    if (!res.ok) throw new Error("Export failed");
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `sonoprep-data-export-${new Date().toISOString().slice(0, 10)}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                  } catch {
+                    alert("Failed to export data. Please try again.");
+                  }
+                }}
+                className="shrink-0"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Export
+              </Button>
+            </div>
+
+            {/* Delete Account */}
+            <DeleteAccountSection />
+          </CardContent>
+        </Card>
+      </motion.div>
+
     </div>
   );
 }
+
+/* ── Delete Account Component ──────────────────────────────────── */
+function DeleteAccountSection() {
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [confirmText, setConfirmText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  const handleDelete = async () => {
+    if (confirmText !== "DELETE") return;
+    setDeleting(true);
+    try {
+      const res = await fetch("/api/account/delete", { method: "DELETE" });
+      if (!res.ok) throw new Error("Delete failed");
+      // Sign out and redirect
+      await signOut({ callbackUrl: "/" });
+    } catch {
+      alert("Failed to delete account. Please contact support@sonoprep.com.");
+      setDeleting(false);
+    }
+  };
+
+  return (
+    <div className="p-4 rounded-xl border border-red-500/20 bg-red-500/[0.03]">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm text-cream font-medium flex items-center gap-2">
+            <AlertTriangle className="h-4 w-4 text-red-400" />
+            Delete account
+          </p>
+          <p className="text-xs text-cream-dim/50 mt-0.5">
+            Permanently delete your account and anonymize your data. This cannot be undone.
+          </p>
+        </div>
+        {!showConfirm && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowConfirm(true)}
+            className="shrink-0 border-red-500/30 text-red-400 hover:bg-red-500/10"
+          >
+            <Trash2 className="h-4 w-4 mr-2" />
+            Delete
+          </Button>
+        )}
+      </div>
+      {showConfirm && (
+        <div className="mt-4 space-y-3">
+          <p className="text-xs text-red-400">
+            Type <strong>DELETE</strong> to confirm. Your study progress, exam history, and flashcard data will be permanently removed.
+            Purchase records are retained for legal compliance.
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={confirmText}
+              onChange={e => setConfirmText(e.target.value)}
+              placeholder="Type DELETE"
+              className="flex-1 p-2 text-sm bg-[#1a212b] border border-red-500/30 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+              aria-label="Type DELETE to confirm account deletion"
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={confirmText !== "DELETE" || deleting}
+              onClick={handleDelete}
+              className="border-red-500/30 text-red-400 hover:bg-red-500/10 disabled:opacity-30"
+            >
+              {deleting ? "Deleting…" : "Confirm"}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => { setShowConfirm(false); setConfirmText(""); }}
+              className="text-cream-dim"
+            >
+              Cancel
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export const dynamic = 'force-dynamic';

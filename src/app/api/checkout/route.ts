@@ -3,6 +3,13 @@ import Stripe from "stripe";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { isStaleSession } from "@/lib/session-guard";
+import { createRateLimiter, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
+
+/* ── Rate limiter: 10 checkout attempts per IP per 15 minutes ──── */
+const checkoutLimiter = createRateLimiter("checkout", {
+  maxRequests: 10,
+  windowMs: 15 * 60 * 1000,
+});
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -23,6 +30,10 @@ const PRODUCT_PRICE_MAP: Record<string, string | undefined> = {
 
 export async function POST(req: NextRequest) {
   try {
+    const clientIp = getClientIp(req);
+    const rl = checkoutLimiter.check(clientIp);
+    if (!rl.success) return rateLimitResponse(rl);
+
     const body = await req.json();
 
     // Support both { productKey } (from billing page) and { priceId } (direct)

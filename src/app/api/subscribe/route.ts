@@ -1,7 +1,18 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { createRateLimiter, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
 
-export async function POST(req: Request) {
+/* ── Rate limiter: 5 subscribes per IP per 15 minutes ─────────────── */
+const subscribeLimiter = createRateLimiter("subscribe", {
+  maxRequests: 5,
+  windowMs: 15 * 60 * 1000,
+});
+
+export async function POST(req: NextRequest) {
   try {
+    const clientIp = getClientIp(req);
+    const rl = subscribeLimiter.check(clientIp);
+    if (!rl.success) return rateLimitResponse(rl);
+
     const { email, signup_source = "unknown" } = await req.json();
 
     // basic validation

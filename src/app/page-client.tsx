@@ -1152,7 +1152,7 @@ export function HomePageClient() {
   return (
     <div className="min-h-screen bg-[#0B0D10]">
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <TheFork />
         <LazySection><WhoIsThisFor /></LazySection>

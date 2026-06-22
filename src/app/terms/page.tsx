@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "June 1, 2026";
+const LAST_UPDATED = "June 22, 2026";
 
 export default function TermsPage() {
   return (
@@ -32,7 +32,7 @@ export default function TermsPage() {
           <section>
             <h2 className="display-serif text-xl font-semibold text-white mb-3">1. Agreement</h2>
             <p>
-              By creating an account or purchasing a product on sonoprep.com, you agree to these Terms of Service. If you do not agree, do not use the service. These terms apply to all users, including free demo users and paying subscribers.
+              By creating an account or purchasing a product on sonoprep.com (&quot;Service&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree, do not use the Service. These Terms apply to all users, including free demo users and paying customers. By checking the &quot;I agree to the Terms of Service&quot; box during registration, you acknowledge that you have read, understood, and agree to be bound by these Terms.
             </p>
           </section>
 
@@ -72,14 +72,14 @@ export default function TermsPage() {
           <section>
             <h2 className="display-serif text-xl font-semibold text-white mb-3">5. Access Period</h2>
             <p>
-              Access begins on the date of purchase, not on the date you first log in. The Exam Simulator and Flashcard products include a 60-day access window. The Premium Bundle includes 60 days. Access expires automatically at the end of the period and is not renewed automatically.
+              Access begins on the date of purchase, not on the date you first log in. All products include a 60-day access window. Access expires automatically at the end of the period and is not renewed automatically. You may repurchase any product after expiration.
             </p>
           </section>
 
           <section>
             <h2 className="display-serif text-xl font-semibold text-white mb-3">6. Exam Attempts</h2>
             <p>
-              Products that include the Exam Simulator provide 3 exam attempts within the access window. Once an attempt is started, the timer cannot be paused or reset. Unused attempts do not carry over after the access period ends and are not refundable.
+              Products that include the Exam Simulator provide 3 exam attempts within the access window. Once an attempt is started, the timer cannot be paused or reset. Unused attempts do not carry over after the access period ends and are not refundable. You may repurchase the Exam Simulator for additional attempts.
             </p>
           </section>
 
@@ -98,37 +98,107 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="display-serif text-xl font-semibold text-white mb-3">9. Account Termination</h2>
-            <p>
-              We reserve the right to terminate or suspend any account that violates these terms, including accounts that share credentials, scrape content, or engage in fraudulent activity. Terminated accounts for violations are not eligible for refunds.
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">9. DMCA &amp; Copyright Infringement</h2>
+            <p className="mb-3">
+              SonoPrep respects the intellectual property rights of others. If you believe that content on SonoPrep infringes your copyright, you may submit a DMCA takedown notice to our designated agent:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-3">
+              <li><strong className="text-white">Email:</strong>{" "}<a href="mailto:dmca@sonoprep.com" className="text-[#c85b3a] hover:underline">dmca@sonoprep.com</a></li>
+              <li><strong className="text-white">Subject line:</strong> DMCA Takedown Notice</li>
+            </ul>
+            <p className="mb-3">Your notice must include:</p>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>Identification of the copyrighted work you claim is infringed.</li>
+              <li>Identification of the material you claim is infringing and its location on the Service.</li>
+              <li>Your contact information (name, address, email, phone number).</li>
+              <li>A statement that you have a good-faith belief the use is not authorized by the copyright owner.</li>
+              <li>A statement, under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on behalf of the owner.</li>
+              <li>Your physical or electronic signature.</li>
+            </ol>
+            <p className="mt-3">
+              Upon receipt of a valid DMCA notice, we will promptly remove or disable access to the allegedly infringing material and notify the user who posted it. Counter-notifications may be submitted following the procedures outlined in 17 U.S.C. § 512(g).
             </p>
           </section>
 
           <section>
-            <h2 className="display-serif text-xl font-semibold text-white mb-3">10. Limitation of Liability</h2>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">10. Account Termination</h2>
             <p>
-              To the maximum extent permitted by law, SonoPrep is not liable for any indirect, incidental, or consequential damages arising from your use of the service. Our total liability to you for any claim is limited to the amount you paid for the product in question.
+              We reserve the right to terminate or suspend any account that violates these Terms, including accounts that share credentials, scrape content, or engage in fraudulent activity. Terminated accounts for violations are not eligible for refunds.
             </p>
           </section>
 
           <section>
-            <h2 className="display-serif text-xl font-semibold text-white mb-3">11. Governing Law</h2>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">11. Limitation of Liability</h2>
+            <p className="mb-3">
+              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SONOPREP AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE SERVICE, EVEN IF SONOPREP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+            </p>
             <p>
-              These terms are governed by the laws of the State of Texas, United States, without regard to conflict-of-law principles. Any disputes will be resolved in the courts of Texas.
+              OUR TOTAL AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE SHALL NOT EXCEED THE TOTAL AMOUNT YOU HAVE PAID TO SONOPREP IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
             </p>
           </section>
 
           <section>
-            <h2 className="display-serif text-xl font-semibold text-white mb-3">12. Changes to These Terms</h2>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">12. Disclaimer of Warranties</h2>
             <p>
-              We may update these terms. Continued use of the service after changes are posted constitutes acceptance. We will update the "Last updated" date when changes are made.
+              THE SERVICE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. SONOPREP DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.
             </p>
           </section>
 
           <section>
-            <h2 className="display-serif text-xl font-semibold text-white mb-3">13. Contact</h2>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">13. Binding Arbitration</h2>
+            <p className="mb-3">
+              Any dispute, controversy, or claim arising out of or relating to these Terms or the Service, including the formation, interpretation, breach, or termination thereof, shall be settled by binding arbitration administered by the American Arbitration Association (&quot;AAA&quot;) under its Consumer Arbitration Rules.
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>The arbitration shall take place in Houston, Texas, or at another mutually agreed location.</li>
+              <li>The arbitrator&apos;s decision shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</li>
+              <li>Each party shall bear its own costs and attorney&apos;s fees, unless the arbitrator determines otherwise.</li>
+              <li>For claims under $10,000, the arbitration may be conducted entirely online or by phone at your election.</li>
+            </ul>
+            <p className="mt-3">
+              <strong className="text-white">Opt-Out:</strong> You may opt out of this arbitration provision by sending written notice to <a href="mailto:legal@sonoprep.com" className="text-[#c85b3a] hover:underline">legal@sonoprep.com</a> within 30 days of creating your account. If you opt out, disputes will be resolved in the state or federal courts located in Harris County, Texas.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">14. Class Action Waiver</h2>
             <p>
-              Questions about these terms? Email{" "}
+              YOU AND SONOPREP AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING. Unless both you and SonoPrep agree otherwise in writing, the arbitrator may not consolidate more than one person&apos;s claims and may not otherwise preside over any form of a representative or class proceeding.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">15. Governing Law</h2>
+            <p>
+              These Terms shall be governed by and construed in accordance with the laws of the State of Texas, United States, without regard to its conflict-of-law principles. To the extent that any lawsuit or court proceeding is permitted under these Terms, you and SonoPrep agree to submit to the exclusive personal jurisdiction of the state and federal courts located in Harris County, Texas.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">16. AI-Assisted Content Disclosure</h2>
+            <p>
+              SonoPrep may use artificial intelligence tools to assist in generating study explanations, flashcard rationales, and analytics summaries. All AI-generated content is reviewed and curated by licensed sonography professionals before publication. AI is not used to make automated decisions about your account, purchases, or exam scoring. Your exam answers are graded against a fixed answer key — not by AI.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">17. Changes to These Terms</h2>
+            <p>
+              We may update these Terms from time to time. When we make material changes, we will notify you by email or by posting a prominent notice on the Service. Continued use of the Service after changes are posted constitutes acceptance. We will update the &quot;Last updated&quot; date when changes are made.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">18. Severability</h2>
+            <p>
+              If any provision of these Terms is held to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that the remaining provisions will continue in full force and effect.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="display-serif text-xl font-semibold text-white mb-3">19. Contact</h2>
+            <p>
+              Questions about these Terms? Email{" "}
               <a href="mailto:support@sonoprep.com" className="text-[#c85b3a] hover:underline">support@sonoprep.com</a>.
             </p>
           </section>

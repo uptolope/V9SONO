@@ -24,6 +24,9 @@ export const authOptions: NextAuthOptions = {
         });
         if (!user || !user.password) return null;
 
+        // Reject soft-deleted users
+        if (user.deletedAt) return null;
+
         // Account lockout check
         if (user.lockedUntil && user.lockedUntil > new Date()) {
           return null; // Still locked
