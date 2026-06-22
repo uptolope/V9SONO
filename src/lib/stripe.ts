@@ -36,6 +36,22 @@ export const PRODUCT_PRICES = {
     priceId: process.env.STRIPE_PRICE_PREMIUM_BUNDLE ?? "",
     amount: 9900,
   },
+  // Question bank products
+  PHYSICS_QB: {
+    name: "Ultrasound Physics Question Bank",
+    priceId: process.env.STRIPE_PRICE_PHYSICS_QB ?? "",
+    amount: 4900,
+  },
+  ABDOMEN_QB: {
+    name: "Abdominal Ultrasound Question Bank",
+    priceId: process.env.STRIPE_PRICE_ABDOMEN_QB ?? "",
+    amount: 5900,
+  },
+  VASCULAR_QB: {
+    name: "Vascular Ultrasound Question Bank",
+    priceId: process.env.STRIPE_PRICE_VASCULAR_QB ?? "",
+    amount: 5900,
+  },
 } as const;
 
 export type ProductKey = keyof typeof PRODUCT_PRICES;

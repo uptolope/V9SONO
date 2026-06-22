@@ -1,164 +1,84 @@
 import { NextResponse, NextRequest } from "next/server";
+import { EXAM_QUESTIONS } from "@/lib/content/exam-data";
 
 // ═══════════════════════════════════════════════════════════════════
-// Questions API — serves practice questions by product slug
-// LICENSED CONTENT — READ ONLY — DO NOT MODIFY QUESTION CONTENT
-// TODO: Move to DB once Prisma is wired for question banks
+// Questions API — serves practice preview questions by product slug
+// Pulls from licensed content (exam-data.ts) — maps ARDMS domains
+// to product slugs. Client-safe: only sends choices + answerIndex
+// after the user submits (same data shape used by practice page).
 // ═══════════════════════════════════════════════════════════════════
 
-type Question = {
+type ClientQuestion = {
   id: string;
   question: string;
   choices: string[];
   answerIndex: number;
   explanation: string;
+  domain: string;
 };
 
-const questionsBySlug: Record<string, Question[]> = {
-  "ultrasound-physics": [
-    {
-      id: "phys-1",
-      question: "A patient with gallstones shows posterior acoustic shadowing. What is the primary cause of this artifact?",
-      choices: [
-        "Reflection at tissue interfaces",
-        "Strong attenuation by the stones",
-        "Refraction at curved surfaces",
-        "Mirror imaging artifact",
-      ],
-      answerIndex: 1,
-      explanation: "Gallstones cause strong attenuation (both absorption and reflection), resulting in posterior acoustic shadowing — a clean shadow directly behind the calcified structure.",
-    },
-    {
-      id: "phys-2",
-      question: "When using spectral Doppler, what happens to the frequency shift when the angle of incidence increases from 0° to 60°?",
-      choices: [
-        "Frequency shift doubles",
-        "Frequency shift decreases",
-        "Frequency shift increases",
-        "No change in frequency shift",
-      ],
-      answerIndex: 1,
-      explanation: "The Doppler equation includes cosθ. As the angle increases from 0° to 60°, cosθ decreases from 1.0 to 0.5, causing the measured frequency shift to decrease by half.",
-    },
-    {
-      id: "phys-3",
-      question: "Which type of resolution is determined primarily by the transducer frequency?",
-      choices: [
-        "Lateral resolution",
-        "Axial resolution",
-        "Temporal resolution",
-        "Contrast resolution",
-      ],
-      answerIndex: 1,
-      explanation: "Axial resolution is determined by spatial pulse length (SPL), which is inversely related to transducer frequency. Higher frequency → shorter SPL → better axial resolution.",
-    },
-    {
-      id: "phys-4",
-      question: "What happens to beam penetration when transducer frequency is increased?",
-      choices: [
-        "Penetration increases",
-        "Penetration decreases",
-        "Penetration stays the same",
-        "Penetration doubles",
-      ],
-      answerIndex: 1,
-      explanation: "Higher frequency ultrasound experiences greater attenuation in tissue, resulting in less penetration depth. This is the fundamental frequency–penetration tradeoff.",
-    },
-    {
-      id: "phys-5",
-      question: "What are the two main biological effects of ultrasound?",
-      choices: [
-        "Thermal and cavitational",
-        "Electrical and magnetic",
-        "Ionizing and non-ionizing",
-        "Mechanical and chemical",
-      ],
-      answerIndex: 0,
-      explanation: "The two main biological effects are thermal (tissue heating from absorption) and cavitational (microscopic bubble formation and collapse). Both are monitored via TI and MI indices.",
-    },
-    {
-      id: "phys-6",
-      question: "What percentage of ultrasound energy is reflected at a soft tissue-to-bone interface?",
-      choices: [
-        "Less than 1%",
-        "About 50%",
-        "Nearly 100%",
-        "About 25%",
-      ],
-      answerIndex: 2,
-      explanation: "Bone has a much higher acoustic impedance than soft tissue. The large impedance mismatch causes nearly total reflection of ultrasound energy at this interface.",
-    },
-    {
-      id: "phys-7",
-      question: "The Mechanical Index (MI) on an ultrasound machine displays 0.8. What does this value indicate?",
-      choices: [
-        "Maximum frame rate setting",
-        "Thermal dose delivered to tissue",
-        "Likelihood of cavitation effects",
-        "Current transducer frequency in MHz",
-      ],
-      answerIndex: 2,
-      explanation: "The Mechanical Index (MI) estimates the likelihood of cavitational (mechanical) bioeffects. Higher MI values indicate a greater potential for cavitation. FDA limit is 1.9 for diagnostic use.",
-    },
-    {
-      id: "phys-8",
-      question: "What is the typical attenuation coefficient of soft tissue in dB/cm/MHz?",
-      choices: [
-        "0.3 dB/cm/MHz",
-        "0.5 dB/cm/MHz",
-        "1.0 dB/cm/MHz",
-        "2.0 dB/cm/MHz",
-      ],
-      answerIndex: 1,
-      explanation: "The average attenuation coefficient of soft tissue is approximately 0.5 dB/cm/MHz. This is the foundational value used for calculating penetration depth and TGC settings.",
-    },
-    {
-      id: "phys-9",
-      question: "In color Doppler, aliasing occurs when blood velocity exceeds the Nyquist limit. How can you typically reduce aliasing?",
-      choices: [
-        "Increase the imaging depth",
-        "Decrease the scale (PRF)",
-        "Increase the baseline shift",
-        "Use a lower frequency transducer",
-      ],
-      answerIndex: 2,
-      explanation: "Shifting the baseline effectively doubles the displayable velocity range in one direction, reducing aliasing without changing PRF or frequency.",
-    },
-    {
-      id: "phys-10",
-      question: "What is acoustic impedance (Z) and how is it calculated?",
-      choices: [
-        "Z = density × wavelength",
-        "Z = density × propagation speed",
-        "Z = frequency × wavelength",
-        "Z = propagation speed / frequency",
-      ],
-      answerIndex: 1,
-      explanation: "Acoustic impedance (Z) equals tissue density (ρ) multiplied by the speed of sound in that tissue (c): Z = ρ × c. Impedance mismatches between tissues cause reflections.",
-    },
-  ],
-  // TODO: Add licensed abdomen + vascular question content
-  "abdominal-ultrasound": [],
-  "vascular-ultrasound": [],
+// Map ARDMS domains → product slug
+// Physics product gets all 5 SPI domains (this IS the SPI prep)
+// Abdomen + vascular will be wired once licensed content exists
+const DOMAIN_TO_PRODUCT: Record<string, string> = {
+  "Domain 1: Physics Principles": "ultrasound-physics",
+  "Domain 2: Transducer Technology": "ultrasound-physics",
+  "Domain 3: Principles of Imaging": "ultrasound-physics",
+  "Domain 4: Doppler & Hemodynamics": "ultrasound-physics",
+  "Domain 5: Bioeffects & Safety": "ultrasound-physics",
 };
+
+function getQuestionsForSlug(slug: string): ClientQuestion[] {
+  // Filter exam questions that belong to this product
+  const matching = EXAM_QUESTIONS.filter((q) => {
+    const mapped = DOMAIN_TO_PRODUCT[q.domain];
+    return mapped === slug;
+  });
+
+  // Convert to client-safe format
+  return matching.map((q) => ({
+    id: `eq-${q.id}`,
+    question: q.question,
+    choices: [...q.options],
+    answerIndex: q.correctAnswer,
+    explanation: q.explanation,
+    domain: q.domain,
+  }));
+}
+
+// Supported product slugs
+const VALID_SLUGS = [
+  "ultrasound-physics",
+  "abdominal-ultrasound",
+  "vascular-ultrasound",
+];
 
 export async function GET(req: NextRequest) {
   const slug = req.nextUrl.searchParams.get("slug");
 
-  if (!slug || !questionsBySlug[slug]) {
+  if (!slug || !VALID_SLUGS.includes(slug)) {
     return NextResponse.json(
       { error: "Unknown product slug" },
       { status: 400 }
     );
   }
 
-  const questions = questionsBySlug[slug];
+  const questions = getQuestionsForSlug(slug);
+
   if (questions.length === 0) {
+    // Product exists but content isn't loaded yet
     return NextResponse.json(
-      { error: "Questions not yet available for this product" },
-      { status: 404 }
+      {
+        error: "coming_soon",
+        message: "Questions for this product are being finalized. Check back soon.",
+        slug,
+      },
+      { status: 200 }
     );
   }
 
-  return NextResponse.json(questions);
+  // Shuffle questions for variety on each load
+  const shuffled = [...questions].sort(() => Math.random() - 0.5);
+
+  return NextResponse.json(shuffled);
 }

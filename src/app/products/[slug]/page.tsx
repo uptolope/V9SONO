@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { questionBanks, getProductBySlug } from "@/lib/products";
+import { ProductCheckoutButton } from "./checkout-button";
 
 /* ── Static generation for all product pages ───────────────────── */
 export function generateStaticParams() {
@@ -94,10 +95,8 @@ export default function ProductDetailPage({
                 </p>
               </div>
 
-              {/* TODO: Wire to Stripe checkout per product */}
-              <button className="btn-industrial w-full py-4 text-[11px] mb-3">
-                GET ACCESS — ${product.price} →
-              </button>
+              {/* Stripe checkout button */}
+              <ProductCheckoutButton slug={product.slug} price={product.price} />
 
               <p className="meta text-[9px] text-[#3a3530] text-center">
                 One payment · instant access · no subscription

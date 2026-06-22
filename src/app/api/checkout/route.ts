@@ -7,13 +7,18 @@ import { isStaleSession } from "@/lib/session-guard";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // ── Product key → Stripe price ID mapping ────────────────────────
-// Keys match the PRODUCTS array in product-card.tsx
+// Keys match the PRODUCTS array in product-card.tsx + question bank slugs
 const PRODUCT_PRICE_MAP: Record<string, string | undefined> = {
+  // Original 5-product store
   SPI_FLASHCARDS:  process.env.STRIPE_PRICE_FLASHCARDS,
   EXAM_SIMULATOR:  process.env.STRIPE_PRICE_EXAM_SIMULATOR,
   PHYSICS_PEARLS:  process.env.STRIPE_PRICE_PHYSICS_PEARLS,
   STUDY_NOTES:     process.env.STRIPE_PRICE_STUDY_NOTES,
   PREMIUM_BUNDLE:  process.env.STRIPE_PRICE_PREMIUM_BUNDLE,
+  // Question bank products
+  PHYSICS_QB:      process.env.STRIPE_PRICE_PHYSICS_QB,
+  ABDOMEN_QB:      process.env.STRIPE_PRICE_ABDOMEN_QB,
+  VASCULAR_QB:     process.env.STRIPE_PRICE_VASCULAR_QB,
 };
 
 export async function POST(req: NextRequest) {

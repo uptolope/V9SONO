@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { saveProgress } from "@/hooks/useProgress";
 
@@ -10,6 +11,7 @@ type Question = {
   choices: string[];
   answerIndex: number;
   explanation?: string;
+  domain?: string;
 };
 
 const FREE_LIMIT = 5;
@@ -19,25 +21,86 @@ export default function PracticePage({
 }: {
   params: { slug: string };
 }) {
+  const { data: session } = useSession();
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [comingSoon, setComingSoon] = useState(false);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [purchasedProducts, setPurchasedProducts] = useState<string[]>([]);
 
-  // TODO: Replace with real auth check via Clerk
-  const user = {
-    purchasedProducts: [] as string[],
-  };
-
+  // Fetch questions
   useEffect(() => {
     fetch(`/api/questions?slug=${params.slug}`)
       .then((res) => res.json())
-      .then(setQuestions)
+      .then((data) => {
+        if (data.error === "coming_soon") {
+          setComingSoon(true);
+        } else if (Array.isArray(data)) {
+          setQuestions(data);
+        }
+      })
       .catch(() => setQuestions([]));
   }, [params.slug]);
 
-  if (!questions.length) {
+  // Fetch user purchases (if logged in)
+  useEffect(() => {
+    if (!session?.user) return;
+    fetch("/api/user/purchases")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.purchases) {
+          // Map productKey to question bank slug
+          const slugMap: Record<string, string> = {
+            PHYSICS_QB: "ultrasound-physics",
+            ABDOMEN_QB: "abdominal-ultrasound",
+            VASCULAR_QB: "vascular-ultrasound",
+            // Also check if they bought the old products that grant access
+            PREMIUM_BUNDLE: "ultrasound-physics",
+            EXAM_SIMULATOR: "ultrasound-physics",
+          };
+          const owned = data.purchases
+            .map((p: { productKey: string }) => slugMap[p.productKey])
+            .filter(Boolean);
+          setPurchasedProducts(owned);
+        }
+      })
+      .catch(() => {});
+  }, [session]);
+
+  /* ── Coming soon state ─────────────────────────────────────────── */
+  if (comingSoon) {
+    const title = params.slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+    return (
+      <div className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-md text-center">
+          <div className="meta text-[9px] text-[#c85b3a] mb-4">
+            COMING SOON
+          </div>
+          <h2 className="display-serif text-2xl font-semibold text-white mb-3">
+            {title} Questions
+          </h2>
+          <p className="body-readable text-[#8a8279] text-sm mb-8">
+            We&apos;re finalizing the licensed question bank for this product.
+            Check back soon or start with our physics questions.
+          </p>
+          <Link
+            href="/practice/ultrasound-physics"
+            className="btn-industrial px-8 py-4 text-[11px]"
+          >
+            TRY PHYSICS QUESTIONS →
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  /* ── Loading state ─────────────────────────────────────────────── */
+  if (!questions.length && !comingSoon) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse text-[#4a453f] text-sm">
@@ -47,7 +110,7 @@ export default function PracticePage({
     );
   }
 
-  const hasAccess = user.purchasedProducts.includes(params.slug);
+  const hasAccess = purchasedProducts.includes(params.slug);
   const isLocked = !hasAccess && index >= FREE_LIMIT;
   const current = questions[index];
   const isLastQuestion = index >= questions.length - 1;
@@ -72,7 +135,10 @@ export default function PracticePage({
 
   /* ── Paywall gate ──────────────────────────────────────────────── */
   if (isLocked) {
-    const title = params.slug.replace(/-/g, " ");
+    const title = params.slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-md text-center">
@@ -136,6 +202,13 @@ export default function PracticePage({
             />
           </div>
         </div>
+
+        {/* Domain tag */}
+        {current.domain && (
+          <span className="meta text-[8px] text-[#c85b3a]/60 mb-3 block">
+            {current.domain}
+          </span>
+        )}
 
         {/* Question */}
         <h2 className="display-serif text-lg font-medium text-white mb-8 leading-relaxed">
