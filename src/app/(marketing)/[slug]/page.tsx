@@ -50,7 +50,7 @@ export default function MarketingPage({
         {/* Topic header */}
         <div className="mb-10">
           <span className="meta text-[9px] text-[#c85b3a] mb-3 block">
-            LICENSED QUESTION BANK
+            {product.comingSoon ? "COMING SOON" : "LICENSED QUESTION BANK"}
           </span>
           <h1 className="display-serif text-3xl sm:text-4xl font-semibold text-white mb-4">
             {product.name}
@@ -90,18 +90,22 @@ export default function MarketingPage({
             href={`/products/${product.slug}`}
             className="btn-industrial px-6 py-4 text-[11px] text-center"
           >
-            VIEW FULL QUESTION BANK →
+            {product.comingSoon ? "JOIN WAITLIST →" : "VIEW FULL QUESTION BANK →"}
           </Link>
-          <Link
-            href={`/practice/${product.slug}`}
-            className="btn-industrial-outline px-6 py-4 text-[10px] text-center"
-          >
-            TRY FREE PREVIEW
-          </Link>
+          {!product.comingSoon && (
+            <Link
+              href={`/practice/${product.slug}`}
+              className="btn-industrial-outline px-6 py-4 text-[10px] text-center"
+            >
+              TRY FREE PREVIEW
+            </Link>
+          )}
         </div>
 
         <p className="meta text-[9px] text-[#3a3530]">
-          Licensed content · 14-day full refund · No subscription
+          {product.comingSoon
+            ? "Join the waitlist — we'll notify you at launch"
+            : "Licensed content · 14-day full refund · No subscription"}
         </p>
 
         {/* Cross-links */}

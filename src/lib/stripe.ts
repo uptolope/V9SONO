@@ -42,6 +42,7 @@ export const PRODUCT_PRICES = {
     priceId: process.env.STRIPE_PRICE_PHYSICS_QB ?? "",
     amount: 4900,
   },
+  // Coming soon — no live Stripe prices yet
   ABDOMEN_QB: {
     name: "Abdominal Ultrasound Question Bank",
     priceId: process.env.STRIPE_PRICE_ABDOMEN_QB ?? "",

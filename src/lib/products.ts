@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════
 // SonoPrep — Product-Based Question Banks
-// Topic-keyed products for SEO → product → preview → purchase funnel
+// Physics is live; Abdomen + Vascular are Coming Soon
 // ═══════════════════════════════════════════════════════════════════
 
 export interface QuestionBankProduct {
@@ -14,19 +14,20 @@ export interface QuestionBankProduct {
   features: string[];
   seoTitle: string;
   seoDescription: string;
+  comingSoon: boolean;
 }
 
 export const questionBanks: QuestionBankProduct[] = [
   {
     slug: "ultrasound-physics",
-    name: "Ultrasound Physics Question Bank",
+    name: "SPI Physics Question Bank",
     shortName: "Physics",
     price: 49,
     description:
       "High-yield physics questions designed for ARDMS SPI exam success.",
     longDescription:
       "Covers all core physics domains tested on the SPI — acoustic properties, pulse-echo imaging, Doppler principles, artifacts, instrumentation, and bioeffects. Every question maps to the official ARDMS content outline weightings.",
-    questionCount: "170+",
+    questionCount: "278",
     features: [
       "Questions mapped to ARDMS content outline",
       "Detailed clinical rationales for every answer",
@@ -37,6 +38,7 @@ export const questionBanks: QuestionBankProduct[] = [
     seoTitle: "Ultrasound Physics Practice Questions — ARDMS SPI Prep",
     seoDescription:
       "Practice high-yield ultrasound physics questions mapped to the ARDMS SPI exam content outline. Start free, unlock the full bank.",
+    comingSoon: false,
   },
   {
     slug: "abdominal-ultrasound",
@@ -58,6 +60,7 @@ export const questionBanks: QuestionBankProduct[] = [
     seoTitle: "Abdominal Ultrasound Practice Questions — ARDMS Exam Prep",
     seoDescription:
       "Practice abdominal ultrasound questions with clinical cases and diagnostic reasoning. Prep for ARDMS specialty exams.",
+    comingSoon: true,
   },
   {
     slug: "vascular-ultrasound",
@@ -79,6 +82,7 @@ export const questionBanks: QuestionBankProduct[] = [
     seoTitle: "Vascular Ultrasound Practice Questions — RVT Exam Prep",
     seoDescription:
       "Practice vascular ultrasound questions focused on Doppler interpretation and hemodynamics. Prep for the RVT exam.",
+    comingSoon: true,
   },
 ];
 

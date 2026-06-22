@@ -40,7 +40,7 @@ const PRODUCTS: Product[] = [
     description: "Everything you need to pass — in one system. The flashcard deck, the full domain-weighted simulator, Physics Pearls, and the 159-page study notes. All 6 ARDMS SPI domains. No piecing resources together.",
     features: [
       "200+ flashcards with SM-2 spaced repetition",
-      "3 exam attempts · 110 Qs from 170+ bank",
+      "3 exam attempts · 110 Qs from a 278-question bank",
       "50 high-yield Physics Pearls",
       "159-page study notes (10 chapters)",
       "All 6 ARDMS SPI domains covered",
@@ -99,10 +99,10 @@ const PRODUCTS: Product[] = [
     name: "Exam Simulator",
     price: "$49.99",
     tag: "TEST YOURSELF",
-    description: "3 exam attempts over 90 days. Each draws 110 random questions from a 170+ bank — ARDMS domain-weighted, 2-hour timer, with detailed rationales. Per-domain analytics show exactly where you're losing points.",
+    description: "3 exam attempts over 90 days. Each draws 110 random questions from a 278-question bank — ARDMS domain-weighted, 2-hour timer, with detailed rationales. Per-domain analytics show exactly where you're losing points.",
     features: [
       "3 attempts · 90-day access",
-      "170+ bank · 110 questions per exam",
+      "278-question bank · 110 questions per exam",
       "2-hour timer (real SPI format)",
       "Randomized & domain-weighted",
       "Detailed clinical rationales",
@@ -172,7 +172,7 @@ export default function ProductsPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { not: "Not a textbook", is: "Structured SPI prep based on ARDMS exam weighting" },
-                { not: "Not random practice tests", is: "110 questions drawn from 170+ bank, mapped to 6 domains at real exam ratios" },
+                { not: "Not random practice tests", is: "110 questions drawn from a 278-question bank, mapped to 6 domains at real exam ratios" },
                 { not: "Not a subscription", is: "One payment. 90-day access. 14-day full refund policy." },
               ].map(({ not, is }) => (
                 <div key={not}>

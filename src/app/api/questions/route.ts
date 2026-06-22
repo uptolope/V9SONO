@@ -1,11 +1,11 @@
 import { NextResponse, NextRequest } from "next/server";
-import { EXAM_QUESTIONS } from "@/lib/content/exam-data";
+import { EXAM_QUESTIONS as CONTENT_QUESTIONS } from "@/lib/content/exam-data";
+import { EXAM_QUESTIONS as FULL_QUESTIONS } from "@/lib/exam/full-questions";
 
 // ═══════════════════════════════════════════════════════════════════
-// Questions API — serves practice preview questions by product slug
-// Pulls from licensed content (exam-data.ts) — maps ARDMS domains
-// to product slugs. Client-safe: only sends choices + answerIndex
-// after the user submits (same data shape used by practice page).
+// Questions API — serves SPI practice preview questions
+// Combines both question sources (281 total) for the physics product.
+// Abdomen + vascular return coming_soon until content is added.
 // ═══════════════════════════════════════════════════════════════════
 
 type ClientQuestion = {
@@ -17,67 +17,82 @@ type ClientQuestion = {
   domain: string;
 };
 
-// Map ARDMS domains → product slug
-// Physics product gets all 5 SPI domains (this IS the SPI prep)
-// Abdomen + vascular will be wired once licensed content exists
-const DOMAIN_TO_PRODUCT: Record<string, string> = {
-  "Domain 1: Physics Principles": "ultrasound-physics",
-  "Domain 2: Transducer Technology": "ultrasound-physics",
-  "Domain 3: Principles of Imaging": "ultrasound-physics",
-  "Domain 4: Doppler & Hemodynamics": "ultrasound-physics",
-  "Domain 5: Bioeffects & Safety": "ultrasound-physics",
-};
-
-function getQuestionsForSlug(slug: string): ClientQuestion[] {
-  // Filter exam questions that belong to this product
-  const matching = EXAM_QUESTIONS.filter((q) => {
-    const mapped = DOMAIN_TO_PRODUCT[q.domain];
-    return mapped === slug;
-  });
-
-  // Convert to client-safe format
-  return matching.map((q) => ({
-    id: `eq-${q.id}`,
+function getAllPhysicsQuestions(): ClientQuestion[] {
+  // Source 1: content/exam-data.ts (111 questions, 5 ARDMS domains)
+  const fromContent: ClientQuestion[] = CONTENT_QUESTIONS.map((q) => ({
+    id: `ce-${q.id}`,
     question: q.question,
     choices: [...q.options],
     answerIndex: q.correctAnswer,
     explanation: q.explanation,
     domain: q.domain,
   }));
+
+  // Source 2: exam/full-questions.ts (170 questions)
+  const fromFull: ClientQuestion[] = FULL_QUESTIONS.map((q) => ({
+    id: `fq-${q.id}`,
+    question: q.question,
+    choices: [...q.options],
+    answerIndex: q.correctAnswer,
+    explanation: q.explanation || "",
+    domain: q.domain,
+  }));
+
+  // Deduplicate by first 50 chars of question text (case-insensitive)
+  const seen = new Set<string>();
+  const combined: ClientQuestion[] = [];
+
+  // Prefer content questions (they have better domain labels)
+  for (const q of fromContent) {
+    const key = q.question.trim().slice(0, 50).toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      combined.push(q);
+    }
+  }
+  for (const q of fromFull) {
+    const key = q.question.trim().slice(0, 50).toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      combined.push(q);
+    }
+  }
+
+  return combined;
 }
 
-// Supported product slugs
-const VALID_SLUGS = [
-  "ultrasound-physics",
-  "abdominal-ultrasound",
-  "vascular-ultrasound",
-];
+// Supported slugs
+const COMING_SOON_SLUGS = ["abdominal-ultrasound", "vascular-ultrasound"];
 
 export async function GET(req: NextRequest) {
   const slug = req.nextUrl.searchParams.get("slug");
 
-  if (!slug || !VALID_SLUGS.includes(slug)) {
+  if (!slug) {
+    return NextResponse.json(
+      { error: "Missing slug parameter" },
+      { status: 400 }
+    );
+  }
+
+  // Coming soon products
+  if (COMING_SOON_SLUGS.includes(slug)) {
+    return NextResponse.json({
+      error: "coming_soon",
+      message: "This question bank is coming soon. Join the waitlist to be notified.",
+      slug,
+    });
+  }
+
+  if (slug !== "ultrasound-physics") {
     return NextResponse.json(
       { error: "Unknown product slug" },
       { status: 400 }
     );
   }
 
-  const questions = getQuestionsForSlug(slug);
+  const questions = getAllPhysicsQuestions();
 
-  if (questions.length === 0) {
-    // Product exists but content isn't loaded yet
-    return NextResponse.json(
-      {
-        error: "coming_soon",
-        message: "Questions for this product are being finalized. Check back soon.",
-        slug,
-      },
-      { status: 200 }
-    );
-  }
-
-  // Shuffle questions for variety on each load
+  // Shuffle for variety on each load
   const shuffled = [...questions].sort(() => Math.random() - 0.5);
 
   return NextResponse.json(shuffled);
