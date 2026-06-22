@@ -41,7 +41,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       lastModified: new Date(),
     },
+    {
+      url: `${BASE}/about`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE}/faq`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE}/privacy`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+      lastModified: new Date(),
+    },
+    {
+      url: `${BASE}/terms`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+      lastModified: new Date(),
+    },
   ];
+
+  // Specialty credential landing pages
+  const credentialRoutes: MetadataRoute.Sitemap = [
+    "rdcs", "rdms", "rmsks", "rvt",
+  ].map((slug) => ({
+    url: `${BASE}/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+    lastModified: new Date(),
+  }));
 
   // SEO marketing pages + product detail pages + practice pages
   const productRoutes: MetadataRoute.Sitemap = questionBanks.flatMap((p) => [
@@ -72,5 +106,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...productRoutes, ...blogRoutes];
+  return [
+    ...staticRoutes,
+    ...credentialRoutes,
+    ...productRoutes,
+    ...blogRoutes,
+  ];
 }

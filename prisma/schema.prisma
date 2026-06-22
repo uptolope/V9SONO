@@ -1,0 +1,259 @@
+// ═══════════════════════════════════════════════════════════════════
+// SonoPrep — Prisma Schema
+// PostgreSQL database for auth, purchases, exam progress, and SRS
+// ═══════════════════════════════════════════════════════════════════
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── NextAuth Models ──────────────────────────────────────────────
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ── User ─────────────────────────────────────────────────────────
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?   // bcrypt hash — null for OAuth users
+  role          Role      @default(STUDENT)
+
+  // SonoPrep-specific
+  examDate      DateTime? // Target SPI exam date
+  institution   String?   // School or hospital
+
+  // Stripe
+  stripeCustomerId String? @unique
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Security
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+  lastLoginAt         DateTime?
+
+  // Concurrent session detection — only one active session at a time
+  activeSessionId     String?
+
+  // Relations
+  accounts           Account[]
+  sessions           Session[]
+  purchases          Purchase[]
+  examSessions       ExamSession[]
+  flashcardProgress  FlashcardProgress[]
+  studyNoteProgress  StudyNoteProgress[]
+
+  // Soft delete
+  deletedAt DateTime?
+
+  @@index([email])
+  @@index([stripeCustomerId])
+}
+
+// ── Products & Purchases ─────────────────────────────────────────
+
+enum ProductType {
+  FLASHCARDS
+  PHYSICS_PEARLS
+  EXAM_SIMULATOR
+  STUDY_NOTES
+  PREMIUM_BUNDLE
+}
+
+enum PurchaseStatus {
+  COMPLETED
+  REFUNDED
+  DISPUTED
+  PENDING
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  type        ProductType @unique
+  name        String
+  description String
+  priceInCents Int
+  stripePriceId String?   @unique
+  active      Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  purchases Purchase[]
+}
+
+model Purchase {
+  status           String   @default("COMPLETED")
+  accessExpiresAt  DateTime
+  productId        String?
+  product          Product? @relation(fields: [productId], references: [id])
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productName      String
+  productKey       String
+  priceId          String
+  stripeSessionId  String   @unique
+  amount           Int      // in cents
+  purchasedAt      DateTime @default(now())
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ── Exam Simulator ───────────────────────────────────────────────
+
+model ExamSession {
+  id             String   @id @default(cuid())
+  userId         String
+  examType       String   @default("SPI")
+  totalQuestions  Int
+  correctAnswers Int      @default(0)
+  score          Float?   // Percentage
+  timeSpentSecs  Int      @default(0)
+  completed      Boolean  @default(false)
+  categoryBreakdown Json? // Per-domain score breakdown
+  startedAt      DateTime @default(now())
+  completedAt    DateTime?
+
+  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers ExamAnswer[]
+
+  @@index([userId])
+  @@index([userId, examType])
+  @@index([userId, completed])
+}
+
+model ExamAnswer {
+  id            String  @id @default(cuid())
+  sessionId     String
+  questionId    Int
+  selectedIndex Int
+  isCorrect     Boolean
+  timeSpentMs   Int     @default(0)
+
+  session ExamSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+}
+
+// ── Flashcards (Spaced Repetition) ───────────────────────────────
+
+model FlashcardProgress {
+  id           String   @id @default(cuid())
+  userId       String
+  cardId       Int
+  box          Int      @default(1) // Leitner box 1–5
+  easeFactor   Float    @default(2.5) // SM-2 ease factor
+  interval     Int      @default(1) // Days until next review
+  repetitions  Int      @default(0) // SM-2 repetition count (resets on fail)
+  nextReview   DateTime @default(now())
+  lastReviewed DateTime @default(now())
+  isMastered   Boolean  @default(false)
+  reviewCount  Int      @default(0)
+  correctCount Int      @default(0)
+  incorrectCount Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, cardId])
+  @@index([userId])
+  @@index([userId, nextReview])
+  @@index([userId, isMastered])
+}
+
+// ── Study Notes Progress ─────────────────────────────────────────
+
+model StudyNoteProgress {
+  id        String @id @default(cuid())
+  userId    String
+  chapterId Int
+  progress  Float  @default(0) // 0–100 percentage
+  bookmarks Json?  // Array of page numbers
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, chapterId])
+  @@index([userId])
+}
+
+// ── Demo Lead Capture ────────────────────────────────────────────
+
+model DemoLead {
+  id        String   @id @default(cuid())
+  email     String
+  source    String   @default("demo") // "demo_exam", "demo_flashcards"
+  score     Int?     // Exam score percentage (if from exam demo)
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+// ── Audit Log ────────────────────────────────────────────────────
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String   // "login", "purchase", "exam_start", etc.
+  details   Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+}

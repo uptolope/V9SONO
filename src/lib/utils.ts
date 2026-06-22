@@ -1,17 +1,17 @@
-// ═══════════════════════════════════════════════════════════════════
-// Utility functions
-// ═══════════════════════════════════════════════════════════════════
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-/** Merge class names — simple clsx-style utility */
-export function cn(...classes: (string | boolean | undefined | null)[]): string {
-  return classes.filter(Boolean).join(" ");
+/** Merge Tailwind classes safely (handles conflicts). */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 
-/** Format a number as USD currency */
-export function formatCurrency(amount: number): string {
+/** Format currency in USD. */
+export function formatCurrency(cents: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: amount % 1 === 0 ? 0 : 2,
-  }).format(amount);
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  }).format(cents / 100);
 }

@@ -1,0 +1,81 @@
+// ═══════════════════════════════════════════════════════════════════
+// SonoPrep — Concurrent Session Guard (SERVER-SIDE ONLY)
+// Ensures only one device can access paid content at a time.
+// Last login wins: if user logs in elsewhere, the first device is blocked.
+// ═══════════════════════════════════════════════════════════════════
+
+import { prisma } from "@/lib/prisma";
+
+export interface SessionCheckResult {
+  valid: boolean;
+  reason?: string;
+}
+
+/**
+ * Verify that the session's ID matches the user's active session in the DB.
+ * If they don't match, another device logged in after this one.
+ *
+ * Call this on every protected content API route.
+ */
+export async function checkSessionValid(
+  userId: string,
+  sessionId: string | undefined
+): Promise<SessionCheckResult> {
+  if (!userId) {
+    return { valid: false, reason: "Missing user ID" };
+  }
+
+  if (!sessionId) {
+    // Legacy sessions without sessionId — allow (will get new one on next login)
+    return { valid: true };
+  }
+
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { activeSessionId: true },
+    });
+
+    if (!user) {
+      return { valid: false, reason: "User not found" };
+    }
+
+    // If no activeSessionId in DB (e.g., before migration), allow
+    if (!user.activeSessionId) {
+      return { valid: true };
+    }
+
+    if (user.activeSessionId !== sessionId) {
+      return {
+        valid: false,
+        reason: "Your account is active on another device. Please sign in again to use it here.",
+      };
+    }
+
+    return { valid: true };
+  } catch {
+    // Fail open — don't block users on DB errors
+    return { valid: true };
+  }
+}
+
+/**
+ * Convenience wrapper for API routes using getServerSession().
+ * Returns true if the session has been invalidated by a newer login.
+ *
+ * Usage:
+ *   const session = await getServerSession(authOptions);
+ *   if (await isStaleSession(session)) {
+ *     return NextResponse.json({ error: "Session expired" }, { status: 401 });
+ *   }
+ */
+export async function isStaleSession(
+  session: { user?: { id?: string; sessionId?: string } } | null
+): Promise<boolean> {
+  if (!session?.user?.id) return false;
+  const result = await checkSessionValid(
+    session.user.id,
+    session.user.sessionId
+  );
+  return !result.valid;
+}
