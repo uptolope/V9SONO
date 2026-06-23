@@ -8,7 +8,7 @@ read: "15 min read"
 
 # Ultrasound Artifacts: The 7 Most Common SPI Exam Questions
 
-*April 3, 2026 · 15 min read*
+_April 3, 2026 · 15 min read_
 
 Artifacts are a favorite SPI exam topic because they test whether you understand the underlying physics, not just whether you can recognize a pattern on a screen. Every artifact below has a clear physical cause — and the exam usually asks about the cause, not just the name. Here are the seven that come up most often.
 

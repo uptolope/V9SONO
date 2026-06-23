@@ -1,8 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useRef, useCallback, lazy, Suspense } from "react";
-import { motion, useInView, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import {
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  lazy,
+  Suspense,
+} from "react";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import { trackSignup } from "@/lib/analytics";
 import { Header } from "@/components/layout/header";
 import { ExamSimulator } from "@/components/app/exam-simulator";
@@ -111,10 +125,12 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          The SPI exam blocks every ARDMS credential — RDMS, RDCS, RVT, RMSKS. Most students
-          fail not from lack of effort, but because they studied the wrong material at the wrong
-          weight. SonoPrep gives you a domain-weighted 110-question simulator, 200+ flashcards,
-          and 50 Physics Pearls — all written by an RDMS instructor to the exact ARDMS blueprint.
+          The SPI exam blocks every ARDMS credential — RDMS, RDCS, RVT, RMSKS.
+          Most students fail not from lack of effort, but because they studied
+          the wrong material at the wrong weight. SonoPrep gives you a
+          domain-weighted 110-question simulator, 200+ flashcards, and 50
+          Physics Pearls — all written by an RDMS instructor to the exact ARDMS
+          blueprint.
         </motion.p>
 
         {/* CTA pair */}
@@ -165,12 +181,27 @@ function Hero() {
 }
 
 /** Single counter cell — hooks called at component level, not inside .map() */
-function StatCell({ target, suffix, prefix, label }: { target: number; suffix: string; prefix?: string; label: string }) {
+function StatCell({
+  target,
+  suffix,
+  prefix,
+  label,
+}: {
+  target: number;
+  suffix: string;
+  prefix?: string;
+  label: string;
+}) {
   const { count, ref } = useCounter(target, 2000);
   return (
     <div className="text-center py-4">
-      <div ref={ref as React.RefObject<HTMLDivElement>} className="t-display text-4xl sm:text-5xl">
-        {prefix ?? ""}{count}{suffix}
+      <div
+        ref={ref as React.RefObject<HTMLDivElement>}
+        className="t-display text-4xl sm:text-5xl"
+      >
+        {prefix ?? ""}
+        {count}
+        {suffix}
       </div>
       <div className="t-caption text-[10px] mt-3 text-[#4a453f]">{label}</div>
     </div>
@@ -187,8 +218,8 @@ function HeroStats() {
     >
       <StatCell target={200} suffix="+" label="Flashcards" />
       <StatCell target={170} suffix="+" label="Question Bank" />
-      <StatCell target={50}  suffix=""  label="Physics Pearls" />
-      <StatCell target={6}   suffix=""  label="SPI Domains Covered" />
+      <StatCell target={50} suffix="" label="Physics Pearls" />
+      <StatCell target={6} suffix="" label="SPI Domains Covered" />
     </motion.div>
   );
 }
@@ -230,8 +261,9 @@ function TheFork() {
               Study everything. Hope it's enough.
             </h3>
             <p className="t-body text-sm text-[#5a5349]">
-              Read the textbook cover to cover. Do random practice questions. Walk in and
-              find out which domains the exam actually weighted. If that doesn't work — pay the retake fee.
+              Read the textbook cover to cover. Do random practice questions.
+              Walk in and find out which domains the exam actually weighted. If
+              that doesn't work — pay the retake fee.
             </p>
           </motion.div>
 
@@ -244,16 +276,18 @@ function TheFork() {
             transition={{ duration: 0.8, delay: 0.35 }}
           >
             <div className="absolute top-0 left-0 bg-gradient-to-r from-[#c85b3a] to-[#e06840] px-5 py-2 rounded-br-2xl rounded-tl-[15px]">
-              <span className="t-caption text-white text-[10px]">WHAT SONOPREP DOES</span>
+              <span className="t-caption text-white text-[10px]">
+                WHAT SONOPREP DOES
+              </span>
             </div>
             <span className="t-caption text-[#c85b3a] block mt-8">PATH B</span>
             <h3 className="t-subhead text-xl mt-4 mb-5">
               Focus on exactly what ARDMS tests.
             </h3>
             <p className="t-body text-sm">
-              Each exam attempt pulls 110 questions from a 170+ question bank — weighted to
-              the real ARDMS domain distribution. You see exactly where you're losing points
-              while there's still time to fix them.
+              Each exam attempt pulls 110 questions from a 170+ question bank —
+              weighted to the real ARDMS domain distribution. You see exactly
+              where you're losing points while there's still time to fix them.
             </p>
           </motion.div>
         </div>
@@ -267,7 +301,9 @@ function TheFork() {
           <Link href="#demo" className="premium-cta px-10 py-5 text-sm">
             START WITH THE FREE DEMO →
           </Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">No account · 2 minutes · instant domain feedback</p>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">
+            No account · 2 minutes · instant domain feedback
+          </p>
         </motion.div>
       </div>
     </section>
@@ -287,19 +323,22 @@ function WhoIsThisFor() {
       tag: "EXAM IN 2–4 WEEKS",
       head: "Most students don't know what they're weak on until they lose points for it.",
       body: "Retaking the SPI delays every specialty credential. Our domain-weighted simulator shows your weak spots while there's still time to fix them.",
-      cta: "Get the Bundle →", href: "/products",
+      cta: "Get the Bundle →",
+      href: "/products",
     },
     {
       tag: "IN A SONO PROGRAM",
       head: "Your program covers procedures. SonoPrep covers the physics.",
       body: "Most clinical programs don't spend enough time on physics — which is exactly what the SPI tests. 50 Physics Pearls and 200+ flashcards fill that gap.",
-      cta: "Try the Demo →", href: "#demo",
+      cta: "Try the Demo →",
+      href: "#demo",
     },
     {
       tag: "ALREADY FAILED ONCE",
       head: "The problem wasn't effort. It was coverage.",
       body: "The SPI tests 6 domains at specific weightings. If you didn't know which questions came from which domain, you couldn't prioritize. Our analytics fix that.",
-      cta: "See the Simulator →", href: "/products",
+      cta: "See the Simulator →",
+      href: "/products",
     },
   ];
 
@@ -330,7 +369,10 @@ function WhoIsThisFor() {
               <span className="t-caption text-[10px] mb-6">{tag}</span>
               <h3 className="t-subhead text-base mb-5 leading-snug">{head}</h3>
               <p className="t-body text-sm flex-grow mb-8">{body}</p>
-              <Link href={href} className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold text-[#c85b3a] hover:text-[#e06840] transition-colors border border-[#c85b3a]/25 hover:border-[#c85b3a]/60 rounded-lg px-4 py-2.5 w-fit">
+              <Link
+                href={href}
+                className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold text-[#c85b3a] hover:text-[#e06840] transition-colors border border-[#c85b3a]/25 hover:border-[#c85b3a]/60 rounded-lg px-4 py-2.5 w-fit"
+              >
                 {cta}
               </Link>
             </motion.div>
@@ -349,9 +391,18 @@ function WhyMostFail() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const points = [
-    { head: "The SPI doesn't test evenly.", body: "Six domains. Different weightings. Most students prep like every topic matters equally. It doesn't." },
-    { head: "Blind spots don't surface until test day.", body: "You can feel prepared and still fail — because you never identified which specific domains you were actually weak in." },
-    { head: "Broad studying creates false confidence.", body: "Reading a textbook cover to cover feels thorough. But the SPI tests how questions are framed, not just what you know." },
+    {
+      head: "The SPI doesn't test evenly.",
+      body: "Six domains. Different weightings. Most students prep like every topic matters equally. It doesn't.",
+    },
+    {
+      head: "Blind spots don't surface until test day.",
+      body: "You can feel prepared and still fail — because you never identified which specific domains you were actually weak in.",
+    },
+    {
+      head: "Broad studying creates false confidence.",
+      body: "Reading a textbook cover to cover feels thorough. But the SPI tests how questions are framed, not just what you know.",
+    },
   ];
 
   return (
@@ -367,7 +418,9 @@ function WhyMostFail() {
           <span className="t-caption">WHY MOST STUDENTS FAIL</span>
           <h2 className="t-heading text-4xl sm:text-5xl mt-6 leading-tight">
             It's not that they didn't study.{" "}
-            <span className="text-gradient-accent">It's that they didn't know which domains would cost them.</span>
+            <span className="text-gradient-accent">
+              It's that they didn't know which domains would cost them.
+            </span>
           </h2>
         </motion.div>
 
@@ -380,7 +433,9 @@ function WhyMostFail() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.12 }}
             >
-              <span className="text-[#c85b3a] text-base font-semibold shrink-0 mt-0.5">→</span>
+              <span className="text-[#c85b3a] text-base font-semibold shrink-0 mt-0.5">
+                →
+              </span>
               <div>
                 <p className="t-subhead text-sm mb-2">{head}</p>
                 <p className="t-body text-sm text-[#7a7269]">{body}</p>
@@ -396,7 +451,8 @@ function WhyMostFail() {
           transition={{ delay: 0.7 }}
         >
           <p className="t-subhead text-lg text-[#B8B0A6] italic mb-10 max-w-md mx-auto">
-            The question isn't whether you studied enough. It's whether you know where you'd lose points today.
+            The question isn't whether you studied enough. It's whether you know
+            where you'd lose points today.
           </p>
           <Link href="#demo" className="premium-cta px-10 py-5 text-sm">
             FIND OUT WHERE YOU STAND — FREE →
@@ -437,7 +493,9 @@ function DemoSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: trimmed, source: "landing_page" }),
       });
-    } catch { /* silent */ }
+    } catch {
+      /* silent */
+    }
   };
 
   return (
@@ -452,11 +510,13 @@ function DemoSection() {
         >
           <span className="t-caption">TRY IT NOW</span>
           <h2 className="t-heading text-4xl sm:text-5xl mt-5">
-            Find out what you'd get wrong<br className="hidden sm:block" /> if you took the SPI today.
+            Find out what you'd get wrong
+            <br className="hidden sm:block" /> if you took the SPI today.
           </h2>
           <p className="t-body text-base mt-6 max-w-xl mx-auto">
-            This is the real simulator. The full version draws 110 questions from a 170+
-            question bank — domain-weighted with detailed rationales and per-domain analytics.
+            This is the real simulator. The full version draws 110 questions
+            from a 170+ question bank — domain-weighted with detailed rationales
+            and per-domain analytics.
           </p>
         </motion.div>
 
@@ -499,10 +559,11 @@ function DemoSection() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              {activeTab === "exam"
-                ? <ExamSimulator questions={DEMO_QUESTIONS.slice(0, 5)} />
-                : <FlashcardViewer cards={DEMO_FLASHCARDS} />
-              }
+              {activeTab === "exam" ? (
+                <ExamSimulator questions={DEMO_QUESTIONS.slice(0, 5)} />
+              ) : (
+                <FlashcardViewer cards={DEMO_FLASHCARDS} />
+              )}
             </motion.div>
           </AnimatePresence>
         </motion.div>
@@ -514,17 +575,29 @@ function DemoSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h3 className="t-subhead text-xl mb-3">See your SPI weak spots before exam day.</h3>
+            <h3 className="t-subhead text-xl mb-3">
+              See your SPI weak spots before exam day.
+            </h3>
             <p className="t-body text-sm mb-8">
-              Get a domain-by-domain breakdown sent to your inbox. No spam. Unsubscribe anytime.
+              Get a domain-by-domain breakdown sent to your inbox. No spam.
+              Unsubscribe anytime.
             </p>
-            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
+            <form
+              onSubmit={handleEmailSubmit}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <input
-                type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com" required
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
                 className="flex-grow px-6 py-4 bg-[#0B0D10] border border-[#1a1d24] text-white placeholder:text-[#3a3530] text-sm rounded-xl focus:outline-none focus:border-[#c85b3a]/30 transition-colors"
               />
-              <button type="submit" className="premium-cta px-8 py-4 whitespace-nowrap text-sm">
+              <button
+                type="submit"
+                className="premium-cta px-8 py-4 whitespace-nowrap text-sm"
+              >
                 SEND MY DOMAIN BREAKDOWN →
               </button>
             </form>
@@ -538,8 +611,12 @@ function DemoSection() {
             animate={{ opacity: 1, scale: 1 }}
           >
             <h3 className="t-subhead text-lg mb-4">Check your inbox.</h3>
-            <p className="t-body text-sm mb-8">Your SPI breakdown is on its way.</p>
-            <Link href="/products" className="premium-cta px-8 py-4 text-sm">GET FULL ACCESS →</Link>
+            <p className="t-body text-sm mb-8">
+              Your SPI breakdown is on its way.
+            </p>
+            <Link href="/products" className="premium-cta px-8 py-4 text-sm">
+              GET FULL ACCESS →
+            </Link>
           </motion.div>
         )}
 
@@ -552,10 +629,17 @@ function DemoSection() {
             transition={{ delay: 0.5 }}
           >
             <div>
-              <p className="t-subhead text-base">Ready for the full 110-question exam?</p>
-              <p className="t-caption text-[10px] mt-2 text-[#3a3530]">90-day access · 14-day refund · instant unlock</p>
+              <p className="t-subhead text-base">
+                Ready for the full 110-question exam?
+              </p>
+              <p className="t-caption text-[10px] mt-2 text-[#3a3530]">
+                90-day access · 14-day refund · instant unlock
+              </p>
             </div>
-            <Link href="/products" className="premium-cta px-8 py-4 text-sm shrink-0">
+            <Link
+              href="/products"
+              className="premium-cta px-8 py-4 text-sm shrink-0"
+            >
               GET FULL ACCESS →
             </Link>
           </motion.div>
@@ -581,14 +665,25 @@ function WhatThisIsNot() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
         >
           <span className="t-caption">HONEST EXPECTATIONS</span>
-          <h2 className="t-heading text-4xl sm:text-5xl mt-5">What SonoPrep is not.</h2>
+          <h2 className="t-heading text-4xl sm:text-5xl mt-5">
+            What SonoPrep is not.
+          </h2>
         </motion.div>
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           {[
-            { not: "Not a textbook.", is: "Structured SPI prep based on how the exam is actually weighted — not everything the field covers." },
-            { not: "Not random questions.", is: "170+ ARDMS domain-weighted questions. Each exam pulls 110 randomly — so every attempt is unique." },
-            { not: "Not a subscription.", is: "One payment. 90-day access. No recurring charges. The bundle is $99." },
+            {
+              not: "Not a textbook.",
+              is: "Structured SPI prep based on how the exam is actually weighted — not everything the field covers.",
+            },
+            {
+              not: "Not random questions.",
+              is: "170+ ARDMS domain-weighted questions. Each exam pulls 110 randomly — so every attempt is unique.",
+            },
+            {
+              not: "Not a subscription.",
+              is: "One payment. 90-day access. No recurring charges. The bundle is $99.",
+            },
           ].map(({ not, is }, i) => (
             <motion.div
               key={not}
@@ -612,15 +707,20 @@ function WhatThisIsNot() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
         >
-          <span className="t-caption text-[10px] text-[#4a453f]">THE QUESTION NOBODY ASKS OUT LOUD</span>
+          <span className="t-caption text-[10px] text-[#4a453f]">
+            THE QUESTION NOBODY ASKS OUT LOUD
+          </span>
           <h3 className="t-subhead text-lg mt-4 mb-4">
             "What if I go through all this and still don't pass?"
           </h3>
           <p className="t-body text-sm max-w-2xl">
-            14-day full refund. No hoops, no questions. We're confident enough in the material
-            to make buying feel safer than not buying.
+            14-day full refund. No hoops, no questions. We're confident enough
+            in the material to make buying feel safer than not buying.
           </p>
-          <Link href="/products" className="inline-flex items-center gap-2 mt-8 premium-cta px-8 py-4 text-sm">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 mt-8 premium-cta px-8 py-4 text-sm"
+          >
             See Products & Pricing →
           </Link>
         </motion.div>
@@ -638,10 +738,30 @@ function TheSystem() {
   const { onMouseMove } = useCardGlow();
 
   const steps = [
-    { n: "01", label: "Start here", action: "Take the free demo", detail: "2 minutes, real interface, no account" },
-    { n: "02", label: "See your gaps", action: "Review domain results", detail: "Find out which of the 6 areas need work" },
-    { n: "03", label: "Study by domain", action: "Flashcards + Physics Pearls", detail: "Target exactly what the exam weights" },
-    { n: "04", label: "Walk in ready", action: "Full 110-question exams", detail: "Different questions every attempt" },
+    {
+      n: "01",
+      label: "Start here",
+      action: "Take the free demo",
+      detail: "2 minutes, real interface, no account",
+    },
+    {
+      n: "02",
+      label: "See your gaps",
+      action: "Review domain results",
+      detail: "Find out which of the 6 areas need work",
+    },
+    {
+      n: "03",
+      label: "Study by domain",
+      action: "Flashcards + Physics Pearls",
+      detail: "Target exactly what the exam weights",
+    },
+    {
+      n: "04",
+      label: "Walk in ready",
+      action: "Full 110-question exams",
+      detail: "Different questions every attempt",
+    },
   ];
 
   return (
@@ -655,7 +775,9 @@ function TheSystem() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
         >
           <span className="t-caption">HOW IT WORKS</span>
-          <h2 className="t-heading text-4xl sm:text-5xl mt-5">A system, not just a purchase.</h2>
+          <h2 className="t-heading text-4xl sm:text-5xl mt-5">
+            A system, not just a purchase.
+          </h2>
           <p className="t-body text-sm mt-5 max-w-lg mx-auto text-[#7a7269]">
             From where you are now to walking into the SPI with a plan.
           </p>
@@ -671,8 +793,12 @@ function TheSystem() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * i, duration: 0.7 }}
             >
-              <div className="t-display text-5xl text-white/[0.06] mb-5">{n}</div>
-              <span className="t-caption text-[10px] text-[#3a3530]">{label}</span>
+              <div className="t-display text-5xl text-white/[0.06] mb-5">
+                {n}
+              </div>
+              <span className="t-caption text-[10px] text-[#3a3530]">
+                {label}
+              </span>
               <p className="t-subhead text-sm mt-3 mb-3">{action}</p>
               <p className="t-label text-xs text-[#5a5349]">{detail}</p>
             </motion.div>
@@ -688,7 +814,9 @@ function TheSystem() {
           <Link href="/products" className="premium-cta px-10 py-5 text-sm">
             GET THE FULL SYSTEM — $99 →
           </Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">Or start smaller · Physics Pearls from $9</p>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">
+            Or start smaller · Physics Pearls from $9
+          </p>
         </motion.div>
       </div>
     </section>
@@ -718,20 +846,24 @@ function TheCost() {
               A failed SPI isn't just a failed exam.
             </h2>
             <p className="t-body text-sm mt-8">
-              It delays every specialty exam behind it. It means paying ARDMS fees again.
-              It means explaining the gap. And it means more months studying material
-              you may have already gotten wrong once.
+              It delays every specialty exam behind it. It means paying ARDMS
+              fees again. It means explaining the gap. And it means more months
+              studying material you may have already gotten wrong once.
             </p>
             <p className="t-body text-sm mt-5">
-              The SPI isn't hard because the physics is hard — it's hard because most people
-              study broadly instead of studying precisely what ARDMS tests.
+              The SPI isn't hard because the physics is hard — it's hard because
+              most people study broadly instead of studying precisely what ARDMS
+              tests.
             </p>
 
             <div className="mt-10 lift-card p-7">
-              <span className="t-caption text-[10px] text-[#3a3530]">IF YOUR EXAM IS COMING UP</span>
+              <span className="t-caption text-[10px] text-[#3a3530]">
+                IF YOUR EXAM IS COMING UP
+              </span>
               <p className="t-body text-sm mt-4">
-                For students testing in 2–4 weeks: every day you wait is a day you could have
-                found a gap and fixed it. The demo takes 2 minutes.
+                For students testing in 2–4 weeks: every day you wait is a day
+                you could have found a gap and fixed it. The demo takes 2
+                minutes.
               </p>
             </div>
           </motion.div>
@@ -744,25 +876,53 @@ function TheCost() {
             transition={{ duration: 0.8, delay: 0.15 }}
           >
             {[
-              { label: "Broad textbook studying", flag: false, desc: "Covers everything — including what the exam doesn't test" },
-              { label: "Generic practice tests", flag: false, desc: "No domain weighting, no rationale, no gap analysis" },
-              { label: "SonoPrep flashcards", flag: true, desc: "200+ cards mapped to 6 ARDMS SPI domains" },
-              { label: "SonoPrep simulator", flag: true, desc: "110-question exams from 170+ bank, domain-weighted" },
+              {
+                label: "Broad textbook studying",
+                flag: false,
+                desc: "Covers everything — including what the exam doesn't test",
+              },
+              {
+                label: "Generic practice tests",
+                flag: false,
+                desc: "No domain weighting, no rationale, no gap analysis",
+              },
+              {
+                label: "SonoPrep flashcards",
+                flag: true,
+                desc: "200+ cards mapped to 6 ARDMS SPI domains",
+              },
+              {
+                label: "SonoPrep simulator",
+                flag: true,
+                desc: "110-question exams from 170+ bank, domain-weighted",
+              },
             ].map(({ label, flag, desc }, i) => (
               <motion.div
                 key={label}
-                className={flag ? "glow-card-featured p-6 flex items-start gap-5" : "lift-card p-6 flex items-start gap-5 opacity-40"}
+                className={
+                  flag
+                    ? "glow-card-featured p-6 flex items-start gap-5"
+                    : "lift-card p-6 flex items-start gap-5 opacity-40"
+                }
                 onMouseMove={flag ? onMouseMove : undefined}
                 initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: flag ? 1 : 0.4, y: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.08 }}
               >
-                <span className={`text-sm font-bold shrink-0 mt-0.5 ${flag ? "text-[#c85b3a]" : "text-[#3a3530]"}`}>
+                <span
+                  className={`text-sm font-bold shrink-0 mt-0.5 ${flag ? "text-[#c85b3a]" : "text-[#3a3530]"}`}
+                >
                   {flag ? "✓" : "✗"}
                 </span>
                 <div>
-                  <p className={`t-label ${flag ? "text-white" : "text-[#4a453f]"}`}>{label}</p>
-                  <p className="t-label text-[11px] text-[#5a5349] mt-1.5">{desc}</p>
+                  <p
+                    className={`t-label ${flag ? "text-white" : "text-[#4a453f]"}`}
+                  >
+                    {label}
+                  </p>
+                  <p className="t-label text-[11px] text-[#5a5349] mt-1.5">
+                    {desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -775,8 +935,12 @@ function TheCost() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
         >
-          <Link href="/products" className="premium-cta px-10 py-5 text-sm">SEE THE PREP SYSTEM →</Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 90-day access · instant unlock</p>
+          <Link href="/products" className="premium-cta px-10 py-5 text-sm">
+            SEE THE PREP SYSTEM →
+          </Link>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">
+            14-day refund · 90-day access · instant unlock
+          </p>
         </motion.div>
       </div>
     </section>
@@ -807,14 +971,15 @@ function Credibility() {
               This content was taught in a real classroom before it was online.
             </h2>
             <p className="t-body text-sm mt-8">
-              SonoPrep's curriculum comes from study materials developed at Houston
-              International Cardiotech Ultrasound School — where the RDMS instructor behind
-              this content spent years watching students struggle with physics, then pass
-              their credentials.
+              SonoPrep's curriculum comes from study materials developed at
+              Houston International Cardiotech Ultrasound School — where the
+              RDMS instructor behind this content spent years watching students
+              struggle with physics, then pass their credentials.
             </p>
             <p className="t-body text-sm mt-5">
-              Every flashcard, every exam question, every Physics Pearl was written by that
-              instructor — not assembled by a content team, not AI-generated.
+              Every flashcard, every exam question, every Physics Pearl was
+              written by that instructor — not assembled by a content team, not
+              AI-generated.
             </p>
 
             <motion.div
@@ -824,10 +989,12 @@ function Credibility() {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.3 }}
             >
-              <span className="t-caption text-[10px] text-[#4a453f]">BUILT TO THE ACTUAL EXAM</span>
+              <span className="t-caption text-[10px] text-[#4a453f]">
+                BUILT TO THE ACTUAL EXAM
+              </span>
               <p className="t-body text-sm mt-4">
-                Content is built from real SPI exam patterns and ARDMS domain weighting —
-                not generic sonography curriculum.
+                Content is built from real SPI exam patterns and ARDMS domain
+                weighting — not generic sonography curriculum.
               </p>
             </motion.div>
 
@@ -846,7 +1013,9 @@ function Credibility() {
                   transition={{ delay: 0.4 + i * 0.08 }}
                 >
                   <div className="t-heading text-xl">{stat}</div>
-                  <div className="t-caption text-[10px] mt-2 text-[#4a453f]">{label}</div>
+                  <div className="t-caption text-[10px] mt-2 text-[#4a453f]">
+                    {label}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -858,10 +1027,17 @@ function Credibility() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.7 }}
             >
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c85b3a]/15 text-[#c85b3a] text-[10px]">✓</span>
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c85b3a]/15 text-[#c85b3a] text-[10px]">
+                ✓
+              </span>
               <div>
-                <div className="t-caption text-[10px] text-[#c85b3a] tracking-wider">CREDENTIAL VERIFIED</div>
-                <div className="t-body text-sm text-[#B8B0A6] mt-1">Houston International Cardiotech Ultrasound School (HICUS) — Houston, TX</div>
+                <div className="t-caption text-[10px] text-[#c85b3a] tracking-wider">
+                  CREDENTIAL VERIFIED
+                </div>
+                <div className="t-body text-sm text-[#B8B0A6] mt-1">
+                  Houston International Cardiotech Ultrasound School (HICUS) —
+                  Houston, TX
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -879,9 +1055,18 @@ function Credibility() {
 
             <div className="space-y-5">
               {[
-                { head: "Curriculum with a documented track record", body: "Same methodology used at a Houston ultrasound school where students passed RDMS, RDCS, and RVT exams." },
-                { head: "Content written to ARDMS specifications", body: "All 6 SPI domains covered at published weightings. The simulator distributes questions accordingly." },
-                { head: "14-day refund if it doesn't work", body: "Full refund within 14 days. No hoops. If it's not the right fit, you don't pay." },
+                {
+                  head: "Curriculum with a documented track record",
+                  body: "Same methodology used at a Houston ultrasound school where students passed RDMS, RDCS, and RVT exams.",
+                },
+                {
+                  head: "Content written to ARDMS specifications",
+                  body: "All 6 SPI domains covered at published weightings. The simulator distributes questions accordingly.",
+                },
+                {
+                  head: "14-day refund if it doesn't work",
+                  body: "Full refund within 14 days. No hoops. If it's not the right fit, you don't pay.",
+                },
               ].map(({ head, body }, i) => (
                 <motion.div
                   key={head}
@@ -897,8 +1082,16 @@ function Credibility() {
               ))}
             </div>
 
-            <motion.div className="mt-8" initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.7 }}>
-              <Link href="/about" className="t-caption text-[11px] text-[#5a5349] hover:text-[#c85b3a] transition-colors">
+            <motion.div
+              className="mt-8"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.7 }}
+            >
+              <Link
+                href="/about"
+                className="t-caption text-[11px] text-[#5a5349] hover:text-[#c85b3a] transition-colors"
+              >
                 Read more about the instructor →
               </Link>
             </motion.div>
@@ -914,7 +1107,9 @@ function Credibility() {
           <Link href="/products" className="premium-cta px-10 py-5 text-sm">
             GET PREPARED BY AN RDMS INSTRUCTOR →
           </Link>
-          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">14-day refund · 90-day access · instant unlock</p>
+          <p className="t-caption text-[10px] mt-5 text-[#3a3530]">
+            14-day refund · 90-day access · instant unlock
+          </p>
         </motion.div>
       </div>
     </section>
@@ -925,10 +1120,55 @@ function Credibility() {
    SECTION: Products — bento grid with featured bundle
 ═══════════════════════════════════════════════════════════════════ */
 const PRODUCTS = [
-  { key: "pearls", name: "Physics Pearls", price: "$9", tag: "THE FIRST STEP", desc: "Start studying in 10 minutes. 50 high-yield physics concepts — zero friction.", features: ["50 concept summaries", "Clinical examples", "ARDMS domain mapped"], featured: false },
-  { key: "flashcards", name: "SPI Flashcards", price: "$24", tag: "FIX YOUR WEAKEST TOPICS", desc: "200+ cards with SM-2 spaced repetition. Most students start here.", features: ["200+ expert-written cards", "SM-2 algorithm", "Per-card tracking"], featured: false },
-  { key: "simulator", name: "Exam Simulator", price: "$49.99", tag: "TEST YOURSELF", desc: "3 attempts over 90 days. 110 questions from a 170+ bank — domain-weighted, timed, different every time.", features: ["3 attempts · 90-day access", "110 Qs from 170+ bank", "2-hour timer (real SPI format)", "Per-domain analytics"], featured: true },
-  { key: "notes", name: "Study Notes", price: "$34", tag: "UNDERSTAND THE SYSTEM", desc: "Not just memorize answers. 159-page guide covering all 6 SPI domains across 10 chapters.", features: ["159 pages", "10 chapters", "All 6 domains"], featured: false },
+  {
+    key: "pearls",
+    name: "Physics Pearls",
+    price: "$9",
+    tag: "THE FIRST STEP",
+    desc: "Start studying in 10 minutes. 50 high-yield physics concepts — zero friction.",
+    features: [
+      "50 concept summaries",
+      "Clinical examples",
+      "ARDMS domain mapped",
+    ],
+    featured: false,
+  },
+  {
+    key: "flashcards",
+    name: "SPI Flashcards",
+    price: "$24",
+    tag: "FIX YOUR WEAKEST TOPICS",
+    desc: "200+ cards with SM-2 spaced repetition. Most students start here.",
+    features: [
+      "200+ expert-written cards",
+      "SM-2 algorithm",
+      "Per-card tracking",
+    ],
+    featured: false,
+  },
+  {
+    key: "simulator",
+    name: "Exam Simulator",
+    price: "$49.99",
+    tag: "TEST YOURSELF",
+    desc: "3 attempts over 90 days. 110 questions from a 170+ bank — domain-weighted, timed, different every time.",
+    features: [
+      "3 attempts · 90-day access",
+      "110 Qs from 170+ bank",
+      "2-hour timer (real SPI format)",
+      "Per-domain analytics",
+    ],
+    featured: true,
+  },
+  {
+    key: "notes",
+    name: "Study Notes",
+    price: "$34",
+    tag: "UNDERSTAND THE SYSTEM",
+    desc: "Not just memorize answers. 159-page guide covering all 6 SPI domains across 10 chapters.",
+    features: ["159 pages", "10 chapters", "All 6 domains"],
+    featured: false,
+  },
 ];
 
 function ProductsSection() {
@@ -939,12 +1179,19 @@ function ProductsSection() {
   return (
     <section ref={ref} className="py-36 px-6">
       <div className="max-w-6xl mx-auto">
-
-        <motion.div className="mb-10" initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}>
+        <motion.div
+          className="mb-10"
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+        >
           <span className="t-caption">WHAT YOU GET</span>
-          <h2 className="t-heading text-4xl sm:text-5xl mt-5 max-w-lg">There&apos;s one clear path. A few smaller steps if you&apos;re not ready yet.</h2>
+          <h2 className="t-heading text-4xl sm:text-5xl mt-5 max-w-lg">
+            There&apos;s one clear path. A few smaller steps if you&apos;re not
+            ready yet.
+          </h2>
           <p className="t-body text-sm mt-5 max-w-lg text-[#7a7269]">
-            Every product works standalone. But most students get everything — because each step naturally leads to the next.
+            Every product works standalone. But most students get everything —
+            because each step naturally leads to the next.
           </p>
         </motion.div>
 
@@ -957,20 +1204,31 @@ function ProductsSection() {
           transition={{ delay: 0.15 }}
         >
           <div className="absolute top-0 left-0 bg-gradient-to-r from-[#c85b3a] to-[#e06840] px-6 py-2.5 rounded-br-2xl rounded-tl-[15px]">
-            <span className="t-caption text-white text-[10px]">RECOMMENDED — BEST VALUE</span>
+            <span className="t-caption text-white text-[10px]">
+              RECOMMENDED — BEST VALUE
+            </span>
           </div>
           <div className="pt-8 grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="t-caption text-[#c85b3a] text-[10px]">THE PATH PEOPLE ACTUALLY TAKE</span>
+              <span className="t-caption text-[#c85b3a] text-[10px]">
+                THE PATH PEOPLE ACTUALLY TAKE
+              </span>
               <h3 className="t-heading text-3xl mt-3">Premium Bundle</h3>
               <div className="flex items-baseline gap-3 mt-4 mb-5">
-                <span className="t-display text-5xl text-gradient-accent">$99</span>
-                <span className="t-label text-sm text-[#5a5349] line-through">$116</span>
-                <span className="t-caption text-[10px] text-[#3a3530]">/ 90-day access</span>
+                <span className="t-display text-5xl text-gradient-accent">
+                  $99
+                </span>
+                <span className="t-label text-sm text-[#5a5349] line-through">
+                  $116
+                </span>
+                <span className="t-caption text-[10px] text-[#3a3530]">
+                  / 90-day access
+                </span>
               </div>
               <p className="t-body text-sm">
-                Everything you need to pass — in one system. For less than the cost of a single retake fee,
-                you get everything — no piecing resources together.
+                Everything you need to pass — in one system. For less than the
+                cost of a single retake fee, you get everything — no piecing
+                resources together.
               </p>
             </div>
             <div>
@@ -983,17 +1241,30 @@ function ProductsSection() {
                   "Every exam attempt is different",
                   "90-day full access",
                 ].map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm text-[#B8B0A6]">
-                    <span className="text-[#c85b3a] text-xs shrink-0">✓</span>{f}
+                  <li
+                    key={f}
+                    className="flex items-center gap-3 text-sm text-[#B8B0A6]"
+                  >
+                    <span className="text-[#c85b3a] text-xs shrink-0">✓</span>
+                    {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/products" className="premium-cta w-full block text-center py-5 text-sm">
+              <Link
+                href="/products"
+                className="premium-cta w-full block text-center py-5 text-sm"
+              >
                 GET THE BUNDLE — $99 →
               </Link>
-              <p className="t-caption text-[10px] text-center mt-3 text-[#c85b3a]/80 font-medium">Most students choose this</p>
-              <p className="t-caption text-[10px] text-center mt-1 text-[#8a8279]">One bad exam costs more than everything you need to pass</p>
-              <p className="t-caption text-[10px] text-center mt-1 text-[#3a3530]">14-day refund · instant access · no subscription</p>
+              <p className="t-caption text-[10px] text-center mt-3 text-[#c85b3a]/80 font-medium">
+                Most students choose this
+              </p>
+              <p className="t-caption text-[10px] text-center mt-1 text-[#8a8279]">
+                One bad exam costs more than everything you need to pass
+              </p>
+              <p className="t-caption text-[10px] text-center mt-1 text-[#3a3530]">
+                14-day refund · instant access · no subscription
+              </p>
             </div>
           </div>
         </motion.div>
@@ -1012,10 +1283,18 @@ function ProductsSection() {
               <span className="t-caption text-[10px] mb-5">{product.tag}</span>
               <h3 className="t-subhead text-base mb-2">{product.name}</h3>
               <div className="text-2xl font-semibold text-white mb-3">
-                {product.price}<span className="t-caption text-[10px] ml-1.5 text-[#3a3530]">/ 90d</span>
+                {product.price}
+                <span className="t-caption text-[10px] ml-1.5 text-[#3a3530]">
+                  / 90d
+                </span>
               </div>
-              <p className="t-label text-xs text-[#5a5349] flex-grow mb-7">{product.desc}</p>
-              <Link href="/products" className="ghost-cta block py-3 text-center text-[11px] tracking-[0.06em] uppercase">
+              <p className="t-label text-xs text-[#5a5349] flex-grow mb-7">
+                {product.desc}
+              </p>
+              <Link
+                href="/products"
+                className="ghost-cta block py-3 text-center text-[11px] tracking-[0.06em] uppercase"
+              >
                 GET STARTED →
               </Link>
             </motion.div>
@@ -1029,8 +1308,16 @@ function ProductsSection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
         >
-          {["90-day access", "14-day refund", "Instant access", "RDMS instructor", "All 6 domains"].map((t) => (
-            <span key={t} className="t-caption text-[10px] text-[#3a3530]">✓ {t}</span>
+          {[
+            "90-day access",
+            "14-day refund",
+            "Instant access",
+            "RDMS instructor",
+            "All 6 domains",
+          ].map((t) => (
+            <span key={t} className="t-caption text-[10px] text-[#3a3530]">
+              ✓ {t}
+            </span>
           ))}
         </motion.div>
       </div>
@@ -1048,23 +1335,53 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div>
-            <div className="t-heading text-2xl">Sono<span className="text-[#c85b3a]">Prep</span></div>
+            <div className="t-heading text-2xl">
+              Sono<span className="text-[#c85b3a]">Prep</span>
+            </div>
             <p className="t-label text-xs max-w-xs mt-4 text-[#4a453f] leading-relaxed">
-              Built by sonographers, for sonographers.
-              RDMS, RDCS, RVT, and RMSKS SPI exam prep.
+              Built by sonographers, for sonographers. RDMS, RDCS, RVT, and
+              RMSKS SPI exam prep.
             </p>
           </div>
           <div className="flex gap-16">
             {[
-              { title: "PRODUCT", links: [["Free Demo", "/demo"], ["Pricing", "/products"]] },
-              { title: "RESOURCES", links: [["Blog", "/blog"], ["FAQ", "/faq"], ["About", "/about"]] },
-              { title: "LEGAL", links: [["Privacy", "/privacy"], ["Terms", "/terms"], ["Accessibility", "/accessibility"]] },
+              {
+                title: "PRODUCT",
+                links: [
+                  ["Free Demo", "/demo"],
+                  ["Pricing", "/products"],
+                ],
+              },
+              {
+                title: "RESOURCES",
+                links: [
+                  ["Blog", "/blog"],
+                  ["FAQ", "/faq"],
+                  ["About", "/about"],
+                ],
+              },
+              {
+                title: "LEGAL",
+                links: [
+                  ["Privacy", "/privacy"],
+                  ["Terms", "/terms"],
+                  ["Accessibility", "/accessibility"],
+                ],
+              },
             ].map(({ title, links }) => (
               <div key={title}>
-                <div className="t-caption text-[10px] text-[#3a3530] mb-5">{title}</div>
+                <div className="t-caption text-[10px] text-[#3a3530] mb-5">
+                  {title}
+                </div>
                 <div className="space-y-3">
                   {links.map(([label, href]) => (
-                    <Link key={href} href={href} className="t-label text-xs text-[#4a453f] hover:text-white transition-colors block">{label}</Link>
+                    <Link
+                      key={href}
+                      href={href}
+                      className="t-label text-xs text-[#4a453f] hover:text-white transition-colors block"
+                    >
+                      {label}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -1073,10 +1390,13 @@ function Footer() {
         </div>
         <div className="mt-16 pt-8 border-t border-white/[0.03] space-y-3 text-center">
           <p className="t-caption text-[9px] text-[#2a2723] tracking-wider">
-            © {new Date().getFullYear()} SonoPrep. All rights reserved. All content is original, proprietary, and copyright protected.
+            © {new Date().getFullYear()} SonoPrep. All rights reserved. All
+            content is original, proprietary, and copyright protected.
           </p>
           <p className="t-caption text-[9px] text-[#2a2723] tracking-wider">
-            SonoPrep is not affiliated with ARDMS. SPI® is a registered trademark of the American Registry for Diagnostic Medical Sonography.
+            SonoPrep is not affiliated with ARDMS. SPI® is a registered
+            trademark of the American Registry for Diagnostic Medical
+            Sonography.
           </p>
         </div>
       </div>
@@ -1105,7 +1425,10 @@ function StickyMobileCTA() {
           exit={{ y: 100 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
-          <Link href="/products" className="premium-cta block w-full text-center py-4 text-sm font-medium">
+          <Link
+            href="/products"
+            className="premium-cta block w-full text-center py-4 text-sm font-medium"
+          >
             Get Full Access — $99 →
           </Link>
         </motion.div>
@@ -1118,17 +1441,35 @@ function StickyMobileCTA() {
    PAGE ASSEMBLY
 ═══════════════════════════════════════════════════════════════════ */
 /** Defers rendering until the element is near the viewport */
-function LazySection({ children, className }: { children: React.ReactNode; className?: string }) {
+function LazySection({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setShow(true); obs.disconnect(); } }, { rootMargin: "200px" });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShow(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
-  return <div ref={ref} className={className}>{show ? children : <div style={{ minHeight: "60vh" }} />}</div>;
+  return (
+    <div ref={ref} className={className}>
+      {show ? children : <div style={{ minHeight: "60vh" }} />}
+    </div>
+  );
 }
 
 export function HomePageClient() {
@@ -1138,15 +1479,33 @@ export function HomePageClient() {
       <main>
         <Hero />
         <TheFork />
-        <LazySection><WhoIsThisFor /></LazySection>
-        <LazySection><WhyMostFail /></LazySection>
-        <LazySection><DemoSection /></LazySection>
-        <LazySection><WhatThisIsNot /></LazySection>
-        <LazySection><TheSystem /></LazySection>
-        <LazySection><TheCost /></LazySection>
-        <LazySection><Credibility /></LazySection>
-        <LazySection><ProductsSection /></LazySection>
-        <LazySection><FaqSection /></LazySection>
+        <LazySection>
+          <WhoIsThisFor />
+        </LazySection>
+        <LazySection>
+          <WhyMostFail />
+        </LazySection>
+        <LazySection>
+          <DemoSection />
+        </LazySection>
+        <LazySection>
+          <WhatThisIsNot />
+        </LazySection>
+        <LazySection>
+          <TheSystem />
+        </LazySection>
+        <LazySection>
+          <TheCost />
+        </LazySection>
+        <LazySection>
+          <Credibility />
+        </LazySection>
+        <LazySection>
+          <ProductsSection />
+        </LazySection>
+        <LazySection>
+          <FaqSection />
+        </LazySection>
       </main>
       <Footer />
       <StickyMobileCTA />

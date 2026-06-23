@@ -8,7 +8,7 @@ read: "25 min read"
 
 # The Complete ARDMS SPI Exam Guide: Everything You Need to Pass
 
-*May 12, 2026 · 25 min read*
+_May 12, 2026 · 25 min read_
 
 The Sonography Principles & Instrumentation (SPI) exam is the shared first hurdle for every ARDMS credential — RDMS, RDCS, RVT, and RMSKS all require it, alongside at least one specialty exam. This guide covers what the exam actually is, how it's structured, what to study and in what order, and the mistakes that most often trip up first-time candidates.
 
@@ -22,7 +22,7 @@ The SPI exam covers the physics and instrumentation that underlie all diagnostic
 - Scores are reported on a scaled range, with a passing score of approximately 555 out of 700.
 - The exam is administered at Pearson VUE testing centers, with online proctoring available for candidates who meet the technical and environmental requirements.
 - A basic on-screen calculator is provided — you cannot bring your own calculator into the testing room.
-These figures reflect the exam format as commonly reported by test-prep resources and ARDMS guidance; always confirm current details on the official ARDMS website when you register, since policies and formats can be updated.
+  These figures reflect the exam format as commonly reported by test-prep resources and ARDMS guidance; always confirm current details on the official ARDMS website when you register, since policies and formats can be updated.
 
 ## The five domains and why they matter
 
@@ -80,7 +80,7 @@ Given how interconnected the SPI content is — and how much of it (Doppler espe
 - Confusing the direction of a relationship under time pressure. A classic example: decreasing the Doppler angle increases the Doppler shift (and the risk of aliasing) — the opposite of what some students assume.
 - Not practicing under timed conditions. Knowing the material and being able to apply it at a pace of roughly a minute per question are different skills, and the second one only improves with practice under real time constraints.
 - Misreading negatively phrased questions — "which of the following is NOT" — under time pressure. This single phrasing pattern accounts for a disproportionate share of avoidable errors.
-For more on avoiding the pacing and reading-comprehension pitfalls specifically, see our
+  For more on avoiding the pacing and reading-comprehension pitfalls specifically, see our
 
 ## After the SPI: choosing your specialty
 

@@ -8,7 +8,7 @@ read: "13 min read"
 
 # RDMS vs RDCS vs RVT vs RMSKS: Which ARDMS Specialty Is Right for You?
 
-*March 6, 2026 · 13 min read*
+_March 6, 2026 · 13 min read_
 
 The SPI exam is the same for everyone — but it's only half of what you need. To earn an ARDMS credential, you also need to pass at least one specialty exam corresponding to that credential, and the four credential paths (RDMS, RDCS, RVT, and RMSKS) lead to meaningfully different careers. Here's how they break down.
 A key structural point that applies to all four: you must pass the SPI exam and at least one corresponding specialty exam within five years of each other, and they can be taken in either order. Once you've earned one ARDMS credential, you can add additional specialties later without retaking the SPI exam, as long as your certification stays active.

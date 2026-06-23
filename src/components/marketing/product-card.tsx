@@ -3,8 +3,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  BookOpen, Lightbulb, GraduationCap, FileText, Package,
-  ArrowRight, Check, Zap, ShieldCheck, Users, Clock,
+  BookOpen,
+  Lightbulb,
+  GraduationCap,
+  FileText,
+  Package,
+  ArrowRight,
+  Check,
+  Zap,
+  ShieldCheck,
+  Users,
+  Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -116,9 +125,9 @@ function TrustBar() {
     <div className="flex flex-wrap justify-center gap-6 text-xs text-cream-dim/50">
       {[
         { icon: ShieldCheck, text: "14-day refund policy" },
-        { icon: Zap,         text: "Instant access after checkout" },
-        { icon: Users,       text: "Written by an RDMS instructor" },
-        { icon: Clock,       text: "90-day access" },
+        { icon: Zap, text: "Instant access after checkout" },
+        { icon: Users, text: "Written by an RDMS instructor" },
+        { icon: Clock, text: "90-day access" },
       ].map(({ icon: Icon, text }) => (
         <div key={text} className="flex items-center gap-1.5">
           <Icon className="h-3.5 w-3.5 text-[#c85b3a]/50" />
@@ -135,7 +144,8 @@ function BundleValueStrip() {
     <div className="flex items-center gap-3 rounded-lg border border-[#c85b3a]/20 bg-[#c85b3a]/[0.04] px-4 py-2.5">
       <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-[#c85b3a]/70" />
       <span className="text-xs text-cream-dim/70">
-        90-day access to all 4 products · 14-day full refund policy · no subscription
+        90-day access to all 4 products · 14-day full refund policy · no
+        subscription
       </span>
     </div>
   );
@@ -192,7 +202,11 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
                   <motion.span
                     className="absolute inset-0 bg-[#c85b3a]/20"
                     animate={{ opacity: [0, 0.4, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
                   />
                   <span className="relative">Most Popular</span>
                 </Badge>
@@ -202,18 +216,26 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
                   <motion.span
                     className="absolute inset-0 bg-[#c85b3a]/20"
                     animate={{ x: ["-100%", "100%"] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   />
                   <span className="relative">{product.savingsLabel}</span>
                 </Badge>
               )}
             </div>
           </div>
-          <CardTitle className="mt-5 text-2xl font-bold text-cream group-hover:text-[#e06840] transition-colors duration-300">{product.name}</CardTitle>
+          <CardTitle className="mt-5 text-2xl font-bold text-cream group-hover:text-[#e06840] transition-colors duration-300">
+            {product.name}
+          </CardTitle>
         </CardHeader>
 
         <CardContent className="relative space-y-5">
-          <p className="text-base text-cream-dim leading-relaxed">{product.description}</p>
+          <p className="text-base text-cream-dim leading-relaxed">
+            {product.description}
+          </p>
 
           {/* Price block */}
           <div className="relative">
@@ -236,7 +258,9 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
                     {formatCurrency(product.originalPrice)}
                   </motion.span>
                 )}
-                <span className="font-mono text-xs text-cream-dim/50">/ 90-day access</span>
+                <span className="font-mono text-xs text-cream-dim/50">
+                  / 90-day access
+                </span>
               </div>
               {isBundle && product.originalPrice && (
                 <p className="font-mono text-sm text-[#c85b3a]/70 flex items-center gap-2">
@@ -246,7 +270,8 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
                   >
                     ↓
                   </motion.span>
-                  Save {formatCurrency(product.originalPrice - product.price)} vs buying individually
+                  Save {formatCurrency(product.originalPrice - product.price)}{" "}
+                  vs buying individually
                 </p>
               )}
             </div>
@@ -280,7 +305,9 @@ function ProductCard({ product, onPurchase }: ProductCardProps) {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               className={`w-full group/btn transition-all duration-300 ${
-                isBundle ? "bg-gradient-to-r from-amber to-amber-dim hover:from-amber-dim hover:to-amber text-obsidian font-bold" : ""
+                isBundle
+                  ? "bg-gradient-to-r from-amber to-amber-dim hover:from-amber-dim hover:to-amber text-obsidian font-bold"
+                  : ""
               }`}
               size="lg"
               variant={isBundle ? "default" : "default"}
@@ -312,7 +339,6 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
   return (
     <section className="py-24" id="products">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* Section heading */}
         <motion.div
           className="text-center"
@@ -321,14 +347,17 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs uppercase tracking-widest text-[#c85b3a]">Study Materials</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-[#c85b3a]">
+            Study Materials
+          </p>
           <h2 className="mt-3 font-display text-3xl font-bold text-cream sm:text-4xl">
             Everything You Need to Pass the SPI
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-cream-dim">
-            110-question exams from a 170+ question bank, 200+ spaced repetition flashcards, 50 Physics Pearls,
-            and 159 pages of study notes — all written by a credentialed RDMS instructor.
-            Start with a free demo. Upgrade when you're ready.
+            110-question exams from a 170+ question bank, 200+ spaced repetition
+            flashcards, 50 Physics Pearls, and 159 pages of study notes — all
+            written by a credentialed RDMS instructor. Start with a free demo.
+            Upgrade when you're ready.
           </p>
         </motion.div>
 
@@ -342,9 +371,11 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
         >
           <Zap className="h-4 w-4 text-[#c85b3a] shrink-0" />
           <p className="text-sm text-cream-dim">
-            <span className="text-cream font-semibold">Introductory pricing</span> —
-            SonoPrep is a new platform. These are launch rates.
-            All products include a 14-day full refund policy.
+            <span className="text-cream font-semibold">
+              Introductory pricing
+            </span>{" "}
+            — SonoPrep is a new platform. These are launch rates. All products
+            include a 14-day full refund policy.
           </p>
         </motion.div>
 
@@ -356,8 +387,14 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] }}
-              className={product.key === "PREMIUM_BUNDLE" ? "sm:col-span-2" : ""}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              className={
+                product.key === "PREMIUM_BUNDLE" ? "sm:col-span-2" : ""
+              }
             >
               <ProductCard product={product} onPurchase={onPurchase} />
             </motion.div>
@@ -385,7 +422,9 @@ export function ProductGrid({ onPurchase }: ProductGridProps) {
         >
           <p className="text-xs text-cream-dim/30">
             All content is original, proprietary, and copyright protected.
-            SonoPrep is not affiliated with ARDMS. SPI® is a registered trademark of the American Registry for Diagnostic Medical Sonography.
+            SonoPrep is not affiliated with ARDMS. SPI® is a registered
+            trademark of the American Registry for Diagnostic Medical
+            Sonography.
           </p>
         </motion.div>
       </div>

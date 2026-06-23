@@ -8,7 +8,7 @@ read: "20 min read"
 
 # Doppler Principles for the SPI Exam: Nyquist, Aliasing & Spectral Analysis
 
-*April 18, 2026 · 20 min read*
+_April 18, 2026 · 20 min read_
 
 Apply Doppler Concepts is the largest domain on the SPI exam, accounting for roughly 34% of the test — more than a third of all 110 questions. If you're going to over-invest your study time anywhere, this is where. This guide walks through the concepts that show up most often, in the order they tend to build on each other.
 
@@ -17,6 +17,7 @@ Apply Doppler Concepts is the largest domain on the SPI exam, accounting for rou
 The Doppler effect describes the change in frequency of a sound wave when there's relative motion between the source and the reflector — in this case, blood cells moving through a vessel. The Doppler shift is the difference between the transmitted frequency and the received frequency.
 The size of that shift depends on four things: the transmitted frequency, the velocity of the blood flow, the speed of sound in tissue, and the cosine of the Doppler angle — the angle between the ultrasound beam and the direction of blood flow.
 That last variable, the angle, is where most exam questions focus. Because the equation involves the cosine of the angle, the relationship is not linear, and a few angle values are worth memorizing:
+
 - At a 0° angle (beam parallel to flow), cosine is 1 — you get the maximum possible Doppler shift for that velocity.
 - At a 90° angle (beam perpendicular to flow), cosine is 0 — the Doppler shift is zero, regardless of how fast the blood is moving. This is a classic exam trap: fast flow can produce no detectable signal at 90°.
 - At 60°, cosine is 0.5 — a commonly used clinical angle because it balances signal strength with practical scanning geometry, and ARDMS likes to use it in calculation questions.
@@ -29,12 +30,13 @@ When aliasing occurs in spectral Doppler, the waveform appears to "wrap around" 
 ### Ways to eliminate or reduce aliasing
 
 The exam expects you to know multiple ways to address aliasing, because in practice you often need to combine several:
+
 - Increase the PRF (raise the scale): Since aliasing occurs when shift exceeds PRF/2, raising the PRF raises the Nyquist limit and gives the system more "room" before wrapping occurs.
 - Decrease the transmit frequency: Doppler shift is proportional to transmit frequency, so a lower frequency transducer produces a smaller shift for the same velocity, which is less likely to exceed the Nyquist limit.
 - Decrease the Doppler angle: Wait — this one is counterintuitive. A smaller angle (closer to 0°) actually increases the Doppler shift (since cosine is larger), which makes aliasing more likely, not less. Increasing the angle toward 60° reduces the shift and can help avoid aliasing. Don't mix this up.
 - Shift the baseline: In spectral Doppler, moving the baseline doesn't change the underlying physics, but it gives the waveform more room to display in one direction before hitting the edge of the display — effectively unwrapping a mildly aliased signal.
 - Switch to continuous wave (CW) Doppler: CW Doppler has no PRF and therefore no Nyquist limit — it can measure any velocity without aliasing, at the cost of range resolution (you lose the ability to know exactly where along the beam the signal is coming from).
-**Exam trap to watch for:** "Decreasing the Doppler angle" is sometimes listed as an answer choice for "which of the following reduces aliasing." It's the opposite — decreasing the angle increases the Doppler shift and makes aliasing more likely. The correct direction is to increase the angle (move it closer to 90°, though not all the way, since that produces zero shift).
+  **Exam trap to watch for:** "Decreasing the Doppler angle" is sometimes listed as an answer choice for "which of the following reduces aliasing." It's the opposite — decreasing the angle increases the Doppler shift and makes aliasing more likely. The correct direction is to increase the angle (move it closer to 90°, though not all the way, since that produces zero shift).
 
 ## Wall filters
 
@@ -73,8 +75,9 @@ The exam also tests basic hemodynamic relationships — particularly the relatio
 ## Spectral Doppler gain and scale
 
 Gain and scale are two of the most commonly adjusted Doppler settings, and the exam tests whether you can identify the visual signs of each being set incorrectly:
+
 - Spectral gain too high: excessive background noise fills the spectral display, and the waveform may appear washed out or "filled in."
 - Spectral gain too low: the waveform appears faint or incomplete, with parts of the signal missing.
 - Scale too low (relative to velocity): aliasing, as discussed above.
 - Scale too high (relative to velocity): the waveform appears small, compressed into a small portion of the available display — you're not using the full vertical resolution available.
-The Doppler domain rewards understanding relationships, not memorizing isolated facts. Almost every concept above connects to at least one other — aliasing connects to PRF, angle, and CW vs. PW; wall filters connect to flow velocity and clinical application. SonoPrep's flashcard system groups these relationships together so you're reviewing connected concepts, not disconnected definitions.
+  The Doppler domain rewards understanding relationships, not memorizing isolated facts. Almost every concept above connects to at least one other — aliasing connects to PRF, angle, and CW vs. PW; wall filters connect to flow velocity and clinical application. SonoPrep's flashcard system groups these relationships together so you're reviewing connected concepts, not disconnected definitions.

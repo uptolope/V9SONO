@@ -74,12 +74,14 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
         aria-controls={answerId}
         className="flex w-full items-start justify-between gap-4 py-5 text-left"
       >
-        <span className="display-serif font-semibold text-white leading-snug">{q}</span>
+        <span className="display-serif font-semibold text-white leading-snug">
+          {q}
+        </span>
         <ChevronDown
           aria-hidden="true"
           className={cn(
             "h-5 w-5 shrink-0 text-[#c85b3a]/60 transition-transform duration-300 mt-0.5",
-            open && "rotate-180"
+            open && "rotate-180",
           )}
         />
       </button>
@@ -118,7 +120,9 @@ export function FaqSection() {
       <div className="mx-auto max-w-3xl px-6">
         <div className="mb-12 text-center">
           <p className="t-caption text-[11px] mb-4">Common Questions</p>
-          <h2 className="t-heading text-4xl sm:text-5xl">Frequently Asked Questions</h2>
+          <h2 className="t-heading text-4xl sm:text-5xl">
+            Frequently Asked Questions
+          </h2>
         </div>
         <div>
           {FAQS.map((f, i) => (

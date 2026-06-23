@@ -20,14 +20,22 @@ export function CtaSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Headline */}
-        <p className="text-[10px] text-[#5a5349] tracking-[0.15em] uppercase mb-6" style={{ fontFamily: "'Source Serif 4', serif" }}>Ready to Pass?</p>
+        <p
+          className="text-[10px] text-[#5a5349] tracking-[0.15em] uppercase mb-6"
+          style={{ fontFamily: "'Source Serif 4', serif" }}
+        >
+          Ready to Pass?
+        </p>
         <h2 className="display-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
           Know your weak spots
           <br />
           <span className="text-[#c85b3a]">before the SPI does.</span>
         </h2>
 
-        <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-[#c2bab0]" style={{ fontFamily: "'Source Serif 4', serif" }}>
+        <p
+          className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-[#c2bab0]"
+          style={{ fontFamily: "'Source Serif 4', serif" }}
+        >
           Every product is structured around the exact ARDMS exam blueprint.
           That's not a guess — that's by design.
         </p>
@@ -42,7 +50,12 @@ export function CtaSection() {
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#c85b3a]/10 shrink-0">
                 <CheckCircle2 className="h-4 w-4 text-[#c85b3a]" />
               </div>
-              <span className="text-sm text-[#c2bab0] group-hover:text-white transition-colors" style={{ fontFamily: "'Source Serif 4', serif" }}>{item}</span>
+              <span
+                className="text-sm text-[#c2bab0] group-hover:text-white transition-colors"
+                style={{ fontFamily: "'Source Serif 4', serif" }}
+              >
+                {item}
+              </span>
             </div>
           ))}
         </div>
@@ -53,37 +66,74 @@ export function CtaSection() {
           <div className="absolute -top-3 left-1/2 -translate-x-1/2">
             <div className="flex items-center gap-2 rounded-full bg-[#0B0D10] border border-[#c85b3a]/20 px-4 py-1">
               <Shield className="h-3 w-3 text-[#c85b3a]" />
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#c85b3a]" style={{ fontFamily: "'Source Serif 4', serif" }}>Save $17</span>
+              <span
+                className="text-[10px] uppercase tracking-[0.15em] text-[#c85b3a]"
+                style={{ fontFamily: "'Source Serif 4', serif" }}
+              >
+                Save $17
+              </span>
             </div>
           </div>
 
           <div className="text-center">
-            <span className="text-[11px] uppercase tracking-[0.15em] text-[#7a7269] mb-3 block" style={{ fontFamily: "'Source Serif 4', serif" }}>Premium Bundle</span>
+            <span
+              className="text-[11px] uppercase tracking-[0.15em] text-[#7a7269] mb-3 block"
+              style={{ fontFamily: "'Source Serif 4', serif" }}
+            >
+              Premium Bundle
+            </span>
 
             <div className="flex items-end gap-3 justify-center">
-              <span className="display-serif text-5xl font-bold text-white">$99</span>
-              <span className="mb-3 text-[#5a5349] text-sm" style={{ fontFamily: "'Source Serif 4', serif" }}>one-time</span>
+              <span className="display-serif text-5xl font-bold text-white">
+                $99
+              </span>
+              <span
+                className="mb-3 text-[#5a5349] text-sm"
+                style={{ fontFamily: "'Source Serif 4', serif" }}
+              >
+                one-time
+              </span>
             </div>
 
             <div className="mt-4 flex items-center gap-2 justify-center">
-              <span className="text-sm text-[#5a5349] line-through" style={{ fontFamily: "'Source Serif 4', serif" }}>$116</span>
-              <span className="text-xs text-[#7a7269]" style={{ fontFamily: "'Source Serif 4', serif" }}>vs buying separately</span>
+              <span
+                className="text-sm text-[#5a5349] line-through"
+                style={{ fontFamily: "'Source Serif 4', serif" }}
+              >
+                $116
+              </span>
+              <span
+                className="text-xs text-[#7a7269]"
+                style={{ fontFamily: "'Source Serif 4', serif" }}
+              >
+                vs buying separately
+              </span>
             </div>
           </div>
         </div>
 
-        <p className="mt-5 text-sm text-[#5a5349]" style={{ fontFamily: "'Source Serif 4', serif" }}>
+        <p
+          className="mt-5 text-sm text-[#5a5349]"
+          style={{ fontFamily: "'Source Serif 4', serif" }}
+        >
           Or start with individual products from $9
         </p>
 
         {/* CTAs */}
         <div className="mt-12 flex flex-col gap-5 sm:flex-row sm:justify-center">
-          <Link href="/products" className="premium-cta inline-flex items-center justify-center px-10 py-5 rounded-md text-base font-medium">
+          <Link
+            href="/products"
+            className="premium-cta inline-flex items-center justify-center px-10 py-5 rounded-md text-base font-medium"
+          >
             Get the Full Prep System — $99
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
 
-          <Link href="/demo" className="inline-flex items-center justify-center px-10 py-5 border border-white/8 text-[#c2bab0] hover:text-white hover:border-white/15 transition-all rounded-md text-base" style={{ fontFamily: "'Source Serif 4', serif" }}>
+          <Link
+            href="/demo"
+            className="inline-flex items-center justify-center px-10 py-5 border border-white/8 text-[#c2bab0] hover:text-white hover:border-white/15 transition-all rounded-md text-base"
+            style={{ fontFamily: "'Source Serif 4', serif" }}
+          >
             Try Free Demo First
           </Link>
         </div>
@@ -91,8 +141,8 @@ export function CtaSection() {
         {/* Trust indicators */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
           {[
-            { icon: Shield,       text: "Secure checkout" },
-            { icon: Zap,          text: "Instant access" },
+            { icon: Shield, text: "Secure checkout" },
+            { icon: Zap, text: "Instant access" },
             { icon: CheckCircle2, text: "No subscription" },
           ].map(({ icon: Icon, text }) => (
             <div

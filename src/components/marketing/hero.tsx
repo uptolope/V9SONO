@@ -1,14 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play, Shield, Zap, Users, ChevronDown, Sparkles, Layers, Activity, Brain, Target } from "lucide-react";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  AnimatePresence,
+} from "framer-motion";
+import {
+  ArrowRight,
+  Play,
+  Shield,
+  Zap,
+  Users,
+  ChevronDown,
+  Sparkles,
+  Layers,
+  Activity,
+  Brain,
+  Target,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useRef, useState } from "react";
 
 /* ── Animated number counter ──────────────────────────────────────── */
-function CountUp({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) {
+function CountUp({
+  to,
+  suffix = "",
+  duration = 2,
+}: {
+  to: number;
+  suffix?: string;
+  duration?: number;
+}) {
   const nodeRef = useRef<HTMLSpanElement>(null);
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v: number) => Math.round(v));
@@ -68,7 +94,17 @@ function ParticleSystem() {
 }
 
 /* ── Interactive Magnetic Button ─────────────────────────────────────── */
-function MagneticButton({ children, href, variant = "primary", className = "" }: { children: React.ReactNode; href: string; variant?: "primary" | "secondary"; className?: string }) {
+function MagneticButton({
+  children,
+  href,
+  variant = "primary",
+  className = "",
+}: {
+  children: React.ReactNode;
+  href: string;
+  variant?: "primary" | "secondary";
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -97,16 +133,20 @@ function MagneticButton({ children, href, variant = "primary", className = "" }:
       whileTap={{ scale: 0.98 }}
     >
       <Button size="xl" asChild className={`group premium-cta ${className}`}>
-        <Link href={href}>
-          {children}
-        </Link>
+        <Link href={href}>{children}</Link>
       </Button>
     </motion.div>
   );
 }
 
 /* ── 3D Tilt Card Effect ──────────────────────────────────────────────── */
-function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function TiltCard({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -154,10 +194,13 @@ function WaveformAnimation() {
       <div className="relative rounded-3xl border border-[#c85b3a]/20 bg-gradient-to-b from-charcoal/95 to-obsidian/95 backdrop-blur-2xl overflow-hidden shadow-2xl shadow-black/60 p-8">
         {/* Animated grid background */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(rgba(200, 91, 58,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(200, 91, 58,0.1) 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `linear-gradient(rgba(200, 91, 58,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(200, 91, 58,0.1) 1px, transparent 1px)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
         </div>
 
         {/* Waveform visualization */}
@@ -215,7 +258,9 @@ function WaveformAnimation() {
           transition={{ duration: 2, repeat: Infinity }}
         >
           <div className="w-2 h-2 rounded-full bg-[#e06840]" />
-          <span className="font-mono text-xs text-[#e06840] uppercase tracking-wider">Live Scan</span>
+          <span className="font-mono text-xs text-[#e06840] uppercase tracking-wider">
+            Live Scan
+          </span>
         </motion.div>
 
         {/* Metrics */}
@@ -250,11 +295,19 @@ function WaveformAnimation() {
 /* ── Stagger Animation Variants ─────────────────────────────────────── */
 const container = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+  },
 };
 const item = {
   hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 /* ── Stats ─────────────────────────────────────────────────────────── */
@@ -281,8 +334,10 @@ export function Hero() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setInView(true); },
-      { threshold: 0.2 }
+      ([e]) => {
+        if (e.isIntersecting) setInView(true);
+      },
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -336,7 +391,9 @@ export function Hero() {
               ease: "easeInOut",
             }}
           >
-            <div className={`w-full h-full rounded-full ${delay === 0 ? 'bg-[#c85b3a]/[0.03]' : delay === 2 ? 'bg-[#1e3a5f]/[0.04]' : 'bg-[#c85b3a]/[0.02]'}`} />
+            <div
+              className={`w-full h-full rounded-full ${delay === 0 ? "bg-[#c85b3a]/[0.03]" : delay === 2 ? "bg-[#1e3a5f]/[0.04]" : "bg-[#c85b3a]/[0.02]"}`}
+            />
           </motion.div>
         ))}
       </div>
@@ -344,20 +401,24 @@ export function Hero() {
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* Left column — Text */}
-          <motion.div variants={container} initial="hidden" animate="visible" className="text-center lg:text-left">
-
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="text-center lg:text-left"
+          >
             {/* Premium badge */}
             <motion.div variants={item}>
-              <motion.div
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
-              >
+              <motion.div className="inline-block" whileHover={{ scale: 1.05 }}>
                 <Badge className="border border-[#c85b3a]/30 bg-[#c85b3a]/10 text-[#c85b3a] mb-8 px-6 py-3 text-[0.65rem] tracking-widest uppercase">
                   <motion.span
                     animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="inline-block mr-2"
                   >
                     ✦
@@ -389,20 +450,28 @@ export function Hero() {
               variants={item}
               className="mt-8 text-lg sm:text-xl leading-relaxed text-cream-dim max-w-xl"
             >
-              The SPI exam is required for every ARDMS credential — RDMS, RDCS, RVT, and RMSKS.
-              SonoPrep gives you clinically focused flashcards, a realistic exam simulator, and
-              spaced-repetition learning built by practicing sonographers.
+              The SPI exam is required for every ARDMS credential — RDMS, RDCS,
+              RVT, and RMSKS. SonoPrep gives you clinically focused flashcards,
+              a realistic exam simulator, and spaced-repetition learning built
+              by practicing sonographers.
             </motion.p>
 
             {/* Feature pills */}
-            <motion.div variants={item} className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start">
+            <motion.div
+              variants={item}
+              className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start"
+            >
               {FEATURES.map(({ icon: Icon, text }, i) => (
                 <motion.div
                   key={text}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + i * 0.08 }}
-                  whileHover={{ scale: 1.05, borderColor: "rgba(200, 91, 58,0.4)", color: "#e06840" }}
+                  whileHover={{
+                    scale: 1.05,
+                    borderColor: "rgba(200, 91, 58,0.4)",
+                    color: "#e06840",
+                  }}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.07] bg-white/[0.02] text-[#B8B0A6] text-xs tracking-wide cursor-default"
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -437,7 +506,10 @@ export function Hero() {
             </motion.div>
 
             {/* Trust line */}
-            <motion.p variants={item} className="mt-6 font-mono text-xs text-cream-dim/40">
+            <motion.p
+              variants={item}
+              className="mt-6 font-mono text-xs text-cream-dim/40"
+            >
               No subscription · 90-day access · No credit card for demo
             </motion.p>
           </motion.div>
@@ -466,18 +538,30 @@ export function Hero() {
                 key={s.label}
                 initial={{ opacity: 0, y: 40, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 0.8 + i * 0.12, duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                transition={{
+                  delay: 0.8 + i * 0.12,
+                  duration: 0.7,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
                 whileHover={{ y: -8, scale: 1.05 }}
                 className="lift-card p-6 text-center group cursor-default"
               >
                 <div className="relative">
                   <p className="text-4xl lg:text-5xl font-bold text-[#e06840] group-hover:text-[#c85b3a] transition-colors">
-                    {inView ? <CountUp to={s.value} suffix={s.suffix} /> : `0${s.suffix}`}
+                    {inView ? (
+                      <CountUp to={s.value} suffix={s.suffix} />
+                    ) : (
+                      `0${s.suffix}`
+                    )}
                   </p>
                   <motion.div
                     className="absolute -inset-4 rounded-lg bg-[#c85b3a]/[0.08] opacity-0 group-hover:opacity-100 blur-xl transition-opacity"
                     animate={{ scale: [0.8, 1.2, 0.8] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: i * 0.5,
+                    }}
                   />
                 </div>
                 <p className="mt-3 font-mono text-xs uppercase tracking-wider text-cream-dim/60 group-hover:text-cream-dim/80 transition-colors">
@@ -504,7 +588,11 @@ export function Hero() {
               <motion.div
                 className="h-4 w-1.5 rounded-full bg-gradient-to-b from-[#c85b3a] to-[#c85b3a]-glow"
                 animate={{ y: [0, 24, 0], opacity: [1, 0.2, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             </div>
             <motion.div

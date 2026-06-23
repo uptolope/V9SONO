@@ -8,7 +8,7 @@ read: "12 min read"
 
 # Spaced Repetition for SPI Exam Success: Why Active Recall Beats Cramming
 
-*March 20, 2026 · 12 min read*
+_March 20, 2026 · 12 min read_
 
 If you've ever crammed for an exam, passed it, and then realized a month later you couldn't explain half of what you "knew," you've experienced the limits of cramming firsthand. The SPI exam covers a wide range of interconnected physics concepts — and for most candidates, the goal isn't just to pass, but to retain enough of this material to apply it clinically afterward. That's where spaced repetition comes in.
 
@@ -25,12 +25,13 @@ This is why flashcards work better than re-reading, and why flashcards that ask 
 ## How spaced repetition algorithms work, in plain terms
 
 Most modern spaced repetition systems are based on the SM-2 algorithm (or variations of it), originally developed for the SuperMemo software in the late 1980s. The core idea is straightforward:
+
 - Each card has an "interval" — how many days until it's shown again.
 - Each time you review a card, you rate how well you recalled it (typically on a scale from "again" / failed, to "easy").
 - If you recalled it easily, the interval increases — sometimes substantially, since the algorithm wants to space out cards you know well.
 - If you struggled or got it wrong, the interval resets to something short, so you see the card again soon.
 - Over time, cards you consistently know well drift toward longer and longer intervals (weeks, then months), while cards you struggle with stay in frequent rotation until they "graduate."
-The practical effect: your study session each day is automatically composed of a mix of new material and review material that's individually timed for each card based on your own performance — not a one-size-fits-all schedule.
+  The practical effect: your study session each day is automatically composed of a mix of new material and review material that's individually timed for each card based on your own performance — not a one-size-fits-all schedule.
 
 ## Why this matters more for the SPI than for some other exams
 
@@ -43,4 +44,4 @@ Spaced repetition keeps the foundational material "warm" throughout your entire 
 - Do your reviews daily, even briefly. The algorithm's scheduling assumes consistent daily engagement. Skipping several days causes a backlog of overdue cards, which can make a session feel overwhelming and discourage consistency further.
 - Don't over-create new cards early on. Adding too many new cards per day creates a growing review backlog within a couple of weeks. A steady, moderate pace of new material is more sustainable than front-loading everything in week one.
 - Pair flashcards with practice questions and a full simulator. Flashcards build the underlying knowledge; full-length practice exams build the application and pacing skills covered in our test-taking strategies guide. Neither replaces the other.
-SonoPrep's flashcard system is built on the SM-2 spaced repetition model described above, with cards organized around the ARDMS content outline so your review sessions automatically reflect the actual weight of each domain on the exam — more Doppler and image optimization cards in rotation, proportional to how much of the test they represent.
+  SonoPrep's flashcard system is built on the SM-2 spaced repetition model described above, with cards organized around the ARDMS content outline so your review sessions automatically reflect the actual weight of each domain on the exam — more Doppler and image optimization cards in rotation, proportional to how much of the test they represent.
