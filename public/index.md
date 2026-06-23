@@ -22,13 +22,13 @@ The SPI exam tests the physics and instrumentation underlying all diagnostic ult
 
 ## The 5 SPI Domains
 
-| Domain | Exam Weight |
-|---|---|
-| 1. Perform Ultrasound Examinations | 23% |
-| 2. Manage Ultrasound Transducers | 7% |
-| 3. Optimize Sonographic Images | 26% |
-| 4. Apply Doppler Concepts | 34% |
-| 5. Clinical Safety & Quality Assurance | 10% |
+| Domain                                 | Exam Weight |
+| -------------------------------------- | ----------- |
+| 1. Perform Ultrasound Examinations     | 23%         |
+| 2. Manage Ultrasound Transducers       | 7%          |
+| 3. Optimize Sonographic Images         | 26%         |
+| 4. Apply Doppler Concepts              | 34%         |
+| 5. Clinical Safety & Quality Assurance | 10%         |
 
 Domains 3 and 4 — image optimization and Doppler — together make up **60% of the exam**.
 
@@ -44,18 +44,23 @@ SonoPrep is not for candidates who have already passed the SPI. It is specifical
 ## Products
 
 ### Physics Pearls — $9
+
 50 concise summaries of the most commonly tested ultrasound physics concepts. Formulas, definitions, and relationships the ARDMS actually tests. Instant digital download.
 
 ### Flashcards — $24
+
 200+ digital flashcards organized by SPI domain. Spaced-repetition friendly. Works on mobile and desktop. Covers all five content areas.
 
 ### Study Notes — $34
+
 159-page PDF study guide written to the ARDMS content outline. Covers all five domains: physics principles, artifact identification, Doppler analysis, transducer types, quality assurance, and bioeffects. Printable.
 
 ### Exam Simulator — $49.99
+
 170+ practice questions in ARDMS-style multiple-choice format. Timed exam mode, immediate answer explanations, domain-level performance tracking.
 
 ### Full Bundle — $99
+
 All four products. Recommended for complete coverage. Includes 90-day access and a 14-day money-back guarantee.
 
 ## Key Guarantees

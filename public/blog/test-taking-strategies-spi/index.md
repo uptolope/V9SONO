@@ -8,7 +8,7 @@ read: "11 min read"
 
 # SPI Exam Test-Taking Strategies: Eliminate Wrong Answers & Manage Time
 
-*March 14, 2026 · 11 min read*
+_March 14, 2026 · 11 min read_
 
 Knowing the physics is necessary but not sufficient. The SPI exam is also a test of pacing, question-reading, and decision-making under a clock. Here's how to approach the exam itself, separate from the content you've studied.
 
@@ -20,10 +20,11 @@ Note: a small number of questions on any given exam form may be unscored pretest
 ## Pace in passes, not question-by-question
 
 A common and effective approach is to work through the exam in two or three passes rather than forcing yourself to finish each question before moving on:
+
 - First pass: Answer everything you know immediately — definitional questions, straightforward recall, anything that doesn't require a calculation or careful elimination. Flag anything that needs more time.
 - Second pass: Return to flagged questions. Work through moderate-difficulty items — questions that need some elimination or a quick calculation.
 - Final pass: Tackle the hardest remaining questions and any calculations that need careful setup. Use whatever time is left.
-The benefit of this approach is psychological as much as practical — getting through the easy questions first builds momentum and means you're never stuck on question 12 while 90 unanswered questions sit ahead of you.
+  The benefit of this approach is psychological as much as practical — getting through the easy questions first builds momentum and means you're never stuck on question 12 while 90 unanswered questions sit ahead of you.
 
 ## Eliminate before you select
 

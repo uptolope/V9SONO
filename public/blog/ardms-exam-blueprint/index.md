@@ -8,7 +8,7 @@ read: "17 min read"
 
 # ARDMS SPI Exam Blueprint: Domain Weightings Explained
 
-*April 26, 2026 · 17 min read*
+_April 26, 2026 · 17 min read_
 
 Every SPI exam question comes from one of five domains in the official ARDMS content outline. ARDMS publishes this outline so candidates know exactly what to expect — and it's the single most useful document you can study before opening a textbook. If you only read one thing before you start preparing, read this.
 The current outline took effect in September 2023 and represents a meaningful shift from the previous version. If your school handed you study materials written before that date, some of the domain weightings you were given are out of date. Here's the current breakdown.

@@ -8,7 +8,7 @@ read: "18 min read"
 
 # Ultrasound Physics for the SPI Exam: The 6 Concepts That Actually Appear
 
-*April 10, 2026 · 18 min read*
+_April 10, 2026 · 18 min read_
 
 Ultrasound physics textbooks run hundreds of pages. The SPI exam does not test all of it equally. A small set of foundational concepts reappears across multiple domains — Optimize Sonographic Images, Apply Doppler Concepts, and Perform Ultrasound Examinations all draw on the same underlying physics. Get these six right, and a large share of the exam becomes much more approachable.
 
@@ -20,15 +20,17 @@ The tradeoff is penetration: higher frequency sound is attenuated more quickly b
 ## 2. Axial, lateral, elevational, and temporal resolution
 
 These four types of resolution are tested individually and in comparison to each other:
+
 - Axial resolution — along the beam axis. Improved by shorter pulse duration, which comes from higher frequency and fewer cycles per pulse.
 - Lateral resolution — perpendicular to the beam, within the scan plane. Improved by a narrower beam width, which is controlled by focusing.
 - Elevational resolution — perpendicular to the scan plane (the "slice thickness"). Determined by the transducer's elevation lens and is generally the hardest of the three to improve, since it's fixed by the transducer's physical construction in conventional arrays.
 - Temporal resolution — how quickly the image updates, i.e., frame rate. Improved by reducing the amount of information needed per frame: fewer scan lines, narrower sector width, shallower depth, or single focal zone instead of multiple.
-A common exam pattern is to describe a change to one setting (say, adding more focal zones) and ask what happens to a different type of resolution as a side effect (frame rate drops, because temporal resolution and lateral resolution optimization compete for the same "frame time budget").
+  A common exam pattern is to describe a change to one setting (say, adding more focal zones) and ask what happens to a different type of resolution as a side effect (frame rate drops, because temporal resolution and lateral resolution optimization compete for the same "frame time budget").
 
 ## 3. Attenuation and the interaction of sound with tissue
 
 As ultrasound travels through tissue, it loses energy — this is attenuation, caused by absorption, reflection, refraction, and scattering. Understanding how each tissue type attenuates sound differently explains why certain structures appear the way they do:
+
 - Anechoic structures (like simple cysts or a full bladder) produce no internal echoes — sound passes through with minimal reflection, which also causes posterior acoustic enhancement (the tissue behind appears brighter, because less sound was attenuated on the way through).
 - Hyperechoic structures (like bone or calcifications) reflect most of the sound back, often causing posterior shadowing — little to no sound gets through to image what's behind.
 - Attenuation coefficient increases with frequency — this is the physical basis for the frequency/penetration tradeoff in concept 1.

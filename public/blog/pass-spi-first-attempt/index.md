@@ -8,7 +8,7 @@ read: "14 min read"
 
 # How to Pass the SPI Exam on Your First Attempt: A 6-Week Blueprint
 
-*March 28, 2026 · 14 min read*
+_March 28, 2026 · 14 min read_
 
 Six weeks is enough time to build real command of the SPI content outline if your study time is structured around how the exam is actually weighted — not spread evenly across topics regardless of how often they appear. This plan follows the official domain weightings: 23% Perform Ultrasound Examinations, 7% Manage Ultrasound Transducers, 26% Optimize Sonographic Images, 34% Apply Doppler Concepts, and 10% Provide Clinical Safety & Quality Assurance.
 Adjust the pacing to your own schedule — this assumes roughly 10-15 hours of study per week, which is a reasonable target for someone studying alongside clinical rotations or a job, but not the only way to structure it.

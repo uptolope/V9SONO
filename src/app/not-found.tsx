@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Page Not Found | SonoPrep",
-  description: "This page doesn't exist. Head back to SonoPrep to continue your SPI exam prep.",
+  description:
+    "This page doesn't exist. Head back to SonoPrep to continue your SPI exam prep.",
 };
 
 export default function NotFound() {
@@ -35,8 +36,8 @@ export default function NotFound() {
           className="text-base leading-relaxed mb-10"
           style={{ fontFamily: "'Source Serif 4', serif", color: "#B8B0A6" }}
         >
-          The SPI does test your knowledge of what&apos;s real and what isn&apos;t —
-          but this URL is definitely an artifact.
+          The SPI does test your knowledge of what&apos;s real and what
+          isn&apos;t — but this URL is definitely an artifact.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
